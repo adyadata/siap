@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<ew-language date="2017/6/11" version="13.0.0" id="en" name="English" desc="English" author="e.World Technology Ltd.">
+<ew-language date="2017/6/12" version="13.0.0" id="en" name="English" desc="English" author="e.World Technology Ltd.">
   <!-- 
 	*** Important Notes:
 	1. Language ID should follow: https://developers.google.com/recaptcha/docs/language,
@@ -595,6 +595,18 @@
     <menu id="65">
       <phrase id="menutext" value="Setup" />
     </menu>
+    <menu id="128">
+      <phrase id="menutext" value="Umum" />
+    </menu>
+    <menu id="66">
+      <phrase id="menutext" value="Shift" />
+    </menu>
+    <menu id="35">
+      <phrase id="menutext" value="setting" />
+    </menu>
+    <menu id="188">
+      <phrase id="menutext" value="Pembagian Pegawai" />
+    </menu>
     <menu id="31">
       <phrase id="menutext" value="Jabatan" />
     </menu>
@@ -699,9 +711,6 @@
     </menu>
     <menu id="34">
       <phrase id="menutext" value="pendidikan" />
-    </menu>
-    <menu id="35">
-      <phrase id="menutext" value="setting" />
     </menu>
     <menu id="36">
       <phrase id="menutext" value="shift result" />
@@ -1674,7 +1683,7 @@
         <phrase id="fldcaption" value="param name" />
       </field>
       <field id="param_value">
-        <phrase id="fldcaption" value="param value" />
+        <phrase id="fldcaption" value="Nilai" />
       </field>
       <field id="keterangan">
         <phrase id="fldcaption" value="keterangan" />
@@ -2429,6 +2438,21 @@
     </table>
     <table id="c_home_php">
       <phrase id="tblcaption" value="Home" />
+    </table>
+    <table id="v_shift">
+      <phrase id="tblcaption" value="Shift" />
+      <field id="param_name">
+        <phrase id="fldcaption" value="param name" />
+      </field>
+      <field id="disp_field">
+        <phrase id="fldcaption" value="Shift" />
+      </field>
+      <field id="param_value">
+        <phrase id="fldcaption" value="Waktu (menit)" />
+      </field>
+      <field id="disp_no">
+        <phrase id="fldcaption" value="disp no" />
+      </field>
     </table>
   </project>
 </ew-language>

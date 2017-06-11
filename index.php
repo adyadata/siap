@@ -282,6 +282,8 @@ class cdefault {
 			$this->Page_Terminate("t_audit_traillist.php");
 		if ($Security->AllowList(CurrentProjectID() . 't_user'))
 			$this->Page_Terminate("t_userlist.php");
+		if ($Security->AllowList(CurrentProjectID() . 'v_shift'))
+			$this->Page_Terminate("v_shiftlist.php");
 		if ($Security->IsLoggedIn()) {
 			$this->setFailureMessage(ew_DeniedMsg() . "<br><br><a href=\"logout.php\">" . $Language->Phrase("BackToLogin") . "</a>");
 		} else {
