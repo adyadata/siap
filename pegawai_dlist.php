@@ -414,16 +414,15 @@ class cpegawai_d_list extends cpegawai_d {
 
 		// Setup export options
 		$this->SetupExportOptions();
-		$this->pegawai_id->SetVisibility();
 		$this->pend_id->SetVisibility();
 		$this->gol_darah->SetVisibility();
 		$this->stat_nikah->SetVisibility();
+		$this->agama->SetVisibility();
 		$this->jml_anak->SetVisibility();
 		$this->alamat->SetVisibility();
+		$this->nama_hubungan->SetVisibility();
 		$this->telp_extra->SetVisibility();
 		$this->hubungan->SetVisibility();
-		$this->nama_hubungan->SetVisibility();
-		$this->agama->SetVisibility();
 
 		// Global Page Loading event (in userfn*.php)
 		Page_Loading();
@@ -800,12 +799,12 @@ class cpegawai_d_list extends cpegawai_d {
 		$sFilterList = ew_Concat($sFilterList, $this->pend_id->AdvancedSearch->ToJSON(), ","); // Field pend_id
 		$sFilterList = ew_Concat($sFilterList, $this->gol_darah->AdvancedSearch->ToJSON(), ","); // Field gol_darah
 		$sFilterList = ew_Concat($sFilterList, $this->stat_nikah->AdvancedSearch->ToJSON(), ","); // Field stat_nikah
+		$sFilterList = ew_Concat($sFilterList, $this->agama->AdvancedSearch->ToJSON(), ","); // Field agama
 		$sFilterList = ew_Concat($sFilterList, $this->jml_anak->AdvancedSearch->ToJSON(), ","); // Field jml_anak
 		$sFilterList = ew_Concat($sFilterList, $this->alamat->AdvancedSearch->ToJSON(), ","); // Field alamat
+		$sFilterList = ew_Concat($sFilterList, $this->nama_hubungan->AdvancedSearch->ToJSON(), ","); // Field nama_hubungan
 		$sFilterList = ew_Concat($sFilterList, $this->telp_extra->AdvancedSearch->ToJSON(), ","); // Field telp_extra
 		$sFilterList = ew_Concat($sFilterList, $this->hubungan->AdvancedSearch->ToJSON(), ","); // Field hubungan
-		$sFilterList = ew_Concat($sFilterList, $this->nama_hubungan->AdvancedSearch->ToJSON(), ","); // Field nama_hubungan
-		$sFilterList = ew_Concat($sFilterList, $this->agama->AdvancedSearch->ToJSON(), ","); // Field agama
 		if ($this->BasicSearch->Keyword <> "") {
 			$sWrk = "\"" . EW_TABLE_BASIC_SEARCH . "\":\"" . ew_JsEncode2($this->BasicSearch->Keyword) . "\",\"" . EW_TABLE_BASIC_SEARCH_TYPE . "\":\"" . ew_JsEncode2($this->BasicSearch->Type) . "\"";
 			$sFilterList = ew_Concat($sFilterList, $sWrk, ",");
@@ -882,6 +881,14 @@ class cpegawai_d_list extends cpegawai_d {
 		$this->stat_nikah->AdvancedSearch->SearchOperator2 = @$filter["w_stat_nikah"];
 		$this->stat_nikah->AdvancedSearch->Save();
 
+		// Field agama
+		$this->agama->AdvancedSearch->SearchValue = @$filter["x_agama"];
+		$this->agama->AdvancedSearch->SearchOperator = @$filter["z_agama"];
+		$this->agama->AdvancedSearch->SearchCondition = @$filter["v_agama"];
+		$this->agama->AdvancedSearch->SearchValue2 = @$filter["y_agama"];
+		$this->agama->AdvancedSearch->SearchOperator2 = @$filter["w_agama"];
+		$this->agama->AdvancedSearch->Save();
+
 		// Field jml_anak
 		$this->jml_anak->AdvancedSearch->SearchValue = @$filter["x_jml_anak"];
 		$this->jml_anak->AdvancedSearch->SearchOperator = @$filter["z_jml_anak"];
@@ -898,6 +905,14 @@ class cpegawai_d_list extends cpegawai_d {
 		$this->alamat->AdvancedSearch->SearchOperator2 = @$filter["w_alamat"];
 		$this->alamat->AdvancedSearch->Save();
 
+		// Field nama_hubungan
+		$this->nama_hubungan->AdvancedSearch->SearchValue = @$filter["x_nama_hubungan"];
+		$this->nama_hubungan->AdvancedSearch->SearchOperator = @$filter["z_nama_hubungan"];
+		$this->nama_hubungan->AdvancedSearch->SearchCondition = @$filter["v_nama_hubungan"];
+		$this->nama_hubungan->AdvancedSearch->SearchValue2 = @$filter["y_nama_hubungan"];
+		$this->nama_hubungan->AdvancedSearch->SearchOperator2 = @$filter["w_nama_hubungan"];
+		$this->nama_hubungan->AdvancedSearch->Save();
+
 		// Field telp_extra
 		$this->telp_extra->AdvancedSearch->SearchValue = @$filter["x_telp_extra"];
 		$this->telp_extra->AdvancedSearch->SearchOperator = @$filter["z_telp_extra"];
@@ -913,22 +928,6 @@ class cpegawai_d_list extends cpegawai_d {
 		$this->hubungan->AdvancedSearch->SearchValue2 = @$filter["y_hubungan"];
 		$this->hubungan->AdvancedSearch->SearchOperator2 = @$filter["w_hubungan"];
 		$this->hubungan->AdvancedSearch->Save();
-
-		// Field nama_hubungan
-		$this->nama_hubungan->AdvancedSearch->SearchValue = @$filter["x_nama_hubungan"];
-		$this->nama_hubungan->AdvancedSearch->SearchOperator = @$filter["z_nama_hubungan"];
-		$this->nama_hubungan->AdvancedSearch->SearchCondition = @$filter["v_nama_hubungan"];
-		$this->nama_hubungan->AdvancedSearch->SearchValue2 = @$filter["y_nama_hubungan"];
-		$this->nama_hubungan->AdvancedSearch->SearchOperator2 = @$filter["w_nama_hubungan"];
-		$this->nama_hubungan->AdvancedSearch->Save();
-
-		// Field agama
-		$this->agama->AdvancedSearch->SearchValue = @$filter["x_agama"];
-		$this->agama->AdvancedSearch->SearchOperator = @$filter["z_agama"];
-		$this->agama->AdvancedSearch->SearchCondition = @$filter["v_agama"];
-		$this->agama->AdvancedSearch->SearchValue2 = @$filter["y_agama"];
-		$this->agama->AdvancedSearch->SearchOperator2 = @$filter["w_agama"];
-		$this->agama->AdvancedSearch->Save();
 		$this->BasicSearch->setKeyword(@$filter[EW_TABLE_BASIC_SEARCH]);
 		$this->BasicSearch->setType(@$filter[EW_TABLE_BASIC_SEARCH_TYPE]);
 	}
@@ -937,8 +936,8 @@ class cpegawai_d_list extends cpegawai_d {
 	function BasicSearchSQL($arKeywords, $type) {
 		$sWhere = "";
 		$this->BuildBasicSearchSQL($sWhere, $this->alamat, $arKeywords, $type);
-		$this->BuildBasicSearchSQL($sWhere, $this->telp_extra, $arKeywords, $type);
 		$this->BuildBasicSearchSQL($sWhere, $this->nama_hubungan, $arKeywords, $type);
+		$this->BuildBasicSearchSQL($sWhere, $this->telp_extra, $arKeywords, $type);
 		return $sWhere;
 	}
 
@@ -1107,16 +1106,15 @@ class cpegawai_d_list extends cpegawai_d {
 		if (@$_GET["order"] <> "") {
 			$this->CurrentOrder = ew_StripSlashes(@$_GET["order"]);
 			$this->CurrentOrderType = @$_GET["ordertype"];
-			$this->UpdateSort($this->pegawai_id, $bCtrl); // pegawai_id
 			$this->UpdateSort($this->pend_id, $bCtrl); // pend_id
 			$this->UpdateSort($this->gol_darah, $bCtrl); // gol_darah
 			$this->UpdateSort($this->stat_nikah, $bCtrl); // stat_nikah
+			$this->UpdateSort($this->agama, $bCtrl); // agama
 			$this->UpdateSort($this->jml_anak, $bCtrl); // jml_anak
 			$this->UpdateSort($this->alamat, $bCtrl); // alamat
+			$this->UpdateSort($this->nama_hubungan, $bCtrl); // nama_hubungan
 			$this->UpdateSort($this->telp_extra, $bCtrl); // telp_extra
 			$this->UpdateSort($this->hubungan, $bCtrl); // hubungan
-			$this->UpdateSort($this->nama_hubungan, $bCtrl); // nama_hubungan
-			$this->UpdateSort($this->agama, $bCtrl); // agama
 			$this->setStartRecordNumber(1); // Reset start position
 		}
 	}
@@ -1157,16 +1155,15 @@ class cpegawai_d_list extends cpegawai_d {
 			if ($this->Command == "resetsort") {
 				$sOrderBy = "";
 				$this->setSessionOrderBy($sOrderBy);
-				$this->pegawai_id->setSort("");
 				$this->pend_id->setSort("");
 				$this->gol_darah->setSort("");
 				$this->stat_nikah->setSort("");
+				$this->agama->setSort("");
 				$this->jml_anak->setSort("");
 				$this->alamat->setSort("");
+				$this->nama_hubungan->setSort("");
 				$this->telp_extra->setSort("");
 				$this->hubungan->setSort("");
-				$this->nama_hubungan->setSort("");
-				$this->agama->setSort("");
 			}
 
 			// Reset start position
@@ -1622,12 +1619,12 @@ class cpegawai_d_list extends cpegawai_d {
 		$this->pend_id->setDbValue($rs->fields('pend_id'));
 		$this->gol_darah->setDbValue($rs->fields('gol_darah'));
 		$this->stat_nikah->setDbValue($rs->fields('stat_nikah'));
+		$this->agama->setDbValue($rs->fields('agama'));
 		$this->jml_anak->setDbValue($rs->fields('jml_anak'));
 		$this->alamat->setDbValue($rs->fields('alamat'));
+		$this->nama_hubungan->setDbValue($rs->fields('nama_hubungan'));
 		$this->telp_extra->setDbValue($rs->fields('telp_extra'));
 		$this->hubungan->setDbValue($rs->fields('hubungan'));
-		$this->nama_hubungan->setDbValue($rs->fields('nama_hubungan'));
-		$this->agama->setDbValue($rs->fields('agama'));
 	}
 
 	// Load DbValue from recordset
@@ -1638,12 +1635,12 @@ class cpegawai_d_list extends cpegawai_d {
 		$this->pend_id->DbValue = $row['pend_id'];
 		$this->gol_darah->DbValue = $row['gol_darah'];
 		$this->stat_nikah->DbValue = $row['stat_nikah'];
+		$this->agama->DbValue = $row['agama'];
 		$this->jml_anak->DbValue = $row['jml_anak'];
 		$this->alamat->DbValue = $row['alamat'];
+		$this->nama_hubungan->DbValue = $row['nama_hubungan'];
 		$this->telp_extra->DbValue = $row['telp_extra'];
 		$this->hubungan->DbValue = $row['hubungan'];
-		$this->nama_hubungan->DbValue = $row['nama_hubungan'];
-		$this->agama->DbValue = $row['agama'];
 	}
 
 	// Load old record
@@ -1689,12 +1686,12 @@ class cpegawai_d_list extends cpegawai_d {
 		// pend_id
 		// gol_darah
 		// stat_nikah
+		// agama
 		// jml_anak
 		// alamat
+		// nama_hubungan
 		// telp_extra
 		// hubungan
-		// nama_hubungan
-		// agama
 
 		if ($this->RowType == EW_ROWTYPE_VIEW) { // View row
 
@@ -1703,16 +1700,36 @@ class cpegawai_d_list extends cpegawai_d {
 		$this->pegawai_id->ViewCustomAttributes = "";
 
 		// pend_id
-		$this->pend_id->ViewValue = $this->pend_id->CurrentValue;
+		if (strval($this->pend_id->CurrentValue) <> "") {
+			$this->pend_id->ViewValue = $this->pend_id->OptionCaption($this->pend_id->CurrentValue);
+		} else {
+			$this->pend_id->ViewValue = NULL;
+		}
 		$this->pend_id->ViewCustomAttributes = "";
 
 		// gol_darah
-		$this->gol_darah->ViewValue = $this->gol_darah->CurrentValue;
+		if (strval($this->gol_darah->CurrentValue) <> "") {
+			$this->gol_darah->ViewValue = $this->gol_darah->OptionCaption($this->gol_darah->CurrentValue);
+		} else {
+			$this->gol_darah->ViewValue = NULL;
+		}
 		$this->gol_darah->ViewCustomAttributes = "";
 
 		// stat_nikah
-		$this->stat_nikah->ViewValue = $this->stat_nikah->CurrentValue;
+		if (strval($this->stat_nikah->CurrentValue) <> "") {
+			$this->stat_nikah->ViewValue = $this->stat_nikah->OptionCaption($this->stat_nikah->CurrentValue);
+		} else {
+			$this->stat_nikah->ViewValue = NULL;
+		}
 		$this->stat_nikah->ViewCustomAttributes = "";
+
+		// agama
+		if (strval($this->agama->CurrentValue) <> "") {
+			$this->agama->ViewValue = $this->agama->OptionCaption($this->agama->CurrentValue);
+		} else {
+			$this->agama->ViewValue = NULL;
+		}
+		$this->agama->ViewCustomAttributes = "";
 
 		// jml_anak
 		$this->jml_anak->ViewValue = $this->jml_anak->CurrentValue;
@@ -1722,26 +1739,21 @@ class cpegawai_d_list extends cpegawai_d {
 		$this->alamat->ViewValue = $this->alamat->CurrentValue;
 		$this->alamat->ViewCustomAttributes = "";
 
+		// nama_hubungan
+		$this->nama_hubungan->ViewValue = $this->nama_hubungan->CurrentValue;
+		$this->nama_hubungan->ViewCustomAttributes = "";
+
 		// telp_extra
 		$this->telp_extra->ViewValue = $this->telp_extra->CurrentValue;
 		$this->telp_extra->ViewCustomAttributes = "";
 
 		// hubungan
-		$this->hubungan->ViewValue = $this->hubungan->CurrentValue;
+		if (strval($this->hubungan->CurrentValue) <> "") {
+			$this->hubungan->ViewValue = $this->hubungan->OptionCaption($this->hubungan->CurrentValue);
+		} else {
+			$this->hubungan->ViewValue = NULL;
+		}
 		$this->hubungan->ViewCustomAttributes = "";
-
-		// nama_hubungan
-		$this->nama_hubungan->ViewValue = $this->nama_hubungan->CurrentValue;
-		$this->nama_hubungan->ViewCustomAttributes = "";
-
-		// agama
-		$this->agama->ViewValue = $this->agama->CurrentValue;
-		$this->agama->ViewCustomAttributes = "";
-
-			// pegawai_id
-			$this->pegawai_id->LinkCustomAttributes = "";
-			$this->pegawai_id->HrefValue = "";
-			$this->pegawai_id->TooltipValue = "";
 
 			// pend_id
 			$this->pend_id->LinkCustomAttributes = "";
@@ -1758,6 +1770,11 @@ class cpegawai_d_list extends cpegawai_d {
 			$this->stat_nikah->HrefValue = "";
 			$this->stat_nikah->TooltipValue = "";
 
+			// agama
+			$this->agama->LinkCustomAttributes = "";
+			$this->agama->HrefValue = "";
+			$this->agama->TooltipValue = "";
+
 			// jml_anak
 			$this->jml_anak->LinkCustomAttributes = "";
 			$this->jml_anak->HrefValue = "";
@@ -1768,6 +1785,11 @@ class cpegawai_d_list extends cpegawai_d {
 			$this->alamat->HrefValue = "";
 			$this->alamat->TooltipValue = "";
 
+			// nama_hubungan
+			$this->nama_hubungan->LinkCustomAttributes = "";
+			$this->nama_hubungan->HrefValue = "";
+			$this->nama_hubungan->TooltipValue = "";
+
 			// telp_extra
 			$this->telp_extra->LinkCustomAttributes = "";
 			$this->telp_extra->HrefValue = "";
@@ -1777,16 +1799,6 @@ class cpegawai_d_list extends cpegawai_d {
 			$this->hubungan->LinkCustomAttributes = "";
 			$this->hubungan->HrefValue = "";
 			$this->hubungan->TooltipValue = "";
-
-			// nama_hubungan
-			$this->nama_hubungan->LinkCustomAttributes = "";
-			$this->nama_hubungan->HrefValue = "";
-			$this->nama_hubungan->TooltipValue = "";
-
-			// agama
-			$this->agama->LinkCustomAttributes = "";
-			$this->agama->HrefValue = "";
-			$this->agama->TooltipValue = "";
 		}
 
 		// Call Row Rendered event
@@ -2341,8 +2353,18 @@ fpegawai_dlist.ValidateRequired = false;
 <?php } ?>
 
 // Dynamic selection lists
-// Form object for search
+fpegawai_dlist.Lists["x_pend_id"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dlist.Lists["x_pend_id"].Options = <?php echo json_encode($pegawai_d->pend_id->Options()) ?>;
+fpegawai_dlist.Lists["x_gol_darah"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dlist.Lists["x_gol_darah"].Options = <?php echo json_encode($pegawai_d->gol_darah->Options()) ?>;
+fpegawai_dlist.Lists["x_stat_nikah"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dlist.Lists["x_stat_nikah"].Options = <?php echo json_encode($pegawai_d->stat_nikah->Options()) ?>;
+fpegawai_dlist.Lists["x_agama"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dlist.Lists["x_agama"].Options = <?php echo json_encode($pegawai_d->agama->Options()) ?>;
+fpegawai_dlist.Lists["x_hubungan"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dlist.Lists["x_hubungan"].Options = <?php echo json_encode($pegawai_d->hubungan->Options()) ?>;
 
+// Form object for search
 var CurrentSearchForm = fpegawai_dlistsrch = new ew_Form("fpegawai_dlistsrch");
 </script>
 <script type="text/javascript">
@@ -2548,15 +2570,6 @@ $pegawai_d_list->RenderListOptions();
 // Render list options (header, left)
 $pegawai_d_list->ListOptions->Render("header", "left");
 ?>
-<?php if ($pegawai_d->pegawai_id->Visible) { // pegawai_id ?>
-	<?php if ($pegawai_d->SortUrl($pegawai_d->pegawai_id) == "") { ?>
-		<th data-name="pegawai_id"><div id="elh_pegawai_d_pegawai_id" class="pegawai_d_pegawai_id"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->pegawai_id->FldCaption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="pegawai_id"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $pegawai_d->SortUrl($pegawai_d->pegawai_id) ?>',2);"><div id="elh_pegawai_d_pegawai_id" class="pegawai_d_pegawai_id">
-			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->pegawai_id->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->pegawai_id->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->pegawai_id->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
-        </div></div></th>
-	<?php } ?>
-<?php } ?>		
 <?php if ($pegawai_d->pend_id->Visible) { // pend_id ?>
 	<?php if ($pegawai_d->SortUrl($pegawai_d->pend_id) == "") { ?>
 		<th data-name="pend_id"><div id="elh_pegawai_d_pend_id" class="pegawai_d_pend_id"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->pend_id->FldCaption() ?></div></div></th>
@@ -2584,6 +2597,15 @@ $pegawai_d_list->ListOptions->Render("header", "left");
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
+<?php if ($pegawai_d->agama->Visible) { // agama ?>
+	<?php if ($pegawai_d->SortUrl($pegawai_d->agama) == "") { ?>
+		<th data-name="agama"><div id="elh_pegawai_d_agama" class="pegawai_d_agama"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></div></div></th>
+	<?php } else { ?>
+		<th data-name="agama"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $pegawai_d->SortUrl($pegawai_d->agama) ?>',2);"><div id="elh_pegawai_d_agama" class="pegawai_d_agama">
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->agama->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->agama->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+        </div></div></th>
+	<?php } ?>
+<?php } ?>		
 <?php if ($pegawai_d->jml_anak->Visible) { // jml_anak ?>
 	<?php if ($pegawai_d->SortUrl($pegawai_d->jml_anak) == "") { ?>
 		<th data-name="jml_anak"><div id="elh_pegawai_d_jml_anak" class="pegawai_d_jml_anak"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->jml_anak->FldCaption() ?></div></div></th>
@@ -2602,6 +2624,15 @@ $pegawai_d_list->ListOptions->Render("header", "left");
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
+<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
+	<?php if ($pegawai_d->SortUrl($pegawai_d->nama_hubungan) == "") { ?>
+		<th data-name="nama_hubungan"><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?></div></div></th>
+	<?php } else { ?>
+		<th data-name="nama_hubungan"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $pegawai_d->SortUrl($pegawai_d->nama_hubungan) ?>',2);"><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?><?php echo $Language->Phrase("SrchLegend") ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->nama_hubungan->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->nama_hubungan->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+        </div></div></th>
+	<?php } ?>
+<?php } ?>		
 <?php if ($pegawai_d->telp_extra->Visible) { // telp_extra ?>
 	<?php if ($pegawai_d->SortUrl($pegawai_d->telp_extra) == "") { ?>
 		<th data-name="telp_extra"><div id="elh_pegawai_d_telp_extra" class="pegawai_d_telp_extra"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->telp_extra->FldCaption() ?></div></div></th>
@@ -2617,24 +2648,6 @@ $pegawai_d_list->ListOptions->Render("header", "left");
 	<?php } else { ?>
 		<th data-name="hubungan"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $pegawai_d->SortUrl($pegawai_d->hubungan) ?>',2);"><div id="elh_pegawai_d_hubungan" class="pegawai_d_hubungan">
 			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->hubungan->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->hubungan->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->hubungan->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
-        </div></div></th>
-	<?php } ?>
-<?php } ?>		
-<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
-	<?php if ($pegawai_d->SortUrl($pegawai_d->nama_hubungan) == "") { ?>
-		<th data-name="nama_hubungan"><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="nama_hubungan"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $pegawai_d->SortUrl($pegawai_d->nama_hubungan) ?>',2);"><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
-			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?><?php echo $Language->Phrase("SrchLegend") ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->nama_hubungan->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->nama_hubungan->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
-        </div></div></th>
-	<?php } ?>
-<?php } ?>		
-<?php if ($pegawai_d->agama->Visible) { // agama ?>
-	<?php if ($pegawai_d->SortUrl($pegawai_d->agama) == "") { ?>
-		<th data-name="agama"><div id="elh_pegawai_d_agama" class="pegawai_d_agama"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="agama"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $pegawai_d->SortUrl($pegawai_d->agama) ?>',2);"><div id="elh_pegawai_d_agama" class="pegawai_d_agama">
-			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->agama->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->agama->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
@@ -2703,21 +2716,13 @@ while ($pegawai_d_list->RecCnt < $pegawai_d_list->StopRec) {
 // Render list options (body, left)
 $pegawai_d_list->ListOptions->Render("body", "left", $pegawai_d_list->RowCnt);
 ?>
-	<?php if ($pegawai_d->pegawai_id->Visible) { // pegawai_id ?>
-		<td data-name="pegawai_id"<?php echo $pegawai_d->pegawai_id->CellAttributes() ?>>
-<span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_pegawai_id" class="pegawai_d_pegawai_id">
-<span<?php echo $pegawai_d->pegawai_id->ViewAttributes() ?>>
-<?php echo $pegawai_d->pegawai_id->ListViewValue() ?></span>
-</span>
-<a id="<?php echo $pegawai_d_list->PageObjName . "_row_" . $pegawai_d_list->RowCnt ?>"></a></td>
-	<?php } ?>
 	<?php if ($pegawai_d->pend_id->Visible) { // pend_id ?>
 		<td data-name="pend_id"<?php echo $pegawai_d->pend_id->CellAttributes() ?>>
 <span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_pend_id" class="pegawai_d_pend_id">
 <span<?php echo $pegawai_d->pend_id->ViewAttributes() ?>>
 <?php echo $pegawai_d->pend_id->ListViewValue() ?></span>
 </span>
-</td>
+<a id="<?php echo $pegawai_d_list->PageObjName . "_row_" . $pegawai_d_list->RowCnt ?>"></a></td>
 	<?php } ?>
 	<?php if ($pegawai_d->gol_darah->Visible) { // gol_darah ?>
 		<td data-name="gol_darah"<?php echo $pegawai_d->gol_darah->CellAttributes() ?>>
@@ -2732,6 +2737,14 @@ $pegawai_d_list->ListOptions->Render("body", "left", $pegawai_d_list->RowCnt);
 <span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_stat_nikah" class="pegawai_d_stat_nikah">
 <span<?php echo $pegawai_d->stat_nikah->ViewAttributes() ?>>
 <?php echo $pegawai_d->stat_nikah->ListViewValue() ?></span>
+</span>
+</td>
+	<?php } ?>
+	<?php if ($pegawai_d->agama->Visible) { // agama ?>
+		<td data-name="agama"<?php echo $pegawai_d->agama->CellAttributes() ?>>
+<span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_agama" class="pegawai_d_agama">
+<span<?php echo $pegawai_d->agama->ViewAttributes() ?>>
+<?php echo $pegawai_d->agama->ListViewValue() ?></span>
 </span>
 </td>
 	<?php } ?>
@@ -2751,6 +2764,14 @@ $pegawai_d_list->ListOptions->Render("body", "left", $pegawai_d_list->RowCnt);
 </span>
 </td>
 	<?php } ?>
+	<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
+		<td data-name="nama_hubungan"<?php echo $pegawai_d->nama_hubungan->CellAttributes() ?>>
+<span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
+<span<?php echo $pegawai_d->nama_hubungan->ViewAttributes() ?>>
+<?php echo $pegawai_d->nama_hubungan->ListViewValue() ?></span>
+</span>
+</td>
+	<?php } ?>
 	<?php if ($pegawai_d->telp_extra->Visible) { // telp_extra ?>
 		<td data-name="telp_extra"<?php echo $pegawai_d->telp_extra->CellAttributes() ?>>
 <span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_telp_extra" class="pegawai_d_telp_extra">
@@ -2764,22 +2785,6 @@ $pegawai_d_list->ListOptions->Render("body", "left", $pegawai_d_list->RowCnt);
 <span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_hubungan" class="pegawai_d_hubungan">
 <span<?php echo $pegawai_d->hubungan->ViewAttributes() ?>>
 <?php echo $pegawai_d->hubungan->ListViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
-		<td data-name="nama_hubungan"<?php echo $pegawai_d->nama_hubungan->CellAttributes() ?>>
-<span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
-<span<?php echo $pegawai_d->nama_hubungan->ViewAttributes() ?>>
-<?php echo $pegawai_d->nama_hubungan->ListViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($pegawai_d->agama->Visible) { // agama ?>
-		<td data-name="agama"<?php echo $pegawai_d->agama->CellAttributes() ?>>
-<span id="el<?php echo $pegawai_d_list->RowCnt ?>_pegawai_d_agama" class="pegawai_d_agama">
-<span<?php echo $pegawai_d->agama->ViewAttributes() ?>>
-<?php echo $pegawai_d->agama->ListViewValue() ?></span>
 </span>
 </td>
 	<?php } ?>

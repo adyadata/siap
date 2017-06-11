@@ -970,6 +970,9 @@ class cpegawai_edit extends cpegawai {
 
 		// photo_path
 		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->ImageWidth = EW_THUMBNAIL_DEFAULT_WIDTH;
+			$this->photo_path->ImageHeight = EW_THUMBNAIL_DEFAULT_HEIGHT;
+			$this->photo_path->ImageAlt = $this->photo_path->FldAlt();
 			$this->photo_path->ViewValue = $this->photo_path->Upload->DbValue;
 		} else {
 			$this->photo_path->ViewValue = "";
@@ -1060,9 +1063,21 @@ class cpegawai_edit extends cpegawai {
 
 			// photo_path
 			$this->photo_path->LinkCustomAttributes = "";
-			$this->photo_path->HrefValue = "";
+			if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+				$this->photo_path->HrefValue = ew_GetFileUploadUrl($this->photo_path, $this->photo_path->Upload->DbValue); // Add prefix/suffix
+				$this->photo_path->LinkAttrs["target"] = ""; // Add target
+				if ($this->Export <> "") $this->photo_path->HrefValue = ew_ConvertFullUrl($this->photo_path->HrefValue);
+			} else {
+				$this->photo_path->HrefValue = "";
+			}
 			$this->photo_path->HrefValue2 = $this->photo_path->UploadPath . $this->photo_path->Upload->DbValue;
 			$this->photo_path->TooltipValue = "";
+			if ($this->photo_path->UseColorbox) {
+				if (ew_Empty($this->photo_path->TooltipValue))
+					$this->photo_path->LinkAttrs["title"] = $Language->Phrase("ViewImageGallery");
+				$this->photo_path->LinkAttrs["data-rel"] = "pegawai_x_photo_path";
+				ew_AppendClass($this->photo_path->LinkAttrs["class"], "ewLightbox");
+			}
 
 			// nama_bank
 			$this->nama_bank->LinkCustomAttributes = "";
@@ -1221,6 +1236,9 @@ class cpegawai_edit extends cpegawai {
 			$this->photo_path->EditAttrs["class"] = "form-control";
 			$this->photo_path->EditCustomAttributes = "";
 			if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+				$this->photo_path->ImageWidth = EW_THUMBNAIL_DEFAULT_WIDTH;
+				$this->photo_path->ImageHeight = EW_THUMBNAIL_DEFAULT_HEIGHT;
+				$this->photo_path->ImageAlt = $this->photo_path->FldAlt();
 				$this->photo_path->EditValue = $this->photo_path->Upload->DbValue;
 			} else {
 				$this->photo_path->EditValue = "";
@@ -1307,7 +1325,13 @@ class cpegawai_edit extends cpegawai {
 
 			// photo_path
 			$this->photo_path->LinkCustomAttributes = "";
-			$this->photo_path->HrefValue = "";
+			if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+				$this->photo_path->HrefValue = ew_GetFileUploadUrl($this->photo_path, $this->photo_path->Upload->DbValue); // Add prefix/suffix
+				$this->photo_path->LinkAttrs["target"] = ""; // Add target
+				if ($this->Export <> "") $this->photo_path->HrefValue = ew_ConvertFullUrl($this->photo_path->HrefValue);
+			} else {
+				$this->photo_path->HrefValue = "";
+			}
 			$this->photo_path->HrefValue2 = $this->photo_path->UploadPath . $this->photo_path->Upload->DbValue;
 
 			// nama_bank

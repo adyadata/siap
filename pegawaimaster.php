@@ -1,6 +1,5 @@
 <?php
 
-// pegawai_id
 // pegawai_pin
 // pegawai_nip
 // pegawai_nama
@@ -26,17 +25,6 @@
 <table id="tbl_pegawaimaster" class="table table-bordered table-striped ewViewTable">
 <?php echo $pegawai->TableCustomInnerHtml ?>
 	<tbody>
-<?php if ($pegawai->pegawai_id->Visible) { // pegawai_id ?>
-		<tr id="r_pegawai_id">
-			<td><?php echo $pegawai->pegawai_id->FldCaption() ?></td>
-			<td<?php echo $pegawai->pegawai_id->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_id">
-<span<?php echo $pegawai->pegawai_id->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_id->ListViewValue() ?></span>
-</span>
-</td>
-		</tr>
-<?php } ?>
 <?php if ($pegawai->pegawai_pin->Visible) { // pegawai_pin ?>
 		<tr id="r_pegawai_pin">
 			<td><?php echo $pegawai->pegawai_pin->FldCaption() ?></td>
@@ -196,7 +184,7 @@
 			<td><?php echo $pegawai->photo_path->FldCaption() ?></td>
 			<td<?php echo $pegawai->photo_path->CellAttributes() ?>>
 <span id="el_pegawai_photo_path">
-<span<?php echo $pegawai->photo_path->ViewAttributes() ?>>
+<span>
 <?php echo ew_GetFileViewTag($pegawai->photo_path, $pegawai->photo_path->ListViewValue()) ?>
 </span>
 </span>

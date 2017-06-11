@@ -17,12 +17,12 @@ class cpegawai_d extends cTable {
 	var $pend_id;
 	var $gol_darah;
 	var $stat_nikah;
+	var $agama;
 	var $jml_anak;
 	var $alamat;
+	var $nama_hubungan;
 	var $telp_extra;
 	var $hubungan;
-	var $nama_hubungan;
-	var $agama;
 
 	//
 	// Table class constructor
@@ -61,22 +61,40 @@ class cpegawai_d extends cTable {
 		$this->fields['pegawai_id'] = &$this->pegawai_id;
 
 		// pend_id
-		$this->pend_id = new cField('pegawai_d', 'pegawai_d', 'x_pend_id', 'pend_id', '`pend_id`', '`pend_id`', 3, -1, FALSE, '`pend_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->pend_id = new cField('pegawai_d', 'pegawai_d', 'x_pend_id', 'pend_id', '`pend_id`', '`pend_id`', 3, -1, FALSE, '`pend_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'SELECT');
 		$this->pend_id->Sortable = TRUE; // Allow sort
+		$this->pend_id->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->pend_id->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
+		$this->pend_id->OptionCount = 6;
 		$this->pend_id->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['pend_id'] = &$this->pend_id;
 
 		// gol_darah
-		$this->gol_darah = new cField('pegawai_d', 'pegawai_d', 'x_gol_darah', 'gol_darah', '`gol_darah`', '`gol_darah`', 16, -1, FALSE, '`gol_darah`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->gol_darah = new cField('pegawai_d', 'pegawai_d', 'x_gol_darah', 'gol_darah', '`gol_darah`', '`gol_darah`', 16, -1, FALSE, '`gol_darah`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'SELECT');
 		$this->gol_darah->Sortable = TRUE; // Allow sort
+		$this->gol_darah->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->gol_darah->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
+		$this->gol_darah->OptionCount = 8;
 		$this->gol_darah->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['gol_darah'] = &$this->gol_darah;
 
 		// stat_nikah
-		$this->stat_nikah = new cField('pegawai_d', 'pegawai_d', 'x_stat_nikah', 'stat_nikah', '`stat_nikah`', '`stat_nikah`', 16, -1, FALSE, '`stat_nikah`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->stat_nikah = new cField('pegawai_d', 'pegawai_d', 'x_stat_nikah', 'stat_nikah', '`stat_nikah`', '`stat_nikah`', 16, -1, FALSE, '`stat_nikah`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'SELECT');
 		$this->stat_nikah->Sortable = TRUE; // Allow sort
+		$this->stat_nikah->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->stat_nikah->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
+		$this->stat_nikah->OptionCount = 4;
 		$this->stat_nikah->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['stat_nikah'] = &$this->stat_nikah;
+
+		// agama
+		$this->agama = new cField('pegawai_d', 'pegawai_d', 'x_agama', 'agama', '`agama`', '`agama`', 16, -1, FALSE, '`agama`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'SELECT');
+		$this->agama->Sortable = TRUE; // Allow sort
+		$this->agama->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->agama->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
+		$this->agama->OptionCount = 6;
+		$this->agama->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
+		$this->fields['agama'] = &$this->agama;
 
 		// jml_anak
 		$this->jml_anak = new cField('pegawai_d', 'pegawai_d', 'x_jml_anak', 'jml_anak', '`jml_anak`', '`jml_anak`', 16, -1, FALSE, '`jml_anak`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
@@ -89,27 +107,24 @@ class cpegawai_d extends cTable {
 		$this->alamat->Sortable = TRUE; // Allow sort
 		$this->fields['alamat'] = &$this->alamat;
 
+		// nama_hubungan
+		$this->nama_hubungan = new cField('pegawai_d', 'pegawai_d', 'x_nama_hubungan', 'nama_hubungan', '`nama_hubungan`', '`nama_hubungan`', 200, -1, FALSE, '`nama_hubungan`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->nama_hubungan->Sortable = TRUE; // Allow sort
+		$this->fields['nama_hubungan'] = &$this->nama_hubungan;
+
 		// telp_extra
 		$this->telp_extra = new cField('pegawai_d', 'pegawai_d', 'x_telp_extra', 'telp_extra', '`telp_extra`', '`telp_extra`', 200, -1, FALSE, '`telp_extra`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
 		$this->telp_extra->Sortable = TRUE; // Allow sort
 		$this->fields['telp_extra'] = &$this->telp_extra;
 
 		// hubungan
-		$this->hubungan = new cField('pegawai_d', 'pegawai_d', 'x_hubungan', 'hubungan', '`hubungan`', '`hubungan`', 16, -1, FALSE, '`hubungan`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->hubungan = new cField('pegawai_d', 'pegawai_d', 'x_hubungan', 'hubungan', '`hubungan`', '`hubungan`', 16, -1, FALSE, '`hubungan`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'SELECT');
 		$this->hubungan->Sortable = TRUE; // Allow sort
+		$this->hubungan->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->hubungan->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
+		$this->hubungan->OptionCount = 6;
 		$this->hubungan->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['hubungan'] = &$this->hubungan;
-
-		// nama_hubungan
-		$this->nama_hubungan = new cField('pegawai_d', 'pegawai_d', 'x_nama_hubungan', 'nama_hubungan', '`nama_hubungan`', '`nama_hubungan`', 200, -1, FALSE, '`nama_hubungan`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->nama_hubungan->Sortable = TRUE; // Allow sort
-		$this->fields['nama_hubungan'] = &$this->nama_hubungan;
-
-		// agama
-		$this->agama = new cField('pegawai_d', 'pegawai_d', 'x_agama', 'agama', '`agama`', '`agama`', 16, -1, FALSE, '`agama`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->agama->Sortable = TRUE; // Allow sort
-		$this->agama->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
-		$this->fields['agama'] = &$this->agama;
 	}
 
 	// Set Field Visibility
@@ -673,12 +688,12 @@ class cpegawai_d extends cTable {
 		$this->pend_id->setDbValue($rs->fields('pend_id'));
 		$this->gol_darah->setDbValue($rs->fields('gol_darah'));
 		$this->stat_nikah->setDbValue($rs->fields('stat_nikah'));
+		$this->agama->setDbValue($rs->fields('agama'));
 		$this->jml_anak->setDbValue($rs->fields('jml_anak'));
 		$this->alamat->setDbValue($rs->fields('alamat'));
+		$this->nama_hubungan->setDbValue($rs->fields('nama_hubungan'));
 		$this->telp_extra->setDbValue($rs->fields('telp_extra'));
 		$this->hubungan->setDbValue($rs->fields('hubungan'));
-		$this->nama_hubungan->setDbValue($rs->fields('nama_hubungan'));
-		$this->agama->setDbValue($rs->fields('agama'));
 	}
 
 	// Render list row values
@@ -693,28 +708,48 @@ class cpegawai_d extends cTable {
 		// pend_id
 		// gol_darah
 		// stat_nikah
+		// agama
 		// jml_anak
 		// alamat
+		// nama_hubungan
 		// telp_extra
 		// hubungan
-		// nama_hubungan
-		// agama
 		// pegawai_id
 
 		$this->pegawai_id->ViewValue = $this->pegawai_id->CurrentValue;
 		$this->pegawai_id->ViewCustomAttributes = "";
 
 		// pend_id
-		$this->pend_id->ViewValue = $this->pend_id->CurrentValue;
+		if (strval($this->pend_id->CurrentValue) <> "") {
+			$this->pend_id->ViewValue = $this->pend_id->OptionCaption($this->pend_id->CurrentValue);
+		} else {
+			$this->pend_id->ViewValue = NULL;
+		}
 		$this->pend_id->ViewCustomAttributes = "";
 
 		// gol_darah
-		$this->gol_darah->ViewValue = $this->gol_darah->CurrentValue;
+		if (strval($this->gol_darah->CurrentValue) <> "") {
+			$this->gol_darah->ViewValue = $this->gol_darah->OptionCaption($this->gol_darah->CurrentValue);
+		} else {
+			$this->gol_darah->ViewValue = NULL;
+		}
 		$this->gol_darah->ViewCustomAttributes = "";
 
 		// stat_nikah
-		$this->stat_nikah->ViewValue = $this->stat_nikah->CurrentValue;
+		if (strval($this->stat_nikah->CurrentValue) <> "") {
+			$this->stat_nikah->ViewValue = $this->stat_nikah->OptionCaption($this->stat_nikah->CurrentValue);
+		} else {
+			$this->stat_nikah->ViewValue = NULL;
+		}
 		$this->stat_nikah->ViewCustomAttributes = "";
+
+		// agama
+		if (strval($this->agama->CurrentValue) <> "") {
+			$this->agama->ViewValue = $this->agama->OptionCaption($this->agama->CurrentValue);
+		} else {
+			$this->agama->ViewValue = NULL;
+		}
+		$this->agama->ViewCustomAttributes = "";
 
 		// jml_anak
 		$this->jml_anak->ViewValue = $this->jml_anak->CurrentValue;
@@ -724,21 +759,21 @@ class cpegawai_d extends cTable {
 		$this->alamat->ViewValue = $this->alamat->CurrentValue;
 		$this->alamat->ViewCustomAttributes = "";
 
+		// nama_hubungan
+		$this->nama_hubungan->ViewValue = $this->nama_hubungan->CurrentValue;
+		$this->nama_hubungan->ViewCustomAttributes = "";
+
 		// telp_extra
 		$this->telp_extra->ViewValue = $this->telp_extra->CurrentValue;
 		$this->telp_extra->ViewCustomAttributes = "";
 
 		// hubungan
-		$this->hubungan->ViewValue = $this->hubungan->CurrentValue;
+		if (strval($this->hubungan->CurrentValue) <> "") {
+			$this->hubungan->ViewValue = $this->hubungan->OptionCaption($this->hubungan->CurrentValue);
+		} else {
+			$this->hubungan->ViewValue = NULL;
+		}
 		$this->hubungan->ViewCustomAttributes = "";
-
-		// nama_hubungan
-		$this->nama_hubungan->ViewValue = $this->nama_hubungan->CurrentValue;
-		$this->nama_hubungan->ViewCustomAttributes = "";
-
-		// agama
-		$this->agama->ViewValue = $this->agama->CurrentValue;
-		$this->agama->ViewCustomAttributes = "";
 
 		// pegawai_id
 		$this->pegawai_id->LinkCustomAttributes = "";
@@ -760,6 +795,11 @@ class cpegawai_d extends cTable {
 		$this->stat_nikah->HrefValue = "";
 		$this->stat_nikah->TooltipValue = "";
 
+		// agama
+		$this->agama->LinkCustomAttributes = "";
+		$this->agama->HrefValue = "";
+		$this->agama->TooltipValue = "";
+
 		// jml_anak
 		$this->jml_anak->LinkCustomAttributes = "";
 		$this->jml_anak->HrefValue = "";
@@ -770,6 +810,11 @@ class cpegawai_d extends cTable {
 		$this->alamat->HrefValue = "";
 		$this->alamat->TooltipValue = "";
 
+		// nama_hubungan
+		$this->nama_hubungan->LinkCustomAttributes = "";
+		$this->nama_hubungan->HrefValue = "";
+		$this->nama_hubungan->TooltipValue = "";
+
 		// telp_extra
 		$this->telp_extra->LinkCustomAttributes = "";
 		$this->telp_extra->HrefValue = "";
@@ -779,16 +824,6 @@ class cpegawai_d extends cTable {
 		$this->hubungan->LinkCustomAttributes = "";
 		$this->hubungan->HrefValue = "";
 		$this->hubungan->TooltipValue = "";
-
-		// nama_hubungan
-		$this->nama_hubungan->LinkCustomAttributes = "";
-		$this->nama_hubungan->HrefValue = "";
-		$this->nama_hubungan->TooltipValue = "";
-
-		// agama
-		$this->agama->LinkCustomAttributes = "";
-		$this->agama->HrefValue = "";
-		$this->agama->TooltipValue = "";
 
 		// Call Row Rendered event
 		$this->Row_Rendered();
@@ -810,20 +845,22 @@ class cpegawai_d extends cTable {
 		// pend_id
 		$this->pend_id->EditAttrs["class"] = "form-control";
 		$this->pend_id->EditCustomAttributes = "";
-		$this->pend_id->EditValue = $this->pend_id->CurrentValue;
-		$this->pend_id->PlaceHolder = ew_RemoveHtml($this->pend_id->FldCaption());
+		$this->pend_id->EditValue = $this->pend_id->Options(TRUE);
 
 		// gol_darah
 		$this->gol_darah->EditAttrs["class"] = "form-control";
 		$this->gol_darah->EditCustomAttributes = "";
-		$this->gol_darah->EditValue = $this->gol_darah->CurrentValue;
-		$this->gol_darah->PlaceHolder = ew_RemoveHtml($this->gol_darah->FldCaption());
+		$this->gol_darah->EditValue = $this->gol_darah->Options(TRUE);
 
 		// stat_nikah
 		$this->stat_nikah->EditAttrs["class"] = "form-control";
 		$this->stat_nikah->EditCustomAttributes = "";
-		$this->stat_nikah->EditValue = $this->stat_nikah->CurrentValue;
-		$this->stat_nikah->PlaceHolder = ew_RemoveHtml($this->stat_nikah->FldCaption());
+		$this->stat_nikah->EditValue = $this->stat_nikah->Options(TRUE);
+
+		// agama
+		$this->agama->EditAttrs["class"] = "form-control";
+		$this->agama->EditCustomAttributes = "";
+		$this->agama->EditValue = $this->agama->Options(TRUE);
 
 		// jml_anak
 		$this->jml_anak->EditAttrs["class"] = "form-control";
@@ -837,6 +874,12 @@ class cpegawai_d extends cTable {
 		$this->alamat->EditValue = $this->alamat->CurrentValue;
 		$this->alamat->PlaceHolder = ew_RemoveHtml($this->alamat->FldCaption());
 
+		// nama_hubungan
+		$this->nama_hubungan->EditAttrs["class"] = "form-control";
+		$this->nama_hubungan->EditCustomAttributes = "";
+		$this->nama_hubungan->EditValue = $this->nama_hubungan->CurrentValue;
+		$this->nama_hubungan->PlaceHolder = ew_RemoveHtml($this->nama_hubungan->FldCaption());
+
 		// telp_extra
 		$this->telp_extra->EditAttrs["class"] = "form-control";
 		$this->telp_extra->EditCustomAttributes = "";
@@ -846,20 +889,7 @@ class cpegawai_d extends cTable {
 		// hubungan
 		$this->hubungan->EditAttrs["class"] = "form-control";
 		$this->hubungan->EditCustomAttributes = "";
-		$this->hubungan->EditValue = $this->hubungan->CurrentValue;
-		$this->hubungan->PlaceHolder = ew_RemoveHtml($this->hubungan->FldCaption());
-
-		// nama_hubungan
-		$this->nama_hubungan->EditAttrs["class"] = "form-control";
-		$this->nama_hubungan->EditCustomAttributes = "";
-		$this->nama_hubungan->EditValue = $this->nama_hubungan->CurrentValue;
-		$this->nama_hubungan->PlaceHolder = ew_RemoveHtml($this->nama_hubungan->FldCaption());
-
-		// agama
-		$this->agama->EditAttrs["class"] = "form-control";
-		$this->agama->EditCustomAttributes = "";
-		$this->agama->EditValue = $this->agama->CurrentValue;
-		$this->agama->PlaceHolder = ew_RemoveHtml($this->agama->FldCaption());
+		$this->hubungan->EditValue = $this->hubungan->Options(TRUE);
 
 		// Call Row Rendered event
 		$this->Row_Rendered();
@@ -888,27 +918,26 @@ class cpegawai_d extends cTable {
 			if ($Doc->Horizontal) { // Horizontal format, write header
 				$Doc->BeginExportRow();
 				if ($ExportPageType == "view") {
-					if ($this->pegawai_id->Exportable) $Doc->ExportCaption($this->pegawai_id);
 					if ($this->pend_id->Exportable) $Doc->ExportCaption($this->pend_id);
 					if ($this->gol_darah->Exportable) $Doc->ExportCaption($this->gol_darah);
 					if ($this->stat_nikah->Exportable) $Doc->ExportCaption($this->stat_nikah);
+					if ($this->agama->Exportable) $Doc->ExportCaption($this->agama);
 					if ($this->jml_anak->Exportable) $Doc->ExportCaption($this->jml_anak);
 					if ($this->alamat->Exportable) $Doc->ExportCaption($this->alamat);
+					if ($this->nama_hubungan->Exportable) $Doc->ExportCaption($this->nama_hubungan);
 					if ($this->telp_extra->Exportable) $Doc->ExportCaption($this->telp_extra);
 					if ($this->hubungan->Exportable) $Doc->ExportCaption($this->hubungan);
-					if ($this->nama_hubungan->Exportable) $Doc->ExportCaption($this->nama_hubungan);
-					if ($this->agama->Exportable) $Doc->ExportCaption($this->agama);
 				} else {
 					if ($this->pegawai_id->Exportable) $Doc->ExportCaption($this->pegawai_id);
 					if ($this->pend_id->Exportable) $Doc->ExportCaption($this->pend_id);
 					if ($this->gol_darah->Exportable) $Doc->ExportCaption($this->gol_darah);
 					if ($this->stat_nikah->Exportable) $Doc->ExportCaption($this->stat_nikah);
+					if ($this->agama->Exportable) $Doc->ExportCaption($this->agama);
 					if ($this->jml_anak->Exportable) $Doc->ExportCaption($this->jml_anak);
 					if ($this->alamat->Exportable) $Doc->ExportCaption($this->alamat);
+					if ($this->nama_hubungan->Exportable) $Doc->ExportCaption($this->nama_hubungan);
 					if ($this->telp_extra->Exportable) $Doc->ExportCaption($this->telp_extra);
 					if ($this->hubungan->Exportable) $Doc->ExportCaption($this->hubungan);
-					if ($this->nama_hubungan->Exportable) $Doc->ExportCaption($this->nama_hubungan);
-					if ($this->agama->Exportable) $Doc->ExportCaption($this->agama);
 				}
 				$Doc->EndExportRow();
 			}
@@ -940,27 +969,26 @@ class cpegawai_d extends cTable {
 				if (!$Doc->ExportCustom) {
 					$Doc->BeginExportRow($RowCnt); // Allow CSS styles if enabled
 					if ($ExportPageType == "view") {
-						if ($this->pegawai_id->Exportable) $Doc->ExportField($this->pegawai_id);
 						if ($this->pend_id->Exportable) $Doc->ExportField($this->pend_id);
 						if ($this->gol_darah->Exportable) $Doc->ExportField($this->gol_darah);
 						if ($this->stat_nikah->Exportable) $Doc->ExportField($this->stat_nikah);
+						if ($this->agama->Exportable) $Doc->ExportField($this->agama);
 						if ($this->jml_anak->Exportable) $Doc->ExportField($this->jml_anak);
 						if ($this->alamat->Exportable) $Doc->ExportField($this->alamat);
+						if ($this->nama_hubungan->Exportable) $Doc->ExportField($this->nama_hubungan);
 						if ($this->telp_extra->Exportable) $Doc->ExportField($this->telp_extra);
 						if ($this->hubungan->Exportable) $Doc->ExportField($this->hubungan);
-						if ($this->nama_hubungan->Exportable) $Doc->ExportField($this->nama_hubungan);
-						if ($this->agama->Exportable) $Doc->ExportField($this->agama);
 					} else {
 						if ($this->pegawai_id->Exportable) $Doc->ExportField($this->pegawai_id);
 						if ($this->pend_id->Exportable) $Doc->ExportField($this->pend_id);
 						if ($this->gol_darah->Exportable) $Doc->ExportField($this->gol_darah);
 						if ($this->stat_nikah->Exportable) $Doc->ExportField($this->stat_nikah);
+						if ($this->agama->Exportable) $Doc->ExportField($this->agama);
 						if ($this->jml_anak->Exportable) $Doc->ExportField($this->jml_anak);
 						if ($this->alamat->Exportable) $Doc->ExportField($this->alamat);
+						if ($this->nama_hubungan->Exportable) $Doc->ExportField($this->nama_hubungan);
 						if ($this->telp_extra->Exportable) $Doc->ExportField($this->telp_extra);
 						if ($this->hubungan->Exportable) $Doc->ExportField($this->hubungan);
-						if ($this->nama_hubungan->Exportable) $Doc->ExportField($this->nama_hubungan);
-						if ($this->agama->Exportable) $Doc->ExportField($this->agama);
 					}
 					$Doc->EndExportRow();
 				}

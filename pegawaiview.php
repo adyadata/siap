@@ -384,8 +384,6 @@ class cpegawai_view extends cpegawai {
 
 		// Setup export options
 		$this->SetupExportOptions();
-		$this->pegawai_id->SetVisibility();
-		$this->pegawai_id->Visible = !$this->IsAdd() && !$this->IsCopy() && !$this->IsGridAdd();
 		$this->pegawai_pin->SetVisibility();
 		$this->pegawai_nip->SetVisibility();
 		$this->pegawai_nama->SetVisibility();
@@ -1053,6 +1051,9 @@ class cpegawai_view extends cpegawai {
 
 		// photo_path
 		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->ImageWidth = EW_THUMBNAIL_DEFAULT_WIDTH;
+			$this->photo_path->ImageHeight = EW_THUMBNAIL_DEFAULT_HEIGHT;
+			$this->photo_path->ImageAlt = $this->photo_path->FldAlt();
 			$this->photo_path->ViewValue = $this->photo_path->Upload->DbValue;
 		} else {
 			$this->photo_path->ViewValue = "";
@@ -1070,11 +1071,6 @@ class cpegawai_view extends cpegawai {
 		// no_rek
 		$this->no_rek->ViewValue = $this->no_rek->CurrentValue;
 		$this->no_rek->ViewCustomAttributes = "";
-
-			// pegawai_id
-			$this->pegawai_id->LinkCustomAttributes = "";
-			$this->pegawai_id->HrefValue = "";
-			$this->pegawai_id->TooltipValue = "";
 
 			// pegawai_pin
 			$this->pegawai_pin->LinkCustomAttributes = "";
@@ -1148,9 +1144,21 @@ class cpegawai_view extends cpegawai {
 
 			// photo_path
 			$this->photo_path->LinkCustomAttributes = "";
-			$this->photo_path->HrefValue = "";
+			if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+				$this->photo_path->HrefValue = ew_GetFileUploadUrl($this->photo_path, $this->photo_path->Upload->DbValue); // Add prefix/suffix
+				$this->photo_path->LinkAttrs["target"] = ""; // Add target
+				if ($this->Export <> "") $this->photo_path->HrefValue = ew_ConvertFullUrl($this->photo_path->HrefValue);
+			} else {
+				$this->photo_path->HrefValue = "";
+			}
 			$this->photo_path->HrefValue2 = $this->photo_path->UploadPath . $this->photo_path->Upload->DbValue;
 			$this->photo_path->TooltipValue = "";
+			if ($this->photo_path->UseColorbox) {
+				if (ew_Empty($this->photo_path->TooltipValue))
+					$this->photo_path->LinkAttrs["title"] = $Language->Phrase("ViewImageGallery");
+				$this->photo_path->LinkAttrs["data-rel"] = "pegawai_x_photo_path";
+				ew_AppendClass($this->photo_path->LinkAttrs["class"], "ewLightbox");
+			}
 
 			// nama_bank
 			$this->nama_bank->LinkCustomAttributes = "";
@@ -1717,17 +1725,6 @@ $pegawai_view->ShowMessage();
 <input type="hidden" name="modal" value="1">
 <?php } ?>
 <table class="table table-bordered table-striped ewViewTable">
-<?php if ($pegawai->pegawai_id->Visible) { // pegawai_id ?>
-	<tr id="r_pegawai_id">
-		<td><span id="elh_pegawai_pegawai_id"><?php echo $pegawai->pegawai_id->FldCaption() ?></span></td>
-		<td data-name="pegawai_id"<?php echo $pegawai->pegawai_id->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_id">
-<span<?php echo $pegawai->pegawai_id->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_id->ViewValue ?></span>
-</span>
-</td>
-	</tr>
-<?php } ?>
 <?php if ($pegawai->pegawai_pin->Visible) { // pegawai_pin ?>
 	<tr id="r_pegawai_pin">
 		<td><span id="elh_pegawai_pegawai_pin"><?php echo $pegawai->pegawai_pin->FldCaption() ?></span></td>
@@ -1887,7 +1884,7 @@ $pegawai_view->ShowMessage();
 		<td><span id="elh_pegawai_photo_path"><?php echo $pegawai->photo_path->FldCaption() ?></span></td>
 		<td data-name="photo_path"<?php echo $pegawai->photo_path->CellAttributes() ?>>
 <span id="el_pegawai_photo_path">
-<span<?php echo $pegawai->photo_path->ViewAttributes() ?>>
+<span>
 <?php echo ew_GetFileViewTag($pegawai->photo_path, $pegawai->photo_path->ViewValue) ?>
 </span>
 </span>

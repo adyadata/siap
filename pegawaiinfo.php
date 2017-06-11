@@ -176,8 +176,9 @@ class cpegawai extends cTable {
 		$this->fields['tgl_masuk_pertama'] = &$this->tgl_masuk_pertama;
 
 		// photo_path
-		$this->photo_path = new cField('pegawai', 'pegawai', 'x_photo_path', 'photo_path', '`photo_path`', '`photo_path`', 200, -1, TRUE, '`photo_path`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'FILE');
+		$this->photo_path = new cField('pegawai', 'pegawai', 'x_photo_path', 'photo_path', '`photo_path`', '`photo_path`', 200, -1, TRUE, '`photo_path`', FALSE, FALSE, FALSE, 'IMAGE', 'FILE');
 		$this->photo_path->Sortable = TRUE; // Allow sort
+		$this->photo_path->ImageResize = TRUE;
 		$this->fields['photo_path'] = &$this->photo_path;
 
 		// tmp_img
@@ -1037,6 +1038,9 @@ class cpegawai extends cTable {
 
 		// photo_path
 		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->ImageWidth = EW_THUMBNAIL_DEFAULT_WIDTH;
+			$this->photo_path->ImageHeight = EW_THUMBNAIL_DEFAULT_HEIGHT;
+			$this->photo_path->ImageAlt = $this->photo_path->FldAlt();
 			$this->photo_path->ViewValue = $this->photo_path->Upload->DbValue;
 		} else {
 			$this->photo_path->ViewValue = "";
@@ -1151,9 +1155,21 @@ class cpegawai extends cTable {
 
 		// photo_path
 		$this->photo_path->LinkCustomAttributes = "";
-		$this->photo_path->HrefValue = "";
+		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->HrefValue = ew_GetFileUploadUrl($this->photo_path, $this->photo_path->Upload->DbValue); // Add prefix/suffix
+			$this->photo_path->LinkAttrs["target"] = ""; // Add target
+			if ($this->Export <> "") $this->photo_path->HrefValue = ew_ConvertFullUrl($this->photo_path->HrefValue);
+		} else {
+			$this->photo_path->HrefValue = "";
+		}
 		$this->photo_path->HrefValue2 = $this->photo_path->UploadPath . $this->photo_path->Upload->DbValue;
 		$this->photo_path->TooltipValue = "";
+		if ($this->photo_path->UseColorbox) {
+			if (ew_Empty($this->photo_path->TooltipValue))
+				$this->photo_path->LinkAttrs["title"] = $Language->Phrase("ViewImageGallery");
+			$this->photo_path->LinkAttrs["data-rel"] = "pegawai_x_photo_path";
+			ew_AppendClass($this->photo_path->LinkAttrs["class"], "ewLightbox");
+		}
 
 		// tmp_img
 		$this->tmp_img->LinkCustomAttributes = "";
@@ -1288,6 +1304,9 @@ class cpegawai extends cTable {
 		$this->photo_path->EditAttrs["class"] = "form-control";
 		$this->photo_path->EditCustomAttributes = "";
 		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->ImageWidth = EW_THUMBNAIL_DEFAULT_WIDTH;
+			$this->photo_path->ImageHeight = EW_THUMBNAIL_DEFAULT_HEIGHT;
+			$this->photo_path->ImageAlt = $this->photo_path->FldAlt();
 			$this->photo_path->EditValue = $this->photo_path->Upload->DbValue;
 		} else {
 			$this->photo_path->EditValue = "";
@@ -1346,7 +1365,6 @@ class cpegawai extends cTable {
 			if ($Doc->Horizontal) { // Horizontal format, write header
 				$Doc->BeginExportRow();
 				if ($ExportPageType == "view") {
-					if ($this->pegawai_id->Exportable) $Doc->ExportCaption($this->pegawai_id);
 					if ($this->pegawai_pin->Exportable) $Doc->ExportCaption($this->pegawai_pin);
 					if ($this->pegawai_nip->Exportable) $Doc->ExportCaption($this->pegawai_nip);
 					if ($this->pegawai_nama->Exportable) $Doc->ExportCaption($this->pegawai_nama);
@@ -1416,7 +1434,6 @@ class cpegawai extends cTable {
 				if (!$Doc->ExportCustom) {
 					$Doc->BeginExportRow($RowCnt); // Allow CSS styles if enabled
 					if ($ExportPageType == "view") {
-						if ($this->pegawai_id->Exportable) $Doc->ExportField($this->pegawai_id);
 						if ($this->pegawai_pin->Exportable) $Doc->ExportField($this->pegawai_pin);
 						if ($this->pegawai_nip->Exportable) $Doc->ExportField($this->pegawai_nip);
 						if ($this->pegawai_nama->Exportable) $Doc->ExportField($this->pegawai_nama);

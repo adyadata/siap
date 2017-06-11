@@ -411,8 +411,6 @@ class cpegawai_list extends cpegawai {
 
 		// Setup export options
 		$this->SetupExportOptions();
-		$this->pegawai_id->SetVisibility();
-		$this->pegawai_id->Visible = !$this->IsAdd() && !$this->IsCopy() && !$this->IsGridAdd();
 		$this->pegawai_pin->SetVisibility();
 		$this->pegawai_nip->SetVisibility();
 		$this->pegawai_nama->SetVisibility();
@@ -1186,7 +1184,6 @@ class cpegawai_list extends cpegawai {
 		if (@$_GET["order"] <> "") {
 			$this->CurrentOrder = ew_StripSlashes(@$_GET["order"]);
 			$this->CurrentOrderType = @$_GET["ordertype"];
-			$this->UpdateSort($this->pegawai_id, $bCtrl); // pegawai_id
 			$this->UpdateSort($this->pegawai_pin, $bCtrl); // pegawai_pin
 			$this->UpdateSort($this->pegawai_nip, $bCtrl); // pegawai_nip
 			$this->UpdateSort($this->pegawai_nama, $bCtrl); // pegawai_nama
@@ -1238,7 +1235,6 @@ class cpegawai_list extends cpegawai {
 				$sOrderBy = "";
 				$this->setSessionOrderBy($sOrderBy);
 				$this->setSessionOrderByList($sOrderBy);
-				$this->pegawai_id->setSort("");
 				$this->pegawai_pin->setSort("");
 				$this->pegawai_nip->setSort("");
 				$this->pegawai_nama->setSort("");
@@ -2101,6 +2097,9 @@ class cpegawai_list extends cpegawai {
 
 		// photo_path
 		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->ImageWidth = EW_THUMBNAIL_DEFAULT_WIDTH;
+			$this->photo_path->ImageHeight = EW_THUMBNAIL_DEFAULT_HEIGHT;
+			$this->photo_path->ImageAlt = $this->photo_path->FldAlt();
 			$this->photo_path->ViewValue = $this->photo_path->Upload->DbValue;
 		} else {
 			$this->photo_path->ViewValue = "";
@@ -2118,11 +2117,6 @@ class cpegawai_list extends cpegawai {
 		// no_rek
 		$this->no_rek->ViewValue = $this->no_rek->CurrentValue;
 		$this->no_rek->ViewCustomAttributes = "";
-
-			// pegawai_id
-			$this->pegawai_id->LinkCustomAttributes = "";
-			$this->pegawai_id->HrefValue = "";
-			$this->pegawai_id->TooltipValue = "";
 
 			// pegawai_pin
 			$this->pegawai_pin->LinkCustomAttributes = "";
@@ -2196,9 +2190,21 @@ class cpegawai_list extends cpegawai {
 
 			// photo_path
 			$this->photo_path->LinkCustomAttributes = "";
-			$this->photo_path->HrefValue = "";
+			if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+				$this->photo_path->HrefValue = ew_GetFileUploadUrl($this->photo_path, $this->photo_path->Upload->DbValue); // Add prefix/suffix
+				$this->photo_path->LinkAttrs["target"] = ""; // Add target
+				if ($this->Export <> "") $this->photo_path->HrefValue = ew_ConvertFullUrl($this->photo_path->HrefValue);
+			} else {
+				$this->photo_path->HrefValue = "";
+			}
 			$this->photo_path->HrefValue2 = $this->photo_path->UploadPath . $this->photo_path->Upload->DbValue;
 			$this->photo_path->TooltipValue = "";
+			if ($this->photo_path->UseColorbox) {
+				if (ew_Empty($this->photo_path->TooltipValue))
+					$this->photo_path->LinkAttrs["title"] = $Language->Phrase("ViewImageGallery");
+				$this->photo_path->LinkAttrs["data-rel"] = "pegawai_x" . $this->RowCnt . "_photo_path";
+				ew_AppendClass($this->photo_path->LinkAttrs["class"], "ewLightbox");
+			}
 
 			// nama_bank
 			$this->nama_bank->LinkCustomAttributes = "";
@@ -2882,15 +2888,6 @@ $pegawai_list->RenderListOptions();
 // Render list options (header, left)
 $pegawai_list->ListOptions->Render("header", "left");
 ?>
-<?php if ($pegawai->pegawai_id->Visible) { // pegawai_id ?>
-	<?php if ($pegawai->SortUrl($pegawai->pegawai_id) == "") { ?>
-		<th data-name="pegawai_id"><div id="elh_pegawai_pegawai_id" class="pegawai_pegawai_id"><div class="ewTableHeaderCaption"><?php echo $pegawai->pegawai_id->FldCaption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="pegawai_id"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $pegawai->SortUrl($pegawai->pegawai_id) ?>',2);"><div id="elh_pegawai_pegawai_id" class="pegawai_pegawai_id">
-			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai->pegawai_id->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai->pegawai_id->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai->pegawai_id->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
-        </div></div></th>
-	<?php } ?>
-<?php } ?>		
 <?php if ($pegawai->pegawai_pin->Visible) { // pegawai_pin ?>
 	<?php if ($pegawai->SortUrl($pegawai->pegawai_pin) == "") { ?>
 		<th data-name="pegawai_pin"><div id="elh_pegawai_pegawai_pin" class="pegawai_pegawai_pin"><div class="ewTableHeaderCaption"><?php echo $pegawai->pegawai_pin->FldCaption() ?></div></div></th>
@@ -3118,21 +3115,13 @@ while ($pegawai_list->RecCnt < $pegawai_list->StopRec) {
 // Render list options (body, left)
 $pegawai_list->ListOptions->Render("body", "left", $pegawai_list->RowCnt);
 ?>
-	<?php if ($pegawai->pegawai_id->Visible) { // pegawai_id ?>
-		<td data-name="pegawai_id"<?php echo $pegawai->pegawai_id->CellAttributes() ?>>
-<span id="el<?php echo $pegawai_list->RowCnt ?>_pegawai_pegawai_id" class="pegawai_pegawai_id">
-<span<?php echo $pegawai->pegawai_id->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_id->ListViewValue() ?></span>
-</span>
-<a id="<?php echo $pegawai_list->PageObjName . "_row_" . $pegawai_list->RowCnt ?>"></a></td>
-	<?php } ?>
 	<?php if ($pegawai->pegawai_pin->Visible) { // pegawai_pin ?>
 		<td data-name="pegawai_pin"<?php echo $pegawai->pegawai_pin->CellAttributes() ?>>
 <span id="el<?php echo $pegawai_list->RowCnt ?>_pegawai_pegawai_pin" class="pegawai_pegawai_pin">
 <span<?php echo $pegawai->pegawai_pin->ViewAttributes() ?>>
 <?php echo $pegawai->pegawai_pin->ListViewValue() ?></span>
 </span>
-</td>
+<a id="<?php echo $pegawai_list->PageObjName . "_row_" . $pegawai_list->RowCnt ?>"></a></td>
 	<?php } ?>
 	<?php if ($pegawai->pegawai_nip->Visible) { // pegawai_nip ?>
 		<td data-name="pegawai_nip"<?php echo $pegawai->pegawai_nip->CellAttributes() ?>>
@@ -3241,7 +3230,7 @@ $pegawai_list->ListOptions->Render("body", "left", $pegawai_list->RowCnt);
 	<?php if ($pegawai->photo_path->Visible) { // photo_path ?>
 		<td data-name="photo_path"<?php echo $pegawai->photo_path->CellAttributes() ?>>
 <span id="el<?php echo $pegawai_list->RowCnt ?>_pegawai_photo_path" class="pegawai_photo_path">
-<span<?php echo $pegawai->photo_path->ViewAttributes() ?>>
+<span>
 <?php echo ew_GetFileViewTag($pegawai->photo_path, $pegawai->photo_path->ListViewValue()) ?>
 </span>
 </span>

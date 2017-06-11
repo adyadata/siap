@@ -41,54 +41,9 @@ fpegawai_dgrid.Validate = function() {
 		var checkrow = (gridinsert) ? !this.EmptyRow(infix) : true;
 		if (checkrow) {
 			addcnt++;
-			elm = this.GetElements("x" + infix + "_pegawai_id");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->pegawai_id->FldCaption(), $pegawai_d->pegawai_id->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_pegawai_id");
-			if (elm && !ew_CheckInteger(elm.value))
-				return this.OnError(elm, "<?php echo ew_JsEncode2($pegawai_d->pegawai_id->FldErrMsg()) ?>");
-			elm = this.GetElements("x" + infix + "_pend_id");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->pend_id->FldCaption(), $pegawai_d->pend_id->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_pend_id");
-			if (elm && !ew_CheckInteger(elm.value))
-				return this.OnError(elm, "<?php echo ew_JsEncode2($pegawai_d->pend_id->FldErrMsg()) ?>");
-			elm = this.GetElements("x" + infix + "_gol_darah");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->gol_darah->FldCaption(), $pegawai_d->gol_darah->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_gol_darah");
-			if (elm && !ew_CheckInteger(elm.value))
-				return this.OnError(elm, "<?php echo ew_JsEncode2($pegawai_d->gol_darah->FldErrMsg()) ?>");
-			elm = this.GetElements("x" + infix + "_stat_nikah");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->stat_nikah->FldCaption(), $pegawai_d->stat_nikah->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_stat_nikah");
-			if (elm && !ew_CheckInteger(elm.value))
-				return this.OnError(elm, "<?php echo ew_JsEncode2($pegawai_d->stat_nikah->FldErrMsg()) ?>");
-			elm = this.GetElements("x" + infix + "_jml_anak");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->jml_anak->FldCaption(), $pegawai_d->jml_anak->ReqErrMsg)) ?>");
 			elm = this.GetElements("x" + infix + "_jml_anak");
 			if (elm && !ew_CheckInteger(elm.value))
 				return this.OnError(elm, "<?php echo ew_JsEncode2($pegawai_d->jml_anak->FldErrMsg()) ?>");
-			elm = this.GetElements("x" + infix + "_telp_extra");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->telp_extra->FldCaption(), $pegawai_d->telp_extra->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_hubungan");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->hubungan->FldCaption(), $pegawai_d->hubungan->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_hubungan");
-			if (elm && !ew_CheckInteger(elm.value))
-				return this.OnError(elm, "<?php echo ew_JsEncode2($pegawai_d->hubungan->FldErrMsg()) ?>");
-			elm = this.GetElements("x" + infix + "_nama_hubungan");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->nama_hubungan->FldCaption(), $pegawai_d->nama_hubungan->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_agama");
-			if (elm && !ew_IsHidden(elm) && !ew_HasValue(elm))
-				return this.OnError(elm, "<?php echo ew_JsEncode2(str_replace("%s", $pegawai_d->agama->FldCaption(), $pegawai_d->agama->ReqErrMsg)) ?>");
-			elm = this.GetElements("x" + infix + "_agama");
-			if (elm && !ew_CheckInteger(elm.value))
-				return this.OnError(elm, "<?php echo ew_JsEncode2($pegawai_d->agama->FldErrMsg()) ?>");
 
 			// Fire Form_CustomValidate event
 			if (!this.Form_CustomValidate(fobj))
@@ -101,16 +56,15 @@ fpegawai_dgrid.Validate = function() {
 // Check empty row
 fpegawai_dgrid.EmptyRow = function(infix) {
 	var fobj = this.Form;
-	if (ew_ValueChanged(fobj, infix, "pegawai_id", false)) return false;
 	if (ew_ValueChanged(fobj, infix, "pend_id", false)) return false;
 	if (ew_ValueChanged(fobj, infix, "gol_darah", false)) return false;
 	if (ew_ValueChanged(fobj, infix, "stat_nikah", false)) return false;
+	if (ew_ValueChanged(fobj, infix, "agama", false)) return false;
 	if (ew_ValueChanged(fobj, infix, "jml_anak", false)) return false;
 	if (ew_ValueChanged(fobj, infix, "alamat", false)) return false;
+	if (ew_ValueChanged(fobj, infix, "nama_hubungan", false)) return false;
 	if (ew_ValueChanged(fobj, infix, "telp_extra", false)) return false;
 	if (ew_ValueChanged(fobj, infix, "hubungan", false)) return false;
-	if (ew_ValueChanged(fobj, infix, "nama_hubungan", false)) return false;
-	if (ew_ValueChanged(fobj, infix, "agama", false)) return false;
 	return true;
 }
 
@@ -130,8 +84,18 @@ fpegawai_dgrid.ValidateRequired = false;
 <?php } ?>
 
 // Dynamic selection lists
-// Form object for search
+fpegawai_dgrid.Lists["x_pend_id"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dgrid.Lists["x_pend_id"].Options = <?php echo json_encode($pegawai_d->pend_id->Options()) ?>;
+fpegawai_dgrid.Lists["x_gol_darah"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dgrid.Lists["x_gol_darah"].Options = <?php echo json_encode($pegawai_d->gol_darah->Options()) ?>;
+fpegawai_dgrid.Lists["x_stat_nikah"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dgrid.Lists["x_stat_nikah"].Options = <?php echo json_encode($pegawai_d->stat_nikah->Options()) ?>;
+fpegawai_dgrid.Lists["x_agama"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dgrid.Lists["x_agama"].Options = <?php echo json_encode($pegawai_d->agama->Options()) ?>;
+fpegawai_dgrid.Lists["x_hubungan"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawai_dgrid.Lists["x_hubungan"].Options = <?php echo json_encode($pegawai_d->hubungan->Options()) ?>;
 
+// Form object for search
 </script>
 <?php } ?>
 <?php
@@ -212,15 +176,6 @@ $pegawai_d_grid->RenderListOptions();
 // Render list options (header, left)
 $pegawai_d_grid->ListOptions->Render("header", "left");
 ?>
-<?php if ($pegawai_d->pegawai_id->Visible) { // pegawai_id ?>
-	<?php if ($pegawai_d->SortUrl($pegawai_d->pegawai_id) == "") { ?>
-		<th data-name="pegawai_id"><div id="elh_pegawai_d_pegawai_id" class="pegawai_d_pegawai_id"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->pegawai_id->FldCaption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="pegawai_id"><div><div id="elh_pegawai_d_pegawai_id" class="pegawai_d_pegawai_id">
-			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->pegawai_id->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->pegawai_id->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->pegawai_id->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
-        </div></div></th>
-	<?php } ?>
-<?php } ?>		
 <?php if ($pegawai_d->pend_id->Visible) { // pend_id ?>
 	<?php if ($pegawai_d->SortUrl($pegawai_d->pend_id) == "") { ?>
 		<th data-name="pend_id"><div id="elh_pegawai_d_pend_id" class="pegawai_d_pend_id"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->pend_id->FldCaption() ?></div></div></th>
@@ -248,6 +203,15 @@ $pegawai_d_grid->ListOptions->Render("header", "left");
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
+<?php if ($pegawai_d->agama->Visible) { // agama ?>
+	<?php if ($pegawai_d->SortUrl($pegawai_d->agama) == "") { ?>
+		<th data-name="agama"><div id="elh_pegawai_d_agama" class="pegawai_d_agama"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></div></div></th>
+	<?php } else { ?>
+		<th data-name="agama"><div><div id="elh_pegawai_d_agama" class="pegawai_d_agama">
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->agama->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->agama->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+        </div></div></th>
+	<?php } ?>
+<?php } ?>		
 <?php if ($pegawai_d->jml_anak->Visible) { // jml_anak ?>
 	<?php if ($pegawai_d->SortUrl($pegawai_d->jml_anak) == "") { ?>
 		<th data-name="jml_anak"><div id="elh_pegawai_d_jml_anak" class="pegawai_d_jml_anak"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->jml_anak->FldCaption() ?></div></div></th>
@@ -266,6 +230,15 @@ $pegawai_d_grid->ListOptions->Render("header", "left");
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
+<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
+	<?php if ($pegawai_d->SortUrl($pegawai_d->nama_hubungan) == "") { ?>
+		<th data-name="nama_hubungan"><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?></div></div></th>
+	<?php } else { ?>
+		<th data-name="nama_hubungan"><div><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->nama_hubungan->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->nama_hubungan->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+        </div></div></th>
+	<?php } ?>
+<?php } ?>		
 <?php if ($pegawai_d->telp_extra->Visible) { // telp_extra ?>
 	<?php if ($pegawai_d->SortUrl($pegawai_d->telp_extra) == "") { ?>
 		<th data-name="telp_extra"><div id="elh_pegawai_d_telp_extra" class="pegawai_d_telp_extra"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->telp_extra->FldCaption() ?></div></div></th>
@@ -281,24 +254,6 @@ $pegawai_d_grid->ListOptions->Render("header", "left");
 	<?php } else { ?>
 		<th data-name="hubungan"><div><div id="elh_pegawai_d_hubungan" class="pegawai_d_hubungan">
 			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->hubungan->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->hubungan->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->hubungan->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
-        </div></div></th>
-	<?php } ?>
-<?php } ?>		
-<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
-	<?php if ($pegawai_d->SortUrl($pegawai_d->nama_hubungan) == "") { ?>
-		<th data-name="nama_hubungan"><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="nama_hubungan"><div><div id="elh_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
-			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->nama_hubungan->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->nama_hubungan->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->nama_hubungan->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
-        </div></div></th>
-	<?php } ?>
-<?php } ?>		
-<?php if ($pegawai_d->agama->Visible) { // agama ?>
-	<?php if ($pegawai_d->SortUrl($pegawai_d->agama) == "") { ?>
-		<th data-name="agama"><div id="elh_pegawai_d_agama" class="pegawai_d_agama"><div class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="agama"><div><div id="elh_pegawai_d_agama" class="pegawai_d_agama">
-			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $pegawai_d->agama->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($pegawai_d->agama->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($pegawai_d->agama->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
@@ -411,55 +366,21 @@ while ($pegawai_d_grid->RecCnt < $pegawai_d_grid->StopRec) {
 // Render list options (body, left)
 $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowCnt);
 ?>
-	<?php if ($pegawai_d->pegawai_id->Visible) { // pegawai_id ?>
-		<td data-name="pegawai_id"<?php echo $pegawai_d->pegawai_id->CellAttributes() ?>>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
-<?php if ($pegawai_d->pegawai_id->getSessionValue() <> "") { ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_pegawai_id" class="form-group pegawai_d_pegawai_id">
-<span<?php echo $pegawai_d->pegawai_id->ViewAttributes() ?>>
-<p class="form-control-static"><?php echo $pegawai_d->pegawai_id->ViewValue ?></p></span>
-</span>
-<input type="hidden" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->CurrentValue) ?>">
-<?php } else { ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_pegawai_id" class="form-group pegawai_d_pegawai_id">
-<input type="text" data-table="pegawai_d" data-field="x_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->pegawai_id->EditValue ?>"<?php echo $pegawai_d->pegawai_id->EditAttributes() ?>>
-</span>
-<?php } ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->OldValue) ?>">
-<?php } ?>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_pegawai_id" class="form-group pegawai_d_pegawai_id">
-<span<?php echo $pegawai_d->pegawai_id->ViewAttributes() ?>>
-<p class="form-control-static"><?php echo $pegawai_d->pegawai_id->EditValue ?></p></span>
-</span>
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->CurrentValue) ?>">
-<?php } ?>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_pegawai_id" class="pegawai_d_pegawai_id">
-<span<?php echo $pegawai_d->pegawai_id->ViewAttributes() ?>>
-<?php echo $pegawai_d->pegawai_id->ListViewValue() ?></span>
-</span>
-<?php if ($pegawai_d->CurrentAction <> "F") { ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->FormValue) ?>">
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->OldValue) ?>">
-<?php } else { ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->FormValue) ?>">
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->OldValue) ?>">
-<?php } ?>
-<?php } ?>
-<a id="<?php echo $pegawai_d_grid->PageObjName . "_row_" . $pegawai_d_grid->RowCnt ?>"></a></td>
-	<?php } ?>
 	<?php if ($pegawai_d->pend_id->Visible) { // pend_id ?>
 		<td data-name="pend_id"<?php echo $pegawai_d->pend_id->CellAttributes() ?>>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_pend_id" class="form-group pegawai_d_pend_id">
-<input type="text" data-table="pegawai_d" data-field="x_pend_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->pend_id->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->pend_id->EditValue ?>"<?php echo $pegawai_d->pend_id->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_pend_id" data-value-separator="<?php echo $pegawai_d->pend_id->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id"<?php echo $pegawai_d->pend_id->EditAttributes() ?>>
+<?php echo $pegawai_d->pend_id->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id") ?>
+</select>
 </span>
 <input type="hidden" data-table="pegawai_d" data-field="x_pend_id" name="o<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" id="o<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" value="<?php echo ew_HtmlEncode($pegawai_d->pend_id->OldValue) ?>">
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_pend_id" class="form-group pegawai_d_pend_id">
-<input type="text" data-table="pegawai_d" data-field="x_pend_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->pend_id->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->pend_id->EditValue ?>"<?php echo $pegawai_d->pend_id->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_pend_id" data-value-separator="<?php echo $pegawai_d->pend_id->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id"<?php echo $pegawai_d->pend_id->EditAttributes() ?>>
+<?php echo $pegawai_d->pend_id->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id") ?>
+</select>
 </span>
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
@@ -475,19 +396,30 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowCnt);
 <input type="hidden" data-table="pegawai_d" data-field="x_pend_id" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" value="<?php echo ew_HtmlEncode($pegawai_d->pend_id->OldValue) ?>">
 <?php } ?>
 <?php } ?>
-</td>
+<a id="<?php echo $pegawai_d_grid->PageObjName . "_row_" . $pegawai_d_grid->RowCnt ?>"></a></td>
 	<?php } ?>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->CurrentValue) ?>">
+<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->OldValue) ?>">
+<?php } ?>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT || $pegawai_d->CurrentMode == "edit") { ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->CurrentValue) ?>">
+<?php } ?>
 	<?php if ($pegawai_d->gol_darah->Visible) { // gol_darah ?>
 		<td data-name="gol_darah"<?php echo $pegawai_d->gol_darah->CellAttributes() ?>>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_gol_darah" class="form-group pegawai_d_gol_darah">
-<input type="text" data-table="pegawai_d" data-field="x_gol_darah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" id="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->gol_darah->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->gol_darah->EditValue ?>"<?php echo $pegawai_d->gol_darah->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_gol_darah" data-value-separator="<?php echo $pegawai_d->gol_darah->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah"<?php echo $pegawai_d->gol_darah->EditAttributes() ?>>
+<?php echo $pegawai_d->gol_darah->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah") ?>
+</select>
 </span>
 <input type="hidden" data-table="pegawai_d" data-field="x_gol_darah" name="o<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" id="o<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" value="<?php echo ew_HtmlEncode($pegawai_d->gol_darah->OldValue) ?>">
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_gol_darah" class="form-group pegawai_d_gol_darah">
-<input type="text" data-table="pegawai_d" data-field="x_gol_darah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" id="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->gol_darah->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->gol_darah->EditValue ?>"<?php echo $pegawai_d->gol_darah->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_gol_darah" data-value-separator="<?php echo $pegawai_d->gol_darah->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah"<?php echo $pegawai_d->gol_darah->EditAttributes() ?>>
+<?php echo $pegawai_d->gol_darah->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah") ?>
+</select>
 </span>
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
@@ -509,13 +441,17 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowCnt);
 		<td data-name="stat_nikah"<?php echo $pegawai_d->stat_nikah->CellAttributes() ?>>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_stat_nikah" class="form-group pegawai_d_stat_nikah">
-<input type="text" data-table="pegawai_d" data-field="x_stat_nikah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->stat_nikah->EditValue ?>"<?php echo $pegawai_d->stat_nikah->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_stat_nikah" data-value-separator="<?php echo $pegawai_d->stat_nikah->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah"<?php echo $pegawai_d->stat_nikah->EditAttributes() ?>>
+<?php echo $pegawai_d->stat_nikah->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah") ?>
+</select>
 </span>
 <input type="hidden" data-table="pegawai_d" data-field="x_stat_nikah" name="o<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="o<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" value="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->OldValue) ?>">
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_stat_nikah" class="form-group pegawai_d_stat_nikah">
-<input type="text" data-table="pegawai_d" data-field="x_stat_nikah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->stat_nikah->EditValue ?>"<?php echo $pegawai_d->stat_nikah->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_stat_nikah" data-value-separator="<?php echo $pegawai_d->stat_nikah->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah"<?php echo $pegawai_d->stat_nikah->EditAttributes() ?>>
+<?php echo $pegawai_d->stat_nikah->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah") ?>
+</select>
 </span>
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
@@ -529,6 +465,38 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowCnt);
 <?php } else { ?>
 <input type="hidden" data-table="pegawai_d" data-field="x_stat_nikah" name="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" value="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->FormValue) ?>">
 <input type="hidden" data-table="pegawai_d" data-field="x_stat_nikah" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" value="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->OldValue) ?>">
+<?php } ?>
+<?php } ?>
+</td>
+	<?php } ?>
+	<?php if ($pegawai_d->agama->Visible) { // agama ?>
+		<td data-name="agama"<?php echo $pegawai_d->agama->CellAttributes() ?>>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
+<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_agama" class="form-group pegawai_d_agama">
+<select data-table="pegawai_d" data-field="x_agama" data-value-separator="<?php echo $pegawai_d->agama->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama"<?php echo $pegawai_d->agama->EditAttributes() ?>>
+<?php echo $pegawai_d->agama->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_agama") ?>
+</select>
+</span>
+<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
+<?php } ?>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
+<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_agama" class="form-group pegawai_d_agama">
+<select data-table="pegawai_d" data-field="x_agama" data-value-separator="<?php echo $pegawai_d->agama->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama"<?php echo $pegawai_d->agama->EditAttributes() ?>>
+<?php echo $pegawai_d->agama->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_agama") ?>
+</select>
+</span>
+<?php } ?>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
+<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_agama" class="pegawai_d_agama">
+<span<?php echo $pegawai_d->agama->ViewAttributes() ?>>
+<?php echo $pegawai_d->agama->ListViewValue() ?></span>
+</span>
+<?php if ($pegawai_d->CurrentAction <> "F") { ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->FormValue) ?>">
+<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
+<?php } else { ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->FormValue) ?>">
+<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
 <?php } ?>
 <?php } ?>
 </td>
@@ -589,6 +557,34 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowCnt);
 <?php } ?>
 </td>
 	<?php } ?>
+	<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
+		<td data-name="nama_hubungan"<?php echo $pegawai_d->nama_hubungan->CellAttributes() ?>>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
+<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
+<input type="text" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" size="30" maxlength="200" placeholder="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->nama_hubungan->EditValue ?>"<?php echo $pegawai_d->nama_hubungan->EditAttributes() ?>>
+</span>
+<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
+<?php } ?>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
+<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
+<input type="text" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" size="30" maxlength="200" placeholder="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->nama_hubungan->EditValue ?>"<?php echo $pegawai_d->nama_hubungan->EditAttributes() ?>>
+</span>
+<?php } ?>
+<?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
+<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
+<span<?php echo $pegawai_d->nama_hubungan->ViewAttributes() ?>>
+<?php echo $pegawai_d->nama_hubungan->ListViewValue() ?></span>
+</span>
+<?php if ($pegawai_d->CurrentAction <> "F") { ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->FormValue) ?>">
+<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
+<?php } else { ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->FormValue) ?>">
+<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
+<?php } ?>
+<?php } ?>
+</td>
+	<?php } ?>
 	<?php if ($pegawai_d->telp_extra->Visible) { // telp_extra ?>
 		<td data-name="telp_extra"<?php echo $pegawai_d->telp_extra->CellAttributes() ?>>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
@@ -621,13 +617,17 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowCnt);
 		<td data-name="hubungan"<?php echo $pegawai_d->hubungan->CellAttributes() ?>>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_hubungan" class="form-group pegawai_d_hubungan">
-<input type="text" data-table="pegawai_d" data-field="x_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->hubungan->EditValue ?>"<?php echo $pegawai_d->hubungan->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_hubungan" data-value-separator="<?php echo $pegawai_d->hubungan->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan"<?php echo $pegawai_d->hubungan->EditAttributes() ?>>
+<?php echo $pegawai_d->hubungan->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan") ?>
+</select>
 </span>
 <input type="hidden" data-table="pegawai_d" data-field="x_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->hubungan->OldValue) ?>">
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
 <span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_hubungan" class="form-group pegawai_d_hubungan">
-<input type="text" data-table="pegawai_d" data-field="x_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->hubungan->EditValue ?>"<?php echo $pegawai_d->hubungan->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_hubungan" data-value-separator="<?php echo $pegawai_d->hubungan->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan"<?php echo $pegawai_d->hubungan->EditAttributes() ?>>
+<?php echo $pegawai_d->hubungan->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan") ?>
+</select>
 </span>
 <?php } ?>
 <?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
@@ -641,62 +641,6 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowCnt);
 <?php } else { ?>
 <input type="hidden" data-table="pegawai_d" data-field="x_hubungan" name="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->hubungan->FormValue) ?>">
 <input type="hidden" data-table="pegawai_d" data-field="x_hubungan" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->hubungan->OldValue) ?>">
-<?php } ?>
-<?php } ?>
-</td>
-	<?php } ?>
-	<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
-		<td data-name="nama_hubungan"<?php echo $pegawai_d->nama_hubungan->CellAttributes() ?>>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
-<input type="text" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" size="30" maxlength="200" placeholder="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->nama_hubungan->EditValue ?>"<?php echo $pegawai_d->nama_hubungan->EditAttributes() ?>>
-</span>
-<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
-<?php } ?>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
-<input type="text" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" size="30" maxlength="200" placeholder="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->nama_hubungan->EditValue ?>"<?php echo $pegawai_d->nama_hubungan->EditAttributes() ?>>
-</span>
-<?php } ?>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_nama_hubungan" class="pegawai_d_nama_hubungan">
-<span<?php echo $pegawai_d->nama_hubungan->ViewAttributes() ?>>
-<?php echo $pegawai_d->nama_hubungan->ListViewValue() ?></span>
-</span>
-<?php if ($pegawai_d->CurrentAction <> "F") { ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->FormValue) ?>">
-<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
-<?php } else { ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->FormValue) ?>">
-<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
-<?php } ?>
-<?php } ?>
-</td>
-	<?php } ?>
-	<?php if ($pegawai_d->agama->Visible) { // agama ?>
-		<td data-name="agama"<?php echo $pegawai_d->agama->CellAttributes() ?>>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_ADD) { // Add record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_agama" class="form-group pegawai_d_agama">
-<input type="text" data-table="pegawai_d" data-field="x_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->agama->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->agama->EditValue ?>"<?php echo $pegawai_d->agama->EditAttributes() ?>>
-</span>
-<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
-<?php } ?>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_agama" class="form-group pegawai_d_agama">
-<input type="text" data-table="pegawai_d" data-field="x_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->agama->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->agama->EditValue ?>"<?php echo $pegawai_d->agama->EditAttributes() ?>>
-</span>
-<?php } ?>
-<?php if ($pegawai_d->RowType == EW_ROWTYPE_VIEW) { // View record ?>
-<span id="el<?php echo $pegawai_d_grid->RowCnt ?>_pegawai_d_agama" class="pegawai_d_agama">
-<span<?php echo $pegawai_d->agama->ViewAttributes() ?>>
-<?php echo $pegawai_d->agama->ListViewValue() ?></span>
-</span>
-<?php if ($pegawai_d->CurrentAction <> "F") { ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->FormValue) ?>">
-<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
-<?php } else { ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="fpegawai_dgrid$x<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->FormValue) ?>">
-<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="fpegawai_dgrid$o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
 <?php } ?>
 <?php } ?>
 </td>
@@ -743,35 +687,13 @@ fpegawai_dgrid.UpdateOpts(<?php echo $pegawai_d_grid->RowIndex ?>);
 // Render list options (body, left)
 $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowIndex);
 ?>
-	<?php if ($pegawai_d->pegawai_id->Visible) { // pegawai_id ?>
-		<td data-name="pegawai_id">
-<?php if ($pegawai_d->CurrentAction <> "F") { ?>
-<?php if ($pegawai_d->pegawai_id->getSessionValue() <> "") { ?>
-<span id="el$rowindex$_pegawai_d_pegawai_id" class="form-group pegawai_d_pegawai_id">
-<span<?php echo $pegawai_d->pegawai_id->ViewAttributes() ?>>
-<p class="form-control-static"><?php echo $pegawai_d->pegawai_id->ViewValue ?></p></span>
-</span>
-<input type="hidden" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->CurrentValue) ?>">
-<?php } else { ?>
-<span id="el$rowindex$_pegawai_d_pegawai_id" class="form-group pegawai_d_pegawai_id">
-<input type="text" data-table="pegawai_d" data-field="x_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->pegawai_id->EditValue ?>"<?php echo $pegawai_d->pegawai_id->EditAttributes() ?>>
-</span>
-<?php } ?>
-<?php } else { ?>
-<span id="el$rowindex$_pegawai_d_pegawai_id" class="form-group pegawai_d_pegawai_id">
-<span<?php echo $pegawai_d->pegawai_id->ViewAttributes() ?>>
-<p class="form-control-static"><?php echo $pegawai_d->pegawai_id->ViewValue ?></p></span>
-</span>
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->FormValue) ?>">
-<?php } ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_pegawai_id" name="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" id="o<?php echo $pegawai_d_grid->RowIndex ?>_pegawai_id" value="<?php echo ew_HtmlEncode($pegawai_d->pegawai_id->OldValue) ?>">
-</td>
-	<?php } ?>
 	<?php if ($pegawai_d->pend_id->Visible) { // pend_id ?>
 		<td data-name="pend_id">
 <?php if ($pegawai_d->CurrentAction <> "F") { ?>
 <span id="el$rowindex$_pegawai_d_pend_id" class="form-group pegawai_d_pend_id">
-<input type="text" data-table="pegawai_d" data-field="x_pend_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->pend_id->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->pend_id->EditValue ?>"<?php echo $pegawai_d->pend_id->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_pend_id" data-value-separator="<?php echo $pegawai_d->pend_id->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id" name="x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id"<?php echo $pegawai_d->pend_id->EditAttributes() ?>>
+<?php echo $pegawai_d->pend_id->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_pend_id") ?>
+</select>
 </span>
 <?php } else { ?>
 <span id="el$rowindex$_pegawai_d_pend_id" class="form-group pegawai_d_pend_id">
@@ -787,7 +709,9 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowIndex);
 		<td data-name="gol_darah">
 <?php if ($pegawai_d->CurrentAction <> "F") { ?>
 <span id="el$rowindex$_pegawai_d_gol_darah" class="form-group pegawai_d_gol_darah">
-<input type="text" data-table="pegawai_d" data-field="x_gol_darah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" id="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->gol_darah->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->gol_darah->EditValue ?>"<?php echo $pegawai_d->gol_darah->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_gol_darah" data-value-separator="<?php echo $pegawai_d->gol_darah->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah"<?php echo $pegawai_d->gol_darah->EditAttributes() ?>>
+<?php echo $pegawai_d->gol_darah->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_gol_darah") ?>
+</select>
 </span>
 <?php } else { ?>
 <span id="el$rowindex$_pegawai_d_gol_darah" class="form-group pegawai_d_gol_darah">
@@ -803,7 +727,9 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowIndex);
 		<td data-name="stat_nikah">
 <?php if ($pegawai_d->CurrentAction <> "F") { ?>
 <span id="el$rowindex$_pegawai_d_stat_nikah" class="form-group pegawai_d_stat_nikah">
-<input type="text" data-table="pegawai_d" data-field="x_stat_nikah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->stat_nikah->EditValue ?>"<?php echo $pegawai_d->stat_nikah->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_stat_nikah" data-value-separator="<?php echo $pegawai_d->stat_nikah->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah"<?php echo $pegawai_d->stat_nikah->EditAttributes() ?>>
+<?php echo $pegawai_d->stat_nikah->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah") ?>
+</select>
 </span>
 <?php } else { ?>
 <span id="el$rowindex$_pegawai_d_stat_nikah" class="form-group pegawai_d_stat_nikah">
@@ -813,6 +739,24 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowIndex);
 <input type="hidden" data-table="pegawai_d" data-field="x_stat_nikah" name="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="x<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" value="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->FormValue) ?>">
 <?php } ?>
 <input type="hidden" data-table="pegawai_d" data-field="x_stat_nikah" name="o<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" id="o<?php echo $pegawai_d_grid->RowIndex ?>_stat_nikah" value="<?php echo ew_HtmlEncode($pegawai_d->stat_nikah->OldValue) ?>">
+</td>
+	<?php } ?>
+	<?php if ($pegawai_d->agama->Visible) { // agama ?>
+		<td data-name="agama">
+<?php if ($pegawai_d->CurrentAction <> "F") { ?>
+<span id="el$rowindex$_pegawai_d_agama" class="form-group pegawai_d_agama">
+<select data-table="pegawai_d" data-field="x_agama" data-value-separator="<?php echo $pegawai_d->agama->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama"<?php echo $pegawai_d->agama->EditAttributes() ?>>
+<?php echo $pegawai_d->agama->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_agama") ?>
+</select>
+</span>
+<?php } else { ?>
+<span id="el$rowindex$_pegawai_d_agama" class="form-group pegawai_d_agama">
+<span<?php echo $pegawai_d->agama->ViewAttributes() ?>>
+<p class="form-control-static"><?php echo $pegawai_d->agama->ViewValue ?></p></span>
+</span>
+<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->FormValue) ?>">
+<?php } ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
 </td>
 	<?php } ?>
 	<?php if ($pegawai_d->jml_anak->Visible) { // jml_anak ?>
@@ -847,6 +791,22 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowIndex);
 <input type="hidden" data-table="pegawai_d" data-field="x_alamat" name="o<?php echo $pegawai_d_grid->RowIndex ?>_alamat" id="o<?php echo $pegawai_d_grid->RowIndex ?>_alamat" value="<?php echo ew_HtmlEncode($pegawai_d->alamat->OldValue) ?>">
 </td>
 	<?php } ?>
+	<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
+		<td data-name="nama_hubungan">
+<?php if ($pegawai_d->CurrentAction <> "F") { ?>
+<span id="el$rowindex$_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
+<input type="text" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" size="30" maxlength="200" placeholder="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->nama_hubungan->EditValue ?>"<?php echo $pegawai_d->nama_hubungan->EditAttributes() ?>>
+</span>
+<?php } else { ?>
+<span id="el$rowindex$_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
+<span<?php echo $pegawai_d->nama_hubungan->ViewAttributes() ?>>
+<p class="form-control-static"><?php echo $pegawai_d->nama_hubungan->ViewValue ?></p></span>
+</span>
+<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->FormValue) ?>">
+<?php } ?>
+<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
+</td>
+	<?php } ?>
 	<?php if ($pegawai_d->telp_extra->Visible) { // telp_extra ?>
 		<td data-name="telp_extra">
 <?php if ($pegawai_d->CurrentAction <> "F") { ?>
@@ -867,7 +827,9 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowIndex);
 		<td data-name="hubungan">
 <?php if ($pegawai_d->CurrentAction <> "F") { ?>
 <span id="el$rowindex$_pegawai_d_hubungan" class="form-group pegawai_d_hubungan">
-<input type="text" data-table="pegawai_d" data-field="x_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->hubungan->EditValue ?>"<?php echo $pegawai_d->hubungan->EditAttributes() ?>>
+<select data-table="pegawai_d" data-field="x_hubungan" data-value-separator="<?php echo $pegawai_d->hubungan->DisplayValueSeparatorAttribute() ?>" id="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan"<?php echo $pegawai_d->hubungan->EditAttributes() ?>>
+<?php echo $pegawai_d->hubungan->SelectOptionListHtml("x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan") ?>
+</select>
 </span>
 <?php } else { ?>
 <span id="el$rowindex$_pegawai_d_hubungan" class="form-group pegawai_d_hubungan">
@@ -877,38 +839,6 @@ $pegawai_d_grid->ListOptions->Render("body", "left", $pegawai_d_grid->RowIndex);
 <input type="hidden" data-table="pegawai_d" data-field="x_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->hubungan->FormValue) ?>">
 <?php } ?>
 <input type="hidden" data-table="pegawai_d" data-field="x_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->hubungan->OldValue) ?>">
-</td>
-	<?php } ?>
-	<?php if ($pegawai_d->nama_hubungan->Visible) { // nama_hubungan ?>
-		<td data-name="nama_hubungan">
-<?php if ($pegawai_d->CurrentAction <> "F") { ?>
-<span id="el$rowindex$_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
-<input type="text" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" size="30" maxlength="200" placeholder="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->nama_hubungan->EditValue ?>"<?php echo $pegawai_d->nama_hubungan->EditAttributes() ?>>
-</span>
-<?php } else { ?>
-<span id="el$rowindex$_pegawai_d_nama_hubungan" class="form-group pegawai_d_nama_hubungan">
-<span<?php echo $pegawai_d->nama_hubungan->ViewAttributes() ?>>
-<p class="form-control-static"><?php echo $pegawai_d->nama_hubungan->ViewValue ?></p></span>
-</span>
-<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="x<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->FormValue) ?>">
-<?php } ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_nama_hubungan" name="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" id="o<?php echo $pegawai_d_grid->RowIndex ?>_nama_hubungan" value="<?php echo ew_HtmlEncode($pegawai_d->nama_hubungan->OldValue) ?>">
-</td>
-	<?php } ?>
-	<?php if ($pegawai_d->agama->Visible) { // agama ?>
-		<td data-name="agama">
-<?php if ($pegawai_d->CurrentAction <> "F") { ?>
-<span id="el$rowindex$_pegawai_d_agama" class="form-group pegawai_d_agama">
-<input type="text" data-table="pegawai_d" data-field="x_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" size="30" placeholder="<?php echo ew_HtmlEncode($pegawai_d->agama->getPlaceHolder()) ?>" value="<?php echo $pegawai_d->agama->EditValue ?>"<?php echo $pegawai_d->agama->EditAttributes() ?>>
-</span>
-<?php } else { ?>
-<span id="el$rowindex$_pegawai_d_agama" class="form-group pegawai_d_agama">
-<span<?php echo $pegawai_d->agama->ViewAttributes() ?>>
-<p class="form-control-static"><?php echo $pegawai_d->agama->ViewValue ?></p></span>
-</span>
-<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="x<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->FormValue) ?>">
-<?php } ?>
-<input type="hidden" data-table="pegawai_d" data-field="x_agama" name="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" id="o<?php echo $pegawai_d_grid->RowIndex ?>_agama" value="<?php echo ew_HtmlEncode($pegawai_d->agama->OldValue) ?>">
 </td>
 	<?php } ?>
 <?php

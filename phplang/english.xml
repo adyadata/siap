@@ -1515,7 +1515,7 @@
         <phrase id="fldcaption" value="Tgl. Masuk" />
       </field>
       <field id="photo_path">
-        <phrase id="fldcaption" value="Photo Path" />
+        <phrase id="fldcaption" value="Foto" />
       </field>
       <field id="tmp_img">
         <phrase id="fldcaption" value="tmp img" />
@@ -1533,34 +1533,94 @@
     <table id="pegawai_d">
       <phrase id="tblcaption" value="Detal Pegawai" />
       <field id="pegawai_id">
-        <phrase id="fldcaption" value="pegawai id" />
+        <phrase id="fldcaption" value="ID" />
       </field>
       <field id="pend_id">
-        <phrase id="fldcaption" value="pend id" />
+        <phrase id="fldcaption" value="Pend. Terakhir" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="SD" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="SMP" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="SMA" />
+        <phrase id="fldtagvalue4" value="4" />
+        <phrase id="fldtagcaption4" value="S1" />
+        <phrase id="fldtagvalue5" value="5" />
+        <phrase id="fldtagcaption5" value="S2" />
+        <phrase id="fldtagvalue6" value="6" />
+        <phrase id="fldtagcaption6" value="S3" />
       </field>
       <field id="gol_darah">
-        <phrase id="fldcaption" value="gol darah" />
+        <phrase id="fldcaption" value="Gol. Darah" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="A+" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="B+" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="O+" />
+        <phrase id="fldtagvalue4" value="4" />
+        <phrase id="fldtagcaption4" value="AB+" />
+        <phrase id="fldtagvalue5" value="5" />
+        <phrase id="fldtagcaption5" value="A-" />
+        <phrase id="fldtagvalue6" value="6" />
+        <phrase id="fldtagcaption6" value="B-" />
+        <phrase id="fldtagvalue7" value="7" />
+        <phrase id="fldtagcaption7" value="O-" />
+        <phrase id="fldtagvalue8" value="8" />
+        <phrase id="fldtagcaption8" value="AB-" />
       </field>
       <field id="stat_nikah">
-        <phrase id="fldcaption" value="stat nikah" />
-      </field>
-      <field id="jml_anak">
-        <phrase id="fldcaption" value="jml anak" />
-      </field>
-      <field id="alamat">
-        <phrase id="fldcaption" value="alamat" />
-      </field>
-      <field id="telp_extra">
-        <phrase id="fldcaption" value="telp extra" />
-      </field>
-      <field id="hubungan">
-        <phrase id="fldcaption" value="hubungan" />
-      </field>
-      <field id="nama_hubungan">
-        <phrase id="fldcaption" value="nama hubungan" />
+        <phrase id="fldcaption" value="Status Pernikahan" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Menikah" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Belum Menikah" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Pasangan Meninggal" />
+        <phrase id="fldtagvalue4" value="4" />
+        <phrase id="fldtagcaption4" value="Cerai" />
       </field>
       <field id="agama">
-        <phrase id="fldcaption" value="agama" />
+        <phrase id="fldcaption" value="Agama" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Islam" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Katolik" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Protestan" />
+        <phrase id="fldtagvalue4" value="4" />
+        <phrase id="fldtagcaption4" value="Hindu" />
+        <phrase id="fldtagvalue5" value="5" />
+        <phrase id="fldtagcaption5" value="Budha" />
+        <phrase id="fldtagvalue6" value="6" />
+        <phrase id="fldtagcaption6" value="Lainnya" />
+      </field>
+      <field id="jml_anak">
+        <phrase id="fldcaption" value="Jml. Anak" />
+      </field>
+      <field id="alamat">
+        <phrase id="fldcaption" value="Alamat" />
+      </field>
+      <field id="nama_hubungan">
+        <phrase id="fldcaption" value="Kontak Tambahan, Nama" />
+      </field>
+      <field id="telp_extra">
+        <phrase id="fldcaption" value="Telp. / HP" />
+      </field>
+      <field id="hubungan">
+        <phrase id="fldcaption" value="Hubungan" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Keluarga" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Pasangan" />
+        <phrase id="fldtagvalue3" value="3" />
+        <phrase id="fldtagcaption3" value="Saudara" />
+        <phrase id="fldtagvalue4" value="4" />
+        <phrase id="fldtagcaption4" value="Teman" />
+        <phrase id="fldtagvalue5" value="5" />
+        <phrase id="fldtagcaption5" value="Tetangga" />
+        <phrase id="fldtagvalue6" value="6" />
+        <phrase id="fldtagcaption6" value="Lainnya" />
       </field>
     </table>
     <table id="pembagian1">
