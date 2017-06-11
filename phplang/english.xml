@@ -1,0 +1,2366 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ew-language date="2017/6/11" version="13.0.0" id="en" name="English" desc="English" author="e.World Technology Ltd.">
+  <!-- 
+	*** Important Notes:
+	1. Language ID should follow: https://developers.google.com/recaptcha/docs/language,
+	2. Locale settings are placed in a separate locale files under the "locales" folder,
+	3. Locale files must be named with language ID of language file (and converted to lowercase), e.g. en.json,
+	4. Locale files are ALWAYS used, regardless of whether the project is single language or multiple language.
+-->
+  <global>
+    <phrase id="actiondeleted" value="Deleted" />
+    <phrase id="actioninserted" value="Inserted" />
+    <phrase id="actioninsertedgridadd" value="Inserted (Grid-Add)" />
+    <phrase id="actionupdated" value="Updated" />
+    <phrase id="actionupdatedgridedit" value="Updated (Grid-Edit)" />
+    <phrase id="actionupdatedmultiupdate" value="Updated (Multi-Update)" />
+    <phrase id="activateaccount" value="Your account is activated" />
+    <phrase id="activatefailed" value="Activation failed" />
+    <phrase id="add" value="Add" />
+    <phrase id="addblankrow" value="Add Blank Row" class="glyphicon glyphicon-plus ewIcon" />
+    <!-- v11 -->
+    <phrase id="addbtn" value="Add" />
+    <phrase id="addlink" value="Add" class="glyphicon glyphicon-plus ewIcon" />
+    <!-- v11 -->
+    <phrase id="addmasterdetaillink" value="Master/Detail Add" class="icon-md-add ewIcon" />
+    <!-- v11 -->
+    <phrase id="addsuccess" value="Add succeeded" />
+    <phrase id="advancedsearch" value="Advanced Search" />
+    <!-- v11 -->
+    <phrase id="advancedsearchbtn" value="Advanced Search" class="icon-advanced-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="allrecords" value="All" />
+    <phrase id="allword" value="All words" />
+    <phrase id="alwaysask" value="Always ask for my user name and password" />
+    <phrase id="anyword" value="Any word" />
+    <phrase id="audittrailautologin" value="autologin" />
+    <phrase id="audittrailfailedattempt" value="failed attempt: %n" />
+    <phrase id="audittrailuserloggedin" value="user already logged in" />
+    <phrase id="audittrailpasswordexpired" value="password expired" />
+    <phrase id="audittraillogin" value="login" />
+    <phrase id="audittraillogout" value="logout" />
+    <phrase id="autologin" value="Auto login until I logout explicitly" />
+    <phrase id="average" value="Average" />
+    <phrase id="backtolist" value="Back to List" />
+    <phrase id="backtologin" value="Back to login page" />
+    <phrase id="backtomasterrecordpage" value="Back to master table" />
+    <phrase id="batchdeletebegin" value="*** Batch delete begin ***" />
+    <phrase id="batchdeleterollback" value="*** Batch delete rollback ***" />
+    <phrase id="batchdeletesuccess" value="*** Batch delete successful ***" />
+    <phrase id="batchinsertbegin" value="*** Batch insert begin ***" />
+    <phrase id="batchinsertrollback" value="*** Batch insert rollback ***" />
+    <phrase id="batchinsertsuccess" value="*** Batch insert successful ***" />
+    <phrase id="batchupdatebegin" value="*** Batch update begin ***" />
+    <phrase id="batchupdaterollback" value="*** Batch update rollback ***" />
+    <phrase id="batchupdatesuccess" value="*** Batch update successful ***" />
+    <phrase id="buttonactions" value="Actions" class="icon-options ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonaddedit" value="Add/Edit" class="icon-addedit ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttondetails" value="Master/Detail" class="icon-master-detail ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonexport" value="Export" class="icon-export ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonlistoptions" value="Options" class="icon-options ewIcon" />
+    <!-- v11 -->
+    <phrase id="buttonsearch" value="Search" class="icon-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="cancelbtn" value="Cancel" client="1" />
+    <!-- v2017 -->
+    <phrase id="cancellink" value="Cancel" class="glyphicon glyphicon-remove ewIcon" />
+    <!-- v11 -->
+    <phrase id="changepwd" value="Change Password" />
+    <phrase id="changepwdpage" value="Change Password" />
+    <phrase id="changepwdbtn" value="Change" />
+    <phrase id="choosefilebtn" value="Choose..." />
+    <!-- v11 -->
+    <phrase id="choosefile" value="Choose file" />
+    <!-- v11 -->
+    <phrase id="choosefiles" value="Choose files" />
+    <!-- v11 -->
+    <phrase id="clickrecaptcha" value="Please click reCAPTCHA" client="1" />
+    <!-- v12 -->
+    <phrase id="closebtn" value="Close" client="1" />
+    <!-- v2017 -->
+    <phrase id="confirm" value="Confirm" />
+    <phrase id="confirmbtn" value="Confirm" client="1" />
+    <!-- v2017 -->
+    <phrase id="confirmcancel" value="Do you want to cancel?" client="1" />
+    <!-- v12 -->
+    <phrase id="confirmpassword" value="Confirm Password" />
+    <phrase id="conflictcancellink" value="Cancel" />
+    <phrase id="lightboxtitle" value=" " client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxcurrent" value="image {current} of {total}" client="1" />
+    <!-- Note: DO NOT translate "{current}" and "{total}" -->
+    <!-- v11 -->
+    <phrase id="lightboxprevious" value="previous" client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxnext" value="next" client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxclose" value="close" client="1" />
+    <!-- v11 -->
+    <phrase id="lightboxxhrerror" value="This content failed to load." client="1" />
+    <!-- v11 -->
+    <phrase id="lightboximgerror" value="This image failed to load." client="1" />
+    <!-- v11 -->
+    <phrase id="copy" value="Copy" />
+    <phrase id="copylink" value="Copy" class="icon-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="count" value="Count" />
+    <phrase id="countselected" value="%s selected" client="1" />
+    <!-- v12 -->
+    <phrase id="currentpassword" value="Current password: " client="1" />
+    <!-- v12 -->
+    <phrase id="customactioncompleted" value="'%s' completed" />
+    <phrase id="customactioncancelled" value="'%s' cancelled" />
+    <phrase id="customactionfailed" value="'%s' failed" />
+    <!-- v12 -->
+    <phrase id="customactionnotallowed" value="'%s' not allowed" />
+    <!-- v12 -->
+    <phrase id="customview" value="CUSTOM VIEW" />
+    <phrase id="delete" value="Delete" />
+    <phrase id="deletebtn" value="Delete" />
+    <phrase id="deletecancelled" value="Delete cancelled" />
+    <phrase id="deleteconfirmmsg" value="Are you sure you want to delete?" client="1" />
+    <phrase id="deletefilter" value="Delete filter" />
+    <!-- v12 -->
+    <phrase id="deletefilterconfirm" value="Delete filter %s?" client="1" />
+    <!-- v12 -->
+    <phrase id="deletelink" value="Delete" class="glyphicon glyphicon-trash ewIcon" />
+    <!-- v11 -->
+    <phrase id="deleteselectedlink" value="Delete Selected Records" class="glyphicon glyphicon-trash ewIcon" />
+    <!-- v11 -->
+    <phrase id="deletesuccess" value="Delete succeeded" />
+    <phrase id="detaillink" value="" />
+    <phrase id="detailcount" value="&lt;span dir='ltr'&gt;(%c)&lt;/span&gt;" />
+    <!-- v11 -->
+    <phrase id="masterdetailcopylink" value="Master/Detail Copy" class="icon-md-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="masterdetaileditlink" value="Master/Detail Edit" class="icon-md-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="masterdetaillistlink" value="Detail List" class="icon-table ewIcon" />
+    <!-- v11 -->
+    <phrase id="masterdetailviewlink" value="Master/Detail View" class="icon-md-view ewIcon" />
+    <!-- v11 -->
+    <phrase id="dupindex" value="Duplicate value '%v' for unique index '%f'" />
+    <phrase id="dupkey" value="Duplicate primary key: '%f'" />
+    <phrase id="edit" value="Edit" />
+    <phrase id="editlink" value="Edit" class="icon-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="enterfiltername" value="Enter filter name" client="1" />
+    <!-- v12 -->
+    <phrase id="enternewpassword" value="Please enter new password" client="1" />
+    <phrase id="enteroldpassword" value="Please enter old password" client="1" />
+    <phrase id="enterpassword" value="Please enter password" client="1" />
+    <phrase id="enterpwd" value="Please enter password" client="1" />
+    <phrase id="enterrequiredfield" value="Please enter required field - %s" />
+    <!-- v11 -->
+    <phrase id="entersearchcriteria" value="Please enter search criteria" />
+    <phrase id="enterusername" value="Please enter username" client="1" />
+    <phrase id="entervalidatecode" value="Enter the validation code shown" client="1" />
+    <!-- v11 -->
+    <phrase id="entersenderemail" value="Please enter sender email" client="1" />
+    <phrase id="enterpropersenderemail" value="Exceed maximum sender email count or email address incorrect" client="1" />
+    <phrase id="enterrecipientemail" value="Please enter recipient email" client="1" />
+    <phrase id="enterproperrecipientemail" value="Exceed maximum recipient email count or email address incorrect" client="1" />
+    <phrase id="enterproperccemail" value="Exceed maximum cc email count or email address incorrect" client="1" />
+    <phrase id="enterproperbccemail" value="Exceed maximum bcc email count or email address incorrect" client="1" />
+    <phrase id="entersubject" value="Please enter subject" client="1" />
+    <phrase id="emailformsender" value="From" />
+    <phrase id="emailformrecipient" value="To" />
+    <phrase id="emailformcc" value="Cc" />
+    <phrase id="emailformbcc" value="Bcc" />
+    <phrase id="emailformsubject" value="Subject" />
+    <phrase id="emailformmessage" value="Message" />
+    <phrase id="emailformcontenttype" value="Send as" />
+    <phrase id="emailformcontenttypeurl" value="URL" />
+    <phrase id="emailformcontenttypehtml" value="HTML" />
+    <phrase id="enteruid" value="Please enter user ID" client="1" />
+    <phrase id="entervalidemail" value="Please enter valid Email Address" client="1" />
+    <phrase id="exactphrase" value="Exact phrase" />
+    <phrase id="exceedmaxretry" value="Exceed maximum login retry count. Account is locked. Please try again in %t minutes" />
+    <phrase id="exceedmaxemailexport" value="Exceed maximum export email count. Please try again later" />
+    <phrase id="exporttocsv" value="Export to CSV" class="icon-csv ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttocsvtext" value="CSV" />
+    <phrase id="exporttoemail" value="Email" class="icon-email ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttoemailtext" value="Email" client="1" />
+    <phrase id="exporttoexcel" value="Export to Excel" class="icon-excel ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttoexceltext" value="Excel" />
+    <phrase id="exporttohtml" value="Export to HTML" class="icon-html ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttohtmltext" value="HTML" />
+    <phrase id="exporttopdf" value="Export to PDF" class="icon-pdf ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttopdftext" value="PDF" />
+    <phrase id="exporttoword" value="Export to Word" class="icon-word ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttowordtext" value="Word" />
+    <phrase id="exporttoxml" value="Export to XML" class="icon-xml ewIcon" />
+    <!-- v11 -->
+    <phrase id="exporttoxmltext" value="XML" />
+    <phrase id="failedtosendmail" value="Failed to send mail. " />
+    <phrase id="fieldname" value="Field Name" />
+    <phrase id="fieldrequiredindicator" value="&lt;span class=&quot;ewRequired&quot;&gt;&amp;nbsp;*&lt;/span&gt;" />
+    <phrase id="filenotfound" value="File not found" />
+    <!-- *** characters need to be supported by EW_TMP_IMAGE_FONT *** -->
+    <phrase id="filter" value="Filter" />
+    <!-- v12 -->
+    <phrase id="filtername" value="Filter name" client="1" />
+    <!-- v12 -->
+    <phrase id="filters" value="Filters" class="icon-filter ewIcon" />
+    <!-- v12 -->
+    <phrase id="overwritebtn" value="Overwrite" client="1" />
+    <!-- v2017 -->
+    <phrase id="overwritelink" value="Overwrite" />
+    <phrase id="forgotpwd" value="Forgot Password" />
+    <phrase id="goback" value="Go Back" />
+    <phrase id="gridaddcancelled" value="Grid add cancelled" />
+    <!-- v11 -->
+    <phrase id="gridaddlink" value="Grid Add" class="icon-grid-add ewIcon" />
+    <!-- v11 -->
+    <phrase id="gridcancellink" value="Cancel" class="glyphicon glyphicon-remove ewIcon" />
+    <!-- v11 -->
+    <phrase id="grideditcancelled" value="Grid edit cancelled" />
+    <!-- v11 -->
+    <phrase id="grideditlink" value="Grid Edit" class="icon-grid-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="gridinsertlink" value="Insert" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="gridsavelink" value="Save" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="highlight" value="Highlight" />
+    <!-- v11 -->
+    <phrase id="highlightbtn" value="Highlight" class="icon-highlight ewIcon" />
+    <!-- v11 -->
+    <phrase id="homepage" value="Home" class="glyphicon glyphicon-home ewIcon" />
+    <!-- v11 -->
+    <phrase id="incorrectcreditcard" value="Incorrect credit card number" />
+    <phrase id="incorrectdate" value="Incorrect date (%s)" />
+    <phrase id="incorrectdateymd" value="Incorrect date (yyyy%smm%sdd)" />
+    <phrase id="incorrectdatemdy" value="Incorrect date (mm%sdd%syyyy)" />
+    <phrase id="incorrectdatedmy" value="Incorrect date (dd%smm%syyyy)" />
+    <phrase id="incorrectshortdateymd" value="Incorrect date (yy%smm%sdd)" />
+    <phrase id="incorrectshortdatemdy" value="Incorrect date (mm%sdd%syy)" />
+    <phrase id="incorrectshortdatedmy" value="Incorrect date (dd%smm%syy)" />
+    <phrase id="incorrectemail" value="Incorrect email" client="1" />
+    <phrase id="incorrectfield" value="Incorrect field" client="1" />
+    <phrase id="incorrectfloat" value="Incorrect floating point number" client="1" />
+    <phrase id="incorrectguid" value="Incorrect GUID" client="1" />
+    <phrase id="incorrectinteger" value="Incorrect integer" client="1" />
+    <phrase id="incorrectphone" value="Incorrect phone number" client="1" />
+    <phrase id="incorrectregexp" value="Regular expression not matched" client="1" />
+    <phrase id="incorrectrange" value="Number must be between %1 and %2" client="1" />
+    <phrase id="incorrectssn" value="Incorrect social security number" client="1" />
+    <phrase id="incorrecttime" value="Incorrect time (hh%smm%sss)" />
+    <phrase id="incorrectzip" value="Incorrect ZIP code" client="1" />
+    <phrase id="inlineaddlink" value="Inline Add" class="icon-inline-add ewIcon" />
+    <!-- v11 -->
+    <phrase id="inlinecopylink" value="Inline Copy" class="icon-inline-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="inlineeditlink" value="Inline Edit" class="icon-inline-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="insertcancelled" value="Insert cancelled" />
+    <phrase id="insertfailed" value="Insert failed" client="1" />
+    <phrase id="insertlink" value="Insert" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="insertsuccess" value="Insert succeeded" />
+    <phrase id="invalidemail" value="Invalid Email" />
+    <phrase id="invalidfield" value="Invalid Field" />
+    <phrase id="invalidkeyvalue" value="Invalid key value" />
+    <phrase id="invalidrecord" value="Invalid Record! Key is null" client="1" />
+    <phrase id="invalidpostrequest" value="Invalid post request" />
+    <!-- v11 -->
+    <phrase id="invalidparameter" value="Invalid Parameter" />
+    <phrase id="invalidpassword" value="Invalid Password" />
+    <phrase id="invalidnewpassword" value="Invalid New Password" />
+    <phrase id="invaliduidpwd" value="Incorrect user ID or password" />
+    <phrase id="keep" value="Keep" />
+    <phrase id="language" value="Language" />
+    <phrase id="listactionbutton" value="Actions" class="icon-user ewIcon" />
+    <!-- v12 -->
+    <phrase id="loading" value="Loading..." client="1" />
+    <phrase id="login" value="Login" />
+    <phrase id="logincancelled" value="Login cancelled" />
+    <phrase id="loginoptions" value="Options" />
+    <!-- v11 -->
+    <phrase id="loginpage" value="Login" />
+    <phrase id="logout" value="Logout" />
+    <phrase id="lookuplink" value="Lookup - %s" class="glyphicon glyphicon-search ewIcon" />
+    <!-- v2017 -->
+    <phrase id="masterrecord" value="Master Record: " />
+    <phrase id="maxfilesize" value="Max. file size (%s bytes) exceeded." client="1" />
+    <phrase id="messageok" value="OK" client="1" />
+    <phrase id="midnight" value="midnight" />
+    <!-- v2017 -->
+    <phrase id="mismatchpassword" value="Mismatch Password" client="1" />
+    <phrase id="missinglookuptablename" value="Missing lookup table name" />
+    <phrase id="missingdisplayfieldname" value="Missing display field name" />
+    <phrase id="missingdisplayfieldvalue" value="Missing display field value" />
+    <phrase id="missinguserlevelid" value="Missing User Level ID" />
+    <phrase id="missinguserlevelname" value="Missing User Level name" />
+    <phrase id="mobilemenu" value="Menu" />
+    <phrase id="multiplemasterdetails" value="Master/Detail" class="icon-master-detail ewIcon" />
+    <!-- v11 -->
+    <phrase id="new" value="New" />
+    <phrase id="newpassword" value="New Password" />
+    <phrase id="newvalue" value="New value" />
+    <!-- v12 -->
+    <phrase id="next" value="Next" client="1" />
+    <!-- v12 -->
+    <phrase id="noaddrecord" value="No records to be added" client="1" />
+    <phrase id="nofieldselected" value="No field selected for update" client="1" />
+    <phrase id="nopermission" value="You do not have permission to access %s." />
+    <!-- v12.0.6 -->
+    <phrase id="noaddpermission" value="You do not have permission to add the record." />
+    <phrase id="nodeletepermission" value="You do not have permission to delete the record." />
+    <phrase id="noeditpermission" value="You do not have permission to edit the record." />
+    <phrase id="noon" value="noon" />
+    <!-- v2017 -->
+    <phrase id="norecord" value="No records found" client="1" />
+    <!-- v2017 -->
+    <phrase id="norecordforkey" value="No record found for key = " />
+    <phrase id="norecordselected" value="No records selected" client="1" />
+    <phrase id="notablegenerated" value="No tables generated" />
+    <phrase id="nouserlevel" value="No user level settings." />
+    <phrase id="of" value="of" client="1" />
+    <!-- v2017 -->
+    <phrase id="old" value="Old" />
+    <phrase id="oldpassword" value="Old Password" />
+    <phrase id="optionalreadyexist" value="Option already exists" />
+    <phrase id="page" value="Page" client="1" />
+    <!-- v2017 -->
+    <phrase id="pagerfirst" value="First" />
+    <phrase id="pagerlast" value="Last" />
+    <phrase id="pagernext" value="Next" />
+    <phrase id="pagerprevious" value="Previous" />
+    <phrase id="password" value="Password" />
+    <phrase id="passwordmask" value="********" />
+    <!-- v12 -->
+    <phrase id="passwordrequest" value="Password Request" />
+    <phrase id="passwordchanged" value="Password Changed" />
+    <phrase id="passwordexpired" value="Password Expired. Please change password." />
+    <phrase id="passwordstrength" value="Strength: %p" client="1" />
+    <!-- v12 -->
+    <phrase id="passwordtoosimple" value="Your password is too simple" client="1" />
+    <!-- v12 -->
+    <phrase id="generatepassword" value="Generate password" class="glyphicon glyphicon-flash ewIcon" />
+    <!-- v12 -->
+    <phrase id="permission" value="Permissions" class="icon-user ewIcon" />
+    <!-- v11 -->
+    <phrase id="permissionaddcopy" value="Add/Copy" />
+    <phrase id="permissiondelete" value="Delete" />
+    <phrase id="permissionedit" value="Edit" />
+    <phrase id="permissionlistsearchview" value="List/Search/View" />
+    <phrase id="permissionlist" value="List" />
+    <phrase id="permissionsearch" value="Search" />
+    <phrase id="permissionview" value="View" />
+    <phrase id="pickdate" value="Pick a date" />
+    <phrase id="pleaseselect" value="Please select" client="1" />
+    <!-- v12 -->
+    <phrase id="pleasewait" value="Please wait..." client="1" />
+    <phrase id="primarykeyunspecified" value="Primary key unspecified" />
+    <phrase id="printerfriendly" value="Printer Friendly" class="icon-print ewIcon" />
+    <!-- v11 -->
+    <phrase id="printerfriendlytext" value="Printer Friendly" />
+    <phrase id="prev" value="Prev" client="1" />
+    <!-- v12 -->
+    <phrase id="pwdemailsent" value="Password sent to your email" />
+    <phrase id="resetpwdemailsent" value="The reset password email has been sent to you" />
+    <phrase id="quicksearch" value="Quick Search" />
+    <phrase id="quicksearchbtn" value="Search" />
+    <phrase id="quicksearchauto" value="Auto" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchautoshort" value="" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchall" value="All keywords" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchallshort" value="All" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchany" value="Any keywords" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchanyshort" value="Any" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchexact" value="Exact match" client="1" />
+    <!-- v11 -->
+    <phrase id="quicksearchexactshort" value="Exact" client="1" />
+    <!-- v11 -->
+    <phrase id="record" value="Records" client="1" />
+    <!-- v2017 -->
+    <phrase id="recordchangedbyotheruser" value="Data has been changed by other user. Click [Reload] to retrieve the changed data (your data in the form will be overwritten) or click [Overwrite] to overwrite the changed data." />
+    <phrase id="recorddeleted" value="record(s) deleted" />
+    <phrase id="recordinserted" value="record(s) inserted" />
+    <phrase id="recordupdated" value="record(s) updated" />
+    <phrase id="recordsperpage" value="Page size" client="1" />
+    <!-- v2017 -->
+    <phrase id="register" value="Register" />
+    <phrase id="registerbtn" value="Register" />
+    <phrase id="registersuccess" value="Registration succeeded" />
+    <phrase id="registersuccessactivate" value="Registration succeeded. An email has been sent to your email address, please click the link in the email to activate your account." />
+    <phrase id="registerpage" value="Registration" />
+    <phrase id="relatedrecordrequired" value="You cannot add or update a record because the foreign key value does not exist in the master table '%t'" />
+    <phrase id="relatedrecordexists" value="You cannot delete a record because related records exist in the detail table '%t'" />
+    <phrase id="reloadbtn" value="Reload" client="1" />
+    <!-- v2017 -->
+    <phrase id="reloadlink" value="Reload" />
+    <phrase id="rememberme" value="Remember me" />
+    <phrase id="remove" value="Remove" />
+    <phrase id="replace" value="Replace" />
+    <phrase id="report" value="Report" />
+    <phrase id="requestpwdpage" value="Request Password" />
+    <phrase id="reset" value="Reset" />
+    <phrase id="resendregisteremailbtn" value="Resend registration email" />
+    <!-- v12 -->
+    <phrase id="resendregisteremailsuccess" value="Registration email for user '%u' has been re-sent" />
+    <!-- v12 -->
+    <phrase id="resendregisteremailfailure" value="Failed to re-send register email for user '%u' has failed" />
+    <!-- v12 -->
+    <phrase id="resetconcurrentuserbtn" value="Reset concurrent user session" />
+    <!-- v12 -->
+    <phrase id="resetconcurrentusersuccess" value="Session for user '%u' has been reset" />
+    <!-- v12 -->
+    <phrase id="resetconcurrentuserfailure" value="Failed to reset session for user '%u'" />
+    <!-- v12 -->
+    <phrase id="resetloginretrybtn" value="Reset login retry count" />
+    <!-- v12 -->
+    <phrase id="resetloginretrysuccess" value="Login retry count for user '%u' has been reset" />
+    <!-- v12 -->
+    <phrase id="resetloginretryfailure" value="Failed to reset login retry count for user '%u'" />
+    <!-- v12 -->
+    <phrase id="resetsearchbtn" value="Reset" class="icon-reset-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="resetsearch" value="Reset" />
+    <phrase id="rptavg" value="Average" />
+    <phrase id="rptdtlrec" value="Detail Records" />
+    <phrase id="rptgrandtotal" value="Grand Total" />
+    <phrase id="rptmax" value="Maximum" />
+    <phrase id="rptmin" value="Minimum" />
+    <phrase id="rptsum" value="Sum" />
+    <phrase id="rptsumhead" value="Summary for" />
+    <phrase id="savebtn" value="Save" />
+    <!-- v11 -->
+    <phrase id="savecurrentfilter" value="Save current filter" />
+    <!-- v12 -->
+    <phrase id="saveusername" value="Save my user name" />
+    <phrase id="search" value="Search" client="1" />
+    <!-- v2017 -->
+    <phrase id="searchbtn" value="Search" class="glyphicon glyphicon-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="searchpanel" value="Search Panel" />
+    <!-- v11 -->
+    <phrase id="selectbtn" value="Select" client="1" />
+    <!-- v2017 -->
+    <phrase id="sendemailbtn" value="Send" />
+    <phrase id="sendemailsuccess" value="Email sent successfully" client="1" />
+    <phrase id="sendpwd" value="Send" />
+    <phrase id="sequencenumber" value="%s." />
+    <phrase id="servercommunicationerror" value="An error occured while communicating to the server." />
+    <!-- v2017 -->
+    <phrase id="sessionwillexpire" value="Your session will expire in %s seconds. Click OK to continue your session." client="1" />
+    <!-- v12 -->
+    <phrase id="sessionexpired" value="Your session has expired." client="1" />
+    <!-- v12 -->
+    <phrase id="setpasswordexpiredbtn" value="Set password expired" />
+    <!-- v12 -->
+    <phrase id="setpasswordexpiredsuccess" value="Password for user '%u' has been set as expired" />
+    <!-- v12 -->
+    <phrase id="setpasswordexpiredfailure" value="Failed to set password for user '%u' as expired" />
+    <!-- v12 -->
+    <phrase id="showallbtn" value="Show all" class="icon-reset-search ewIcon" />
+    <!-- v11 -->
+    <phrase id="showall" value="Show all" />
+    <!-- v11 -->
+    <phrase id="srchlegend" value="" />
+    <phrase id="table" value="TABLE" />
+    <phrase id="tbltypetable" value="Table: " />
+    <phrase id="tbltypeview" value="View: " />
+    <phrase id="tbltypecustomview" value="Custom View: " />
+    <phrase id="tbltypereport" value="Report: " />
+    <phrase id="to" value="to" />
+    <phrase id="total" value="Total" />
+    <phrase id="unauthorizeduserid" value="The current user (%c) is not authorized to assign the user ID (%u)." />
+    <phrase id="unauthorizedparentuserid" value="The current user (%c) is not authorized to assign the parent user ID (%p)." />
+    <phrase id="unauthorizedmasteruserid" value="The current user (%c) is not authorized to insert the record. Master filter: %f" />
+    <phrase id="update" value="Update" />
+    <phrase id="updatebtn" value="Update" client="1" />
+    <!-- v2017 -->
+    <phrase id="updatecancelled" value="Update cancelled" />
+    <phrase id="updatefailed" value="Update failed" />
+    <phrase id="updatelink" value="Update" class="glyphicon glyphicon-ok ewIcon" />
+    <!-- v11 -->
+    <phrase id="updateselectall" value="Select all" />
+    <!-- v11 -->
+    <phrase id="updateselectedlink" value="Update Selected Records" class="icon-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="updatesuccess" value="Update succeeded" />
+    <phrase id="uploading" value="Uploading..." client="1" />
+    <phrase id="uploadstart" value="Start" client="1" />
+    <phrase id="uploadcancel" value="Cancel" client="1" />
+    <phrase id="uploaddelete" value="Delete" client="1" />
+    <phrase id="uploadoverwrite" value="Overwrite old file?" client="1" />
+    <phrase id="uploaderrmsg1" value="The uploaded file exceeds the upload_max_filesize directive in php.ini" />
+    <phrase id="uploaderrmsg2" value="The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form" />
+    <phrase id="uploaderrmsg3" value="The uploaded file was only partially uploaded" />
+    <phrase id="uploaderrmsg4" value="No file was uploaded" />
+    <phrase id="uploaderrmsg6" value="Missing a temporary folder" />
+    <phrase id="uploaderrmsg7" value="Failed to write file to disk" />
+    <phrase id="uploaderrmsg8" value="A PHP extension stopped the file upload" />
+    <phrase id="uploaderrmsgpostmaxsize" value="The uploaded file exceeds the post_max_size directive in php.ini" />
+    <phrase id="uploaderrmsgmaxfilesize" value="File is too big" client="1" />
+    <phrase id="uploaderrmsgminfilesize" value="File is too small" client="1" />
+    <phrase id="uploaderrmsgacceptfiletypes" value="File type not allowed" client="1" />
+    <phrase id="uploaderrmsgmaxnumberoffiles" value="Maximum number of files exceeded" client="1" />
+    <phrase id="uploaderrmsgmaxwidth" value="Image exceeds maximum width" />
+    <phrase id="uploaderrmsgminwidth" value="Image requires a minimum width" />
+    <phrase id="uploaderrmsgmaxheight" value="Image exceeds maximum height" />
+    <phrase id="uploaderrmsgminheight" value="Image requires a minimum height" />
+    <phrase id="uploaderrmsgmaxfilelength" value="Total length of file names exceeds field length" client="1" />
+    <phrase id="useradministrator" value="Administrator" client="1" />
+    <!-- v12 -->
+    <phrase id="useranonymous" value="Anonymous" client="1" />
+    <!-- v12 -->
+    <phrase id="userdefault" value="Default" client="1" />
+    <!-- v12 -->
+    <phrase id="useremail" value="Email" />
+    <phrase id="userexists" value="User already exists" />
+    <phrase id="userlevel" value="User Level: " />
+    <phrase id="userleveladministratorname" value="User level name for user level -1 must be 'Administrator'" client="1" />
+    <phrase id="userlevelanonymousname" value="User level name for user level -2 must be 'Anonymous'" client="1" />
+    <!-- v12 -->
+    <phrase id="userlevelpermission" value="User Level Permissions" />
+    <phrase id="userlevelidinteger" value="User Level ID must be integer" client="1" />
+    <phrase id="userleveldefaultname" value="User level name for user level 0 must be 'Default'" client="1" />
+    <phrase id="userlevelidincorrect" value="User defined User Level ID must be larger than 0" client="1" />
+    <phrase id="userlevelnameincorrect" value="User defined User Level name cannot be 'Administrator' or 'Default'" client="1" />
+    <phrase id="userloggedin" value="User '%u' already logged in" />
+    <phrase id="username" value="User Name" />
+    <phrase id="userprofilecorrupted" value="User profile is corrupted. Please logout and login again" />
+    <phrase id="valuenotexist" value="Value does not exist" client="1" />
+    <!-- v11 -->
+    <phrase id="view" value="View" />
+    <phrase id="viewimagegallery" value="Click to view image" />
+    <!-- v12 -->
+    <phrase id="viewlink" value="View" class="icon-view ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpageaddlink" value="Add" class="glyphicon glyphicon-plus ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpagecopylink" value="Copy" class="icon-copy ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpagedeletelink" value="Delete" class="glyphicon glyphicon-trash ewIcon" />
+    <!-- v11 -->
+    <phrase id="viewpagedetaillink" value="" />
+    <phrase id="viewpageeditlink" value="Edit" class="icon-edit ewIcon" />
+    <!-- v11 -->
+    <phrase id="wrongfiletype" value="File type is not allowed." client="1" />
+    <phrase id="tableorview" value="Tables" />
+    <phrase id="=" value="&amp;nbsp;" />
+    <!-- v12 -->
+    <phrase id="equal" value="=" />
+    <!-- v12 -->
+    <phrase id="&lt;&gt;" value="&amp;lt;&amp;gt;" />
+    <phrase id="&lt;" value="&amp;lt;" />
+    <phrase id="&lt;=" value="&amp;lt;=" />
+    <phrase id="&gt;" value="&amp;gt;" />
+    <phrase id="&gt;=" value="&amp;gt;=" />
+    <phrase id="like" value="contains" />
+    <phrase id="not like" value="does not contain" />
+    <!-- v11.0.3 -->
+    <phrase id="starts with" value="starts with" />
+    <phrase id="ends with" value="ends with" />
+    <phrase id="is null" value="is null" />
+    <phrase id="is not null" value="is not null" />
+    <phrase id="between" value="between" />
+    <phrase id="and" value="and" />
+    <phrase id="or" value="or" />
+    <phrase id="am" value="AM" />
+    <!-- v2017 -->
+    <phrase id="pm" value="PM" />
+    <!-- v2017 -->
+  </global>
+  <project>
+    <phrase id="bodytitle" value="SIAP" />
+    <phrase id="footertext" value="&amp;copy;2017 SIAP. Dibuat oleh ADYA DATA. Hak cipta dilindungi Undang-Undang." />
+    <menu id="1">
+      <phrase id="menutext" value="att log" />
+    </menu>
+    <menu id="63">
+      <phrase id="menutext" value="Home" />
+    </menu>
+    <menu id="29">
+      <phrase id="menutext" value="Pegawai" />
+    </menu>
+    <menu id="2">
+      <phrase id="menutext" value="cuti normatif" />
+    </menu>
+    <menu id="65">
+      <phrase id="menutext" value="Setup" />
+    </menu>
+    <menu id="62">
+      <phrase id="menutext" value="User" />
+    </menu>
+    <menu id="3">
+      <phrase id="menutext" value="dev type" />
+    </menu>
+    <menu id="64">
+      <phrase id="menutext" value="View" />
+    </menu>
+    <menu id="61">
+      <phrase id="menutext" value="Activity Log." />
+    </menu>
+    <menu id="4">
+      <phrase id="menutext" value="device" />
+    </menu>
+    <menu id="5">
+      <phrase id="menutext" value="ganti jdw d" />
+    </menu>
+    <menu id="6">
+      <phrase id="menutext" value="ganti jdw jk" />
+    </menu>
+    <menu id="7">
+      <phrase id="menutext" value="ganti jdw pegawai" />
+    </menu>
+    <menu id="8">
+      <phrase id="menutext" value="ganti jdw pembagian" />
+    </menu>
+    <menu id="9">
+      <phrase id="menutext" value="ganti jk" />
+    </menu>
+    <menu id="10">
+      <phrase id="menutext" value="ganti jk d" />
+    </menu>
+    <menu id="11">
+      <phrase id="menutext" value="ganti jk pegawai" />
+    </menu>
+    <menu id="12">
+      <phrase id="menutext" value="ganti jk pembagian" />
+    </menu>
+    <menu id="13">
+      <phrase id="menutext" value="grp user d" />
+    </menu>
+    <menu id="14">
+      <phrase id="menutext" value="grp user m" />
+    </menu>
+    <menu id="15">
+      <phrase id="menutext" value="index ot" />
+    </menu>
+    <menu id="16">
+      <phrase id="menutext" value="index type" />
+    </menu>
+    <menu id="17">
+      <phrase id="menutext" value="izin" />
+    </menu>
+    <menu id="18">
+      <phrase id="menutext" value="jam kerja" />
+    </menu>
+    <menu id="19">
+      <phrase id="menutext" value="jam kerja extra" />
+    </menu>
+    <menu id="20">
+      <phrase id="menutext" value="jatah cuti" />
+    </menu>
+    <menu id="21">
+      <phrase id="menutext" value="jdw kerja d" />
+    </menu>
+    <menu id="22">
+      <phrase id="menutext" value="jdw kerja m" />
+    </menu>
+    <menu id="23">
+      <phrase id="menutext" value="jdw kerja pegawai" />
+    </menu>
+    <menu id="24">
+      <phrase id="menutext" value="jns izin" />
+    </menu>
+    <menu id="25">
+      <phrase id="menutext" value="kategori izin" />
+    </menu>
+    <menu id="26">
+      <phrase id="menutext" value="kontrak kerja" />
+    </menu>
+    <menu id="27">
+      <phrase id="menutext" value="lembur" />
+    </menu>
+    <menu id="28">
+      <phrase id="menutext" value="libur" />
+    </menu>
+    <menu id="30">
+      <phrase id="menutext" value="Detal Pegawai" />
+    </menu>
+    <menu id="31">
+      <phrase id="menutext" value="pembagian 1" />
+    </menu>
+    <menu id="32">
+      <phrase id="menutext" value="pembagian 2" />
+    </menu>
+    <menu id="33">
+      <phrase id="menutext" value="pembagian 3" />
+    </menu>
+    <menu id="34">
+      <phrase id="menutext" value="pendidikan" />
+    </menu>
+    <menu id="35">
+      <phrase id="menutext" value="setting" />
+    </menu>
+    <menu id="36">
+      <phrase id="menutext" value="shift result" />
+    </menu>
+    <menu id="37">
+      <phrase id="menutext" value="sms group" />
+    </menu>
+    <menu id="38">
+      <phrase id="menutext" value="sms group member" />
+    </menu>
+    <menu id="39">
+      <phrase id="menutext" value="sms recipient" />
+    </menu>
+    <menu id="40">
+      <phrase id="menutext" value="temp pegawai" />
+    </menu>
+    <menu id="41">
+      <phrase id="menutext" value="tmp" />
+    </menu>
+    <menu id="42">
+      <phrase id="menutext" value="tmp uareu" />
+    </menu>
+    <menu id="43">
+      <phrase id="menutext" value="tukar jam" />
+    </menu>
+    <menu id="44">
+      <phrase id="menutext" value="uareu device" />
+    </menu>
+    <menu id="45">
+      <phrase id="menutext" value="user log" />
+    </menu>
+    <menu id="46">
+      <phrase id="menutext" value="user login" />
+    </menu>
+    <menu id="47">
+      <phrase id="menutext" value="versi db" />
+    </menu>
+    <menu id="48">
+      <phrase id="menutext" value="z pay com" />
+    </menu>
+    <menu id="49">
+      <phrase id="menutext" value="z pay grp" />
+    </menu>
+    <menu id="50">
+      <phrase id="menutext" value="z pay grp com" />
+    </menu>
+    <menu id="51">
+      <phrase id="menutext" value="z pay grp emp" />
+    </menu>
+    <menu id="52">
+      <phrase id="menutext" value="z pay money" />
+    </menu>
+    <menu id="53">
+      <phrase id="menutext" value="z pay process d" />
+    </menu>
+    <menu id="54">
+      <phrase id="menutext" value="z pay process m" />
+    </menu>
+    <menu id="55">
+      <phrase id="menutext" value="z pay process sd" />
+    </menu>
+    <menu id="56">
+      <phrase id="menutext" value="z pay report" />
+    </menu>
+    <menu id="57">
+      <phrase id="menutext" value="zx bayar kredit" />
+    </menu>
+    <menu id="58">
+      <phrase id="menutext" value="zx jns krd" />
+    </menu>
+    <menu id="59">
+      <phrase id="menutext" value="zx kredit d" />
+    </menu>
+    <menu id="60">
+      <phrase id="menutext" value="zx kredit m" />
+    </menu>
+    <table id="att_log">
+      <phrase id="tblcaption" value="att log" />
+      <field id="sn">
+        <phrase id="fldcaption" value="sn" />
+      </field>
+      <field id="scan_date">
+        <phrase id="fldcaption" value="scan date" />
+      </field>
+      <field id="pin">
+        <phrase id="fldcaption" value="pin" />
+      </field>
+      <field id="verifymode">
+        <phrase id="fldcaption" value="verifymode" />
+      </field>
+      <field id="inoutmode">
+        <phrase id="fldcaption" value="inoutmode" />
+      </field>
+      <field id="reserved">
+        <phrase id="fldcaption" value="reserved" />
+      </field>
+      <field id="work_code">
+        <phrase id="fldcaption" value="work code" />
+      </field>
+      <field id="att_id">
+        <phrase id="fldcaption" value="att id" />
+      </field>
+    </table>
+    <table id="cuti_normatif">
+      <phrase id="tblcaption" value="cuti normatif" />
+      <field id="cuti_n_id">
+        <phrase id="fldcaption" value="cuti n id" />
+      </field>
+      <field id="cuti_n_nama">
+        <phrase id="fldcaption" value="cuti n nama" />
+      </field>
+      <field id="cuti_n_lama">
+        <phrase id="fldcaption" value="cuti n lama" />
+      </field>
+      <field id="nominal">
+        <phrase id="fldcaption" value="nominal" />
+      </field>
+      <field id="jns_bayar">
+        <phrase id="fldcaption" value="jns bayar" />
+      </field>
+    </table>
+    <table id="dev_type">
+      <phrase id="tblcaption" value="dev type" />
+      <field id="dev_type">
+        <phrase id="fldcaption" value="dev type" />
+      </field>
+      <field id="id_type">
+        <phrase id="fldcaption" value="id type" />
+      </field>
+      <field id="type">
+        <phrase id="fldcaption" value="type" />
+      </field>
+    </table>
+    <table id="device">
+      <phrase id="tblcaption" value="device" />
+      <field id="sn">
+        <phrase id="fldcaption" value="sn" />
+      </field>
+      <field id="activation_code">
+        <phrase id="fldcaption" value="activation code" />
+      </field>
+      <field id="act_code_realtime">
+        <phrase id="fldcaption" value="act code realtime" />
+      </field>
+      <field id="device_name">
+        <phrase id="fldcaption" value="device name" />
+      </field>
+      <field id="comm_key">
+        <phrase id="fldcaption" value="comm key" />
+      </field>
+      <field id="dev_id">
+        <phrase id="fldcaption" value="dev id" />
+      </field>
+      <field id="comm_type">
+        <phrase id="fldcaption" value="comm type" />
+      </field>
+      <field id="ip_address">
+        <phrase id="fldcaption" value="ip address" />
+      </field>
+      <field id="id_type">
+        <phrase id="fldcaption" value="id type" />
+      </field>
+      <field id="dev_type">
+        <phrase id="fldcaption" value="dev type" />
+      </field>
+      <field id="serial_port">
+        <phrase id="fldcaption" value="serial port" />
+      </field>
+      <field id="baud_rate">
+        <phrase id="fldcaption" value="baud rate" />
+      </field>
+      <field id="ethernet_port">
+        <phrase id="fldcaption" value="ethernet port" />
+      </field>
+      <field id="layar">
+        <phrase id="fldcaption" value="layar" />
+      </field>
+      <field id="alg_ver">
+        <phrase id="fldcaption" value="alg ver" />
+      </field>
+      <field id="use_realtime">
+        <phrase id="fldcaption" value="use realtime" />
+      </field>
+      <field id="group_realtime">
+        <phrase id="fldcaption" value="group realtime" />
+      </field>
+      <field id="last_download">
+        <phrase id="fldcaption" value="last download" />
+      </field>
+      <field id="attlogstamp">
+        <phrase id="fldcaption" value="ATTLOGStamp" />
+      </field>
+      <field id="operlogstamp">
+        <phrase id="fldcaption" value="OPERLOGStamp" />
+      </field>
+      <field id="attphotostamp">
+        <phrase id="fldcaption" value="ATTPHOTOStamp" />
+      </field>
+    </table>
+    <table id="ganti_jdw_d">
+      <phrase id="tblcaption" value="ganti jdw d" />
+      <field id="ganti_jdw_id">
+        <phrase id="fldcaption" value="ganti jdw id" />
+      </field>
+      <field id="tgl_ganti_jdw">
+        <phrase id="fldcaption" value="tgl ganti jdw" />
+      </field>
+      <field id="jns_ganti_jdw">
+        <phrase id="fldcaption" value="jns ganti jdw" />
+      </field>
+      <field id="jdw_kerja_m_id">
+        <phrase id="fldcaption" value="jdw kerja m id" />
+      </field>
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+    </table>
+    <table id="ganti_jdw_jk">
+      <phrase id="tblcaption" value="ganti jdw jk" />
+      <field id="ganti_jdw_id">
+        <phrase id="fldcaption" value="ganti jdw id" />
+      </field>
+      <field id="jdw_kerja_m_id1">
+        <phrase id="fldcaption" value="jdw kerja m id 1" />
+      </field>
+      <field id="jdw_kerja_m_id2">
+        <phrase id="fldcaption" value="jdw kerja m id 2" />
+      </field>
+      <field id="tgl_awal">
+        <phrase id="fldcaption" value="tgl awal" />
+      </field>
+      <field id="tgl_akhir">
+        <phrase id="fldcaption" value="tgl akhir" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="ganti_jdw_pegawai">
+      <phrase id="tblcaption" value="ganti jdw pegawai" />
+      <field id="ganti_jdw_id">
+        <phrase id="fldcaption" value="ganti jdw id" />
+      </field>
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="tgl_awal">
+        <phrase id="fldcaption" value="tgl awal" />
+      </field>
+      <field id="tgl_akhir">
+        <phrase id="fldcaption" value="tgl akhir" />
+      </field>
+      <field id="jdw_kerja_m_id">
+        <phrase id="fldcaption" value="jdw kerja m id" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="ganti_jdw_pembagian">
+      <phrase id="tblcaption" value="ganti jdw pembagian" />
+      <field id="ganti_jdw_id">
+        <phrase id="fldcaption" value="ganti jdw id" />
+      </field>
+      <field id="pembagian1_id">
+        <phrase id="fldcaption" value="pembagian 1 id" />
+      </field>
+      <field id="pembagian2_id">
+        <phrase id="fldcaption" value="pembagian 2 id" />
+      </field>
+      <field id="pembagian3_id">
+        <phrase id="fldcaption" value="pembagian 3 id" />
+      </field>
+      <field id="tgl_awal">
+        <phrase id="fldcaption" value="tgl awal" />
+      </field>
+      <field id="tgl_akhir">
+        <phrase id="fldcaption" value="tgl akhir" />
+      </field>
+      <field id="jdw_kerja_m_id">
+        <phrase id="fldcaption" value="jdw kerja m id" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="ganti_jk">
+      <phrase id="tblcaption" value="ganti jk" />
+      <field id="ganti_jk_id">
+        <phrase id="fldcaption" value="ganti jk id" />
+      </field>
+      <field id="jk_id1">
+        <phrase id="fldcaption" value="jk id 1" />
+      </field>
+      <field id="jk_id2">
+        <phrase id="fldcaption" value="jk id 2" />
+      </field>
+      <field id="tgl_awal">
+        <phrase id="fldcaption" value="tgl awal" />
+      </field>
+      <field id="tgl_akhir">
+        <phrase id="fldcaption" value="tgl akhir" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="ganti_jk_d">
+      <phrase id="tblcaption" value="ganti jk d" />
+      <field id="ganti_jk_id">
+        <phrase id="fldcaption" value="ganti jk id" />
+      </field>
+      <field id="tgl_ganti_jk">
+        <phrase id="fldcaption" value="tgl ganti jk" />
+      </field>
+      <field id="jns_ganti_jk">
+        <phrase id="fldcaption" value="jns ganti jk" />
+      </field>
+      <field id="jk_id">
+        <phrase id="fldcaption" value="jk id" />
+      </field>
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="libur">
+        <phrase id="fldcaption" value="libur" />
+      </field>
+    </table>
+    <table id="ganti_jk_pegawai">
+      <phrase id="tblcaption" value="ganti jk pegawai" />
+      <field id="ganti_jk_id">
+        <phrase id="fldcaption" value="ganti jk id" />
+      </field>
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="tgl_awal">
+        <phrase id="fldcaption" value="tgl awal" />
+      </field>
+      <field id="tgl_akhir">
+        <phrase id="fldcaption" value="tgl akhir" />
+      </field>
+      <field id="jk_id">
+        <phrase id="fldcaption" value="jk id" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="ganti_jk_pembagian">
+      <phrase id="tblcaption" value="ganti jk pembagian" />
+      <field id="ganti_jk_id">
+        <phrase id="fldcaption" value="ganti jk id" />
+      </field>
+      <field id="pembagian1_id">
+        <phrase id="fldcaption" value="pembagian 1 id" />
+      </field>
+      <field id="pembagian2_id">
+        <phrase id="fldcaption" value="pembagian 2 id" />
+      </field>
+      <field id="pembagian3_id">
+        <phrase id="fldcaption" value="pembagian 3 id" />
+      </field>
+      <field id="tgl_awal">
+        <phrase id="fldcaption" value="tgl awal" />
+      </field>
+      <field id="tgl_akhir">
+        <phrase id="fldcaption" value="tgl akhir" />
+      </field>
+      <field id="jk_id">
+        <phrase id="fldcaption" value="jk id" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="grp_user_d">
+      <phrase id="tblcaption" value="grp user d" />
+      <field id="grp_user_id">
+        <phrase id="fldcaption" value="grp user id" />
+      </field>
+      <field id="tree_id">
+        <phrase id="fldcaption" value="tree id" />
+      </field>
+      <field id="level_tree">
+        <phrase id="fldcaption" value="level tree" />
+      </field>
+      <field id="com_id">
+        <phrase id="fldcaption" value="com id" />
+      </field>
+      <field id="com_form">
+        <phrase id="fldcaption" value="com form" />
+      </field>
+      <field id="com_name">
+        <phrase id="fldcaption" value="com name" />
+      </field>
+      <field id="caption">
+        <phrase id="fldcaption" value="caption" />
+      </field>
+      <field id="urutan">
+        <phrase id="fldcaption" value="urutan" />
+      </field>
+      <field id="app_name">
+        <phrase id="fldcaption" value="app name" />
+      </field>
+    </table>
+    <table id="grp_user_m">
+      <phrase id="tblcaption" value="grp user m" />
+      <field id="grp_user_id">
+        <phrase id="fldcaption" value="grp user id" />
+      </field>
+      <field id="grp_user_name">
+        <phrase id="fldcaption" value="grp user name" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+      <field id="detector">
+        <phrase id="fldcaption" value="detector" />
+      </field>
+    </table>
+    <table id="index_ot">
+      <phrase id="tblcaption" value="index ot" />
+      <field id="index_id">
+        <phrase id="fldcaption" value="index id" />
+      </field>
+      <field id="type_ot">
+        <phrase id="fldcaption" value="type ot" />
+      </field>
+      <field id="from_ot">
+        <phrase id="fldcaption" value="from ot" />
+      </field>
+      <field id="to_ot">
+        <phrase id="fldcaption" value="to ot" />
+      </field>
+      <field id="multiplier">
+        <phrase id="fldcaption" value="multiplier" />
+      </field>
+    </table>
+    <table id="index_type">
+      <phrase id="tblcaption" value="index type" />
+      <field id="type_ot">
+        <phrase id="fldcaption" value="type ot" />
+      </field>
+      <field id="type_name">
+        <phrase id="fldcaption" value="type name" />
+      </field>
+    </table>
+    <table id="izin">
+      <phrase id="tblcaption" value="izin" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="izin_urutan">
+        <phrase id="fldcaption" value="izin urutan" />
+      </field>
+      <field id="izin_tgl_pengajuan">
+        <phrase id="fldcaption" value="izin tgl pengajuan" />
+      </field>
+      <field id="izin_tgl">
+        <phrase id="fldcaption" value="izin tgl" />
+      </field>
+      <field id="izin_jenis_id">
+        <phrase id="fldcaption" value="izin jenis id" />
+      </field>
+      <field id="izin_catatan">
+        <phrase id="fldcaption" value="izin catatan" />
+      </field>
+      <field id="izin_status">
+        <phrase id="fldcaption" value="izin status" />
+      </field>
+      <field id="izin_tinggal_t1">
+        <phrase id="fldcaption" value="izin tinggal t 1" />
+      </field>
+      <field id="izin_tinggal_t2">
+        <phrase id="fldcaption" value="izin tinggal t 2" />
+      </field>
+      <field id="cuti_n_id">
+        <phrase id="fldcaption" value="cuti n id" />
+      </field>
+      <field id="izin_ket_lain">
+        <phrase id="fldcaption" value="izin ket lain" />
+      </field>
+      <field id="izin_noscan_time">
+        <phrase id="fldcaption" value="izin noscan time" />
+      </field>
+      <field id="kat_izin_id">
+        <phrase id="fldcaption" value="kat izin id" />
+      </field>
+      <field id="ket_status">
+        <phrase id="fldcaption" value="ket status" />
+      </field>
+    </table>
+    <table id="jam_kerja">
+      <phrase id="tblcaption" value="jam kerja" />
+      <field id="jk_id">
+        <phrase id="fldcaption" value="jk id" />
+      </field>
+      <field id="jk_name">
+        <phrase id="fldcaption" value="jk name" />
+      </field>
+      <field id="jk_kode">
+        <phrase id="fldcaption" value="jk kode" />
+      </field>
+      <field id="use_set">
+        <phrase id="fldcaption" value="use set" />
+      </field>
+      <field id="jk_bcin">
+        <phrase id="fldcaption" value="jk bcin" />
+      </field>
+      <field id="jk_cin">
+        <phrase id="fldcaption" value="jk cin" />
+      </field>
+      <field id="jk_ecin">
+        <phrase id="fldcaption" value="jk ecin" />
+      </field>
+      <field id="jk_tol_late">
+        <phrase id="fldcaption" value="jk tol late" />
+      </field>
+      <field id="jk_use_ist">
+        <phrase id="fldcaption" value="jk use ist" />
+      </field>
+      <field id="jk_ist1">
+        <phrase id="fldcaption" value="jk ist 1" />
+      </field>
+      <field id="jk_ist2">
+        <phrase id="fldcaption" value="jk ist 2" />
+      </field>
+      <field id="jk_tol_early">
+        <phrase id="fldcaption" value="jk tol early" />
+      </field>
+      <field id="jk_bcout">
+        <phrase id="fldcaption" value="jk bcout" />
+      </field>
+      <field id="jk_cout">
+        <phrase id="fldcaption" value="jk cout" />
+      </field>
+      <field id="jk_ecout">
+        <phrase id="fldcaption" value="jk ecout" />
+      </field>
+      <field id="use_eot">
+        <phrase id="fldcaption" value="use eot" />
+      </field>
+      <field id="min_eot">
+        <phrase id="fldcaption" value="min eot" />
+      </field>
+      <field id="max_eot">
+        <phrase id="fldcaption" value="max eot" />
+      </field>
+      <field id="reduce_eot">
+        <phrase id="fldcaption" value="reduce eot" />
+      </field>
+      <field id="jk_durasi">
+        <phrase id="fldcaption" value="jk durasi" />
+      </field>
+      <field id="jk_countas">
+        <phrase id="fldcaption" value="jk countas" />
+      </field>
+      <field id="jk_min_countas">
+        <phrase id="fldcaption" value="jk min countas" />
+      </field>
+      <field id="jk_ket">
+        <phrase id="fldcaption" value="jk ket" />
+      </field>
+    </table>
+    <table id="jam_kerja_extra">
+      <phrase id="tblcaption" value="jam kerja extra" />
+      <field id="jke_tanggal">
+        <phrase id="fldcaption" value="jke tanggal" />
+      </field>
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="jk_id">
+        <phrase id="fldcaption" value="jk id" />
+      </field>
+      <field id="jke_libur">
+        <phrase id="fldcaption" value="jke libur" />
+      </field>
+    </table>
+    <table id="jatah_cuti">
+      <phrase id="tblcaption" value="jatah cuti" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="jatah_c_mulai">
+        <phrase id="fldcaption" value="jatah c mulai" />
+      </field>
+      <field id="jatah_c_akhir">
+        <phrase id="fldcaption" value="jatah c akhir" />
+      </field>
+      <field id="jatah_c_jml">
+        <phrase id="fldcaption" value="jatah c jml" />
+      </field>
+      <field id="jatah_c_hak_jml">
+        <phrase id="fldcaption" value="jatah c hak jml" />
+      </field>
+      <field id="jatah_c_ambil_jml">
+        <phrase id="fldcaption" value="jatah c ambil jml" />
+      </field>
+      <field id="jatah_c_utang_jml">
+        <phrase id="fldcaption" value="jatah c utang jml" />
+      </field>
+    </table>
+    <table id="jdw_kerja_d">
+      <phrase id="tblcaption" value="jdw kerja d" />
+      <field id="jdw_kerja_m_id">
+        <phrase id="fldcaption" value="jdw kerja m id" />
+      </field>
+      <field id="jdw_kerja_d_idx">
+        <phrase id="fldcaption" value="jdw kerja d idx" />
+      </field>
+      <field id="jk_id">
+        <phrase id="fldcaption" value="jk id" />
+      </field>
+      <field id="jdw_kerja_d_hari">
+        <phrase id="fldcaption" value="jdw kerja d hari" />
+      </field>
+      <field id="jdw_kerja_d_libur">
+        <phrase id="fldcaption" value="jdw kerja d libur" />
+      </field>
+    </table>
+    <table id="jdw_kerja_m">
+      <phrase id="tblcaption" value="jdw kerja m" />
+      <field id="jdw_kerja_m_id">
+        <phrase id="fldcaption" value="jdw kerja m id" />
+      </field>
+      <field id="jdw_kerja_m_kode">
+        <phrase id="fldcaption" value="jdw kerja m kode" />
+      </field>
+      <field id="jdw_kerja_m_name">
+        <phrase id="fldcaption" value="jdw kerja m name" />
+      </field>
+      <field id="jdw_kerja_m_keterangan">
+        <phrase id="fldcaption" value="jdw kerja m keterangan" />
+      </field>
+      <field id="jdw_kerja_m_periode">
+        <phrase id="fldcaption" value="jdw kerja m periode" />
+      </field>
+      <field id="jdw_kerja_m_mulai">
+        <phrase id="fldcaption" value="jdw kerja m mulai" />
+      </field>
+      <field id="jdw_kerja_m_type">
+        <phrase id="fldcaption" value="jdw kerja m type" />
+      </field>
+      <field id="use_sama">
+        <phrase id="fldcaption" value="use sama" />
+      </field>
+    </table>
+    <table id="jdw_kerja_pegawai">
+      <phrase id="tblcaption" value="jdw kerja pegawai" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="jdw_kerja_m_id">
+        <phrase id="fldcaption" value="jdw kerja m id" />
+      </field>
+      <field id="jdw_kerja_m_mulai">
+        <phrase id="fldcaption" value="jdw kerja m mulai" />
+      </field>
+    </table>
+    <table id="jns_izin">
+      <phrase id="tblcaption" value="jns izin" />
+      <field id="izin_jenis_id">
+        <phrase id="fldcaption" value="izin jenis id" />
+      </field>
+      <field id="izin_jenis_name">
+        <phrase id="fldcaption" value="izin jenis name" />
+      </field>
+      <field id="flag">
+        <phrase id="fldcaption" value="flag" />
+      </field>
+    </table>
+    <table id="kategori_izin">
+      <phrase id="tblcaption" value="kategori izin" />
+      <field id="kat_izin_id">
+        <phrase id="fldcaption" value="kat izin id" />
+      </field>
+      <field id="kat_izin_nama">
+        <phrase id="fldcaption" value="kat izin nama" />
+      </field>
+      <field id="izin_jenis_id">
+        <phrase id="fldcaption" value="izin jenis id" />
+      </field>
+    </table>
+    <table id="kontrak_kerja">
+      <phrase id="tblcaption" value="kontrak kerja" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="kontrak_start">
+        <phrase id="fldcaption" value="kontrak start" />
+      </field>
+      <field id="kontrak_end">
+        <phrase id="fldcaption" value="kontrak end" />
+      </field>
+      <field id="kontrak_status">
+        <phrase id="fldcaption" value="kontrak status" />
+      </field>
+      <field id="kontrak_aktif">
+        <phrase id="fldcaption" value="kontrak aktif" />
+      </field>
+    </table>
+    <table id="lembur">
+      <phrase id="tblcaption" value="lembur" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="lembur_tgl">
+        <phrase id="fldcaption" value="lembur tgl" />
+      </field>
+      <field id="lembur_mulai">
+        <phrase id="fldcaption" value="lembur mulai" />
+      </field>
+      <field id="lembur_selesai">
+        <phrase id="fldcaption" value="lembur selesai" />
+      </field>
+      <field id="lembur_urut">
+        <phrase id="fldcaption" value="lembur urut" />
+      </field>
+      <field id="type_ot">
+        <phrase id="fldcaption" value="type ot" />
+      </field>
+      <field id="lembur_durasi_min">
+        <phrase id="fldcaption" value="lembur durasi min" />
+      </field>
+      <field id="lembur_durasi_max">
+        <phrase id="fldcaption" value="lembur durasi max" />
+      </field>
+      <field id="lembur_keperluan">
+        <phrase id="fldcaption" value="lembur keperluan" />
+      </field>
+    </table>
+    <table id="libur">
+      <phrase id="tblcaption" value="libur" />
+      <field id="libur_tgl">
+        <phrase id="fldcaption" value="libur tgl" />
+      </field>
+      <field id="libur_keterangan">
+        <phrase id="fldcaption" value="libur keterangan" />
+      </field>
+      <field id="libur_status">
+        <phrase id="fldcaption" value="libur status" />
+      </field>
+    </table>
+    <table id="pegawai">
+      <phrase id="tblcaption" value="Pegawai" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="pegawai_pin">
+        <phrase id="fldcaption" value="PIN" />
+      </field>
+      <field id="pegawai_nip">
+        <phrase id="fldcaption" value="NIP" />
+      </field>
+      <field id="pegawai_nama">
+        <phrase id="fldcaption" value="Nama" />
+      </field>
+      <field id="pegawai_pwd">
+        <phrase id="fldcaption" value="pegawai pwd" />
+      </field>
+      <field id="pegawai_rfid">
+        <phrase id="fldcaption" value="pegawai rfid" />
+      </field>
+      <field id="pegawai_privilege">
+        <phrase id="fldcaption" value="pegawai privilege" />
+      </field>
+      <field id="pegawai_telp">
+        <phrase id="fldcaption" value="pegawai telp" />
+      </field>
+      <field id="pegawai_status">
+        <phrase id="fldcaption" value="pegawai status" />
+      </field>
+      <field id="tempat_lahir">
+        <phrase id="fldcaption" value="tempat lahir" />
+      </field>
+      <field id="tgl_lahir">
+        <phrase id="fldcaption" value="tgl lahir" />
+      </field>
+      <field id="pembagian1_id">
+        <phrase id="fldcaption" value="pembagian 1 id" />
+      </field>
+      <field id="pembagian2_id">
+        <phrase id="fldcaption" value="pembagian 2 id" />
+      </field>
+      <field id="pembagian3_id">
+        <phrase id="fldcaption" value="pembagian 3 id" />
+      </field>
+      <field id="tgl_mulai_kerja">
+        <phrase id="fldcaption" value="tgl mulai kerja" />
+      </field>
+      <field id="tgl_resign">
+        <phrase id="fldcaption" value="tgl resign" />
+      </field>
+      <field id="gender">
+        <phrase id="fldcaption" value="gender" />
+      </field>
+      <field id="tgl_masuk_pertama">
+        <phrase id="fldcaption" value="tgl masuk pertama" />
+      </field>
+      <field id="photo_path">
+        <phrase id="fldcaption" value="photo path" />
+      </field>
+      <field id="tmp_img">
+        <phrase id="fldcaption" value="tmp img" />
+      </field>
+      <field id="nama_bank">
+        <phrase id="fldcaption" value="nama bank" />
+      </field>
+      <field id="nama_rek">
+        <phrase id="fldcaption" value="nama rek" />
+      </field>
+      <field id="no_rek">
+        <phrase id="fldcaption" value="no rek" />
+      </field>
+    </table>
+    <table id="pegawai_d">
+      <phrase id="tblcaption" value="Detal Pegawai" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="pend_id">
+        <phrase id="fldcaption" value="pend id" />
+      </field>
+      <field id="gol_darah">
+        <phrase id="fldcaption" value="gol darah" />
+      </field>
+      <field id="stat_nikah">
+        <phrase id="fldcaption" value="stat nikah" />
+      </field>
+      <field id="jml_anak">
+        <phrase id="fldcaption" value="jml anak" />
+      </field>
+      <field id="alamat">
+        <phrase id="fldcaption" value="alamat" />
+      </field>
+      <field id="telp_extra">
+        <phrase id="fldcaption" value="telp extra" />
+      </field>
+      <field id="hubungan">
+        <phrase id="fldcaption" value="hubungan" />
+      </field>
+      <field id="nama_hubungan">
+        <phrase id="fldcaption" value="nama hubungan" />
+      </field>
+      <field id="agama">
+        <phrase id="fldcaption" value="agama" />
+      </field>
+    </table>
+    <table id="pembagian1">
+      <phrase id="tblcaption" value="pembagian 1" />
+      <field id="pembagian1_id">
+        <phrase id="fldcaption" value="pembagian 1 id" />
+      </field>
+      <field id="pembagian1_nama">
+        <phrase id="fldcaption" value="pembagian 1 nama" />
+      </field>
+      <field id="pembagian1_ket">
+        <phrase id="fldcaption" value="pembagian 1 ket" />
+      </field>
+    </table>
+    <table id="pembagian2">
+      <phrase id="tblcaption" value="pembagian 2" />
+      <field id="pembagian2_id">
+        <phrase id="fldcaption" value="pembagian 2 id" />
+      </field>
+      <field id="pembagian2_nama">
+        <phrase id="fldcaption" value="pembagian 2 nama" />
+      </field>
+      <field id="pembagian2_ket">
+        <phrase id="fldcaption" value="pembagian 2 ket" />
+      </field>
+    </table>
+    <table id="pembagian3">
+      <phrase id="tblcaption" value="pembagian 3" />
+      <field id="pembagian3_id">
+        <phrase id="fldcaption" value="pembagian 3 id" />
+      </field>
+      <field id="pembagian3_nama">
+        <phrase id="fldcaption" value="pembagian 3 nama" />
+      </field>
+      <field id="pembagian3_ket">
+        <phrase id="fldcaption" value="pembagian 3 ket" />
+      </field>
+    </table>
+    <table id="pendidikan">
+      <phrase id="tblcaption" value="pendidikan" />
+      <field id="pend_id">
+        <phrase id="fldcaption" value="pend id" />
+      </field>
+      <field id="pend_name">
+        <phrase id="fldcaption" value="pend name" />
+      </field>
+    </table>
+    <table id="setting">
+      <phrase id="tblcaption" value="setting" />
+      <field id="param_name">
+        <phrase id="fldcaption" value="param name" />
+      </field>
+      <field id="param_value">
+        <phrase id="fldcaption" value="param value" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="shift_result">
+      <phrase id="tblcaption" value="shift result" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+      <field id="tgl_shift">
+        <phrase id="fldcaption" value="tgl shift" />
+      </field>
+      <field id="khusus_lembur">
+        <phrase id="fldcaption" value="khusus lembur" />
+      </field>
+      <field id="khusus_extra">
+        <phrase id="fldcaption" value="khusus extra" />
+      </field>
+      <field id="temp_id_auto">
+        <phrase id="fldcaption" value="temp id auto" />
+      </field>
+      <field id="jdw_kerja_m_id">
+        <phrase id="fldcaption" value="jdw kerja m id" />
+      </field>
+      <field id="jk_id">
+        <phrase id="fldcaption" value="jk id" />
+      </field>
+      <field id="jns_dok">
+        <phrase id="fldcaption" value="jns dok" />
+      </field>
+      <field id="izin_jenis_id">
+        <phrase id="fldcaption" value="izin jenis id" />
+      </field>
+      <field id="cuti_n_id">
+        <phrase id="fldcaption" value="cuti n id" />
+      </field>
+      <field id="libur_umum">
+        <phrase id="fldcaption" value="libur umum" />
+      </field>
+      <field id="libur_rutin">
+        <phrase id="fldcaption" value="libur rutin" />
+      </field>
+      <field id="jk_ot">
+        <phrase id="fldcaption" value="jk ot" />
+      </field>
+      <field id="scan_in">
+        <phrase id="fldcaption" value="scan in" />
+      </field>
+      <field id="att_id_in">
+        <phrase id="fldcaption" value="att id in" />
+      </field>
+      <field id="late_permission">
+        <phrase id="fldcaption" value="late permission" />
+      </field>
+      <field id="late_minute">
+        <phrase id="fldcaption" value="late minute" />
+      </field>
+      <field id="late">
+        <phrase id="fldcaption" value="late" />
+      </field>
+      <field id="break_out">
+        <phrase id="fldcaption" value="break out" />
+      </field>
+      <field id="att_id_break1">
+        <phrase id="fldcaption" value="att id break 1" />
+      </field>
+      <field id="break_in">
+        <phrase id="fldcaption" value="break in" />
+      </field>
+      <field id="att_id_break2">
+        <phrase id="fldcaption" value="att id break 2" />
+      </field>
+      <field id="break_minute">
+        <phrase id="fldcaption" value="break minute" />
+      </field>
+      <field id="break">
+        <phrase id="fldcaption" value="break" />
+      </field>
+      <field id="break_ot_minute">
+        <phrase id="fldcaption" value="break ot minute" />
+      </field>
+      <field id="break_ot">
+        <phrase id="fldcaption" value="break ot" />
+      </field>
+      <field id="early_permission">
+        <phrase id="fldcaption" value="early permission" />
+      </field>
+      <field id="early_minute">
+        <phrase id="fldcaption" value="early minute" />
+      </field>
+      <field id="early">
+        <phrase id="fldcaption" value="early" />
+      </field>
+      <field id="scan_out">
+        <phrase id="fldcaption" value="scan out" />
+      </field>
+      <field id="att_id_out">
+        <phrase id="fldcaption" value="att id out" />
+      </field>
+      <field id="durasi_minute">
+        <phrase id="fldcaption" value="durasi minute" />
+      </field>
+      <field id="durasi">
+        <phrase id="fldcaption" value="durasi" />
+      </field>
+      <field id="durasi_eot_minute">
+        <phrase id="fldcaption" value="durasi eot minute" />
+      </field>
+      <field id="jk_count_as">
+        <phrase id="fldcaption" value="jk count as" />
+      </field>
+      <field id="status_jk">
+        <phrase id="fldcaption" value="status jk" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="sms_group">
+      <phrase id="tblcaption" value="sms group" />
+      <field id="group_id">
+        <phrase id="fldcaption" value="group id" />
+      </field>
+      <field id="group_name">
+        <phrase id="fldcaption" value="group name" />
+      </field>
+    </table>
+    <table id="sms_group_member">
+      <phrase id="tblcaption" value="sms group member" />
+      <field id="group_id">
+        <phrase id="fldcaption" value="group id" />
+      </field>
+      <field id="pegawai_pin">
+        <phrase id="fldcaption" value="pegawai pin" />
+      </field>
+    </table>
+    <table id="sms_recipient">
+      <phrase id="tblcaption" value="sms recipient" />
+      <field id="nama">
+        <phrase id="fldcaption" value="nama" />
+      </field>
+      <field id="nomor_telp">
+        <phrase id="fldcaption" value="nomor telp" />
+      </field>
+      <field id="pegawai_pin">
+        <phrase id="fldcaption" value="pegawai pin" />
+      </field>
+      <field id="group_id">
+        <phrase id="fldcaption" value="group id" />
+      </field>
+      <field id="status">
+        <phrase id="fldcaption" value="status" />
+      </field>
+    </table>
+    <table id="temp_pegawai">
+      <phrase id="tblcaption" value="temp pegawai" />
+      <field id="pegawai_id">
+        <phrase id="fldcaption" value="pegawai id" />
+      </field>
+    </table>
+    <table id="tmp">
+      <phrase id="tblcaption" value="tmp" />
+      <field id="pin">
+        <phrase id="fldcaption" value="pin" />
+      </field>
+      <field id="finger_idx">
+        <phrase id="fldcaption" value="finger idx" />
+      </field>
+      <field id="alg_ver">
+        <phrase id="fldcaption" value="alg ver" />
+      </field>
+      <field id="template1">
+        <phrase id="fldcaption" value="template 1" />
+      </field>
+    </table>
+    <table id="tmp_uareu">
+      <phrase id="tblcaption" value="tmp uareu" />
+      <field id="pin">
+        <phrase id="fldcaption" value="pin" />
+      </field>
+      <field id="finger_idx">
+        <phrase id="fldcaption" value="finger idx" />
+      </field>
+      <field id="alg_ver">
+        <phrase id="fldcaption" value="alg ver" />
+      </field>
+      <field id="template1">
+        <phrase id="fldcaption" value="template 1" />
+      </field>
+    </table>
+    <table id="tukar_jam">
+      <phrase id="tblcaption" value="tukar jam" />
+      <field id="tukar_tgl">
+        <phrase id="fldcaption" value="tukar tgl" />
+      </field>
+      <field id="pegawai_id1">
+        <phrase id="fldcaption" value="pegawai id 1" />
+      </field>
+      <field id="pegawai_id2">
+        <phrase id="fldcaption" value="pegawai id 2" />
+      </field>
+      <field id="alasan">
+        <phrase id="fldcaption" value="alasan" />
+      </field>
+    </table>
+    <table id="uareu_device">
+      <phrase id="tblcaption" value="uareu device" />
+      <field id="device_id">
+        <phrase id="fldcaption" value="device id" />
+      </field>
+      <field id="uau_device_name">
+        <phrase id="fldcaption" value="uau device name" />
+      </field>
+      <field id="uau_serial_number">
+        <phrase id="fldcaption" value="uau serial number" />
+      </field>
+      <field id="uau_verification">
+        <phrase id="fldcaption" value="uau verification" />
+      </field>
+      <field id="uau_activation">
+        <phrase id="fldcaption" value="uau activation" />
+      </field>
+    </table>
+    <table id="user_log">
+      <phrase id="tblcaption" value="user log" />
+      <field id="login_id">
+        <phrase id="fldcaption" value="login id" />
+      </field>
+      <field id="log_date">
+        <phrase id="fldcaption" value="log date" />
+      </field>
+      <field id="module">
+        <phrase id="fldcaption" value="module" />
+      </field>
+      <field id="tipe_log">
+        <phrase id="fldcaption" value="tipe log" />
+      </field>
+      <field id="nama_data">
+        <phrase id="fldcaption" value="nama data" />
+      </field>
+      <field id="log_note">
+        <phrase id="fldcaption" value="log note" />
+      </field>
+    </table>
+    <table id="user_login">
+      <phrase id="tblcaption" value="user login" />
+      <field id="login_id">
+        <phrase id="fldcaption" value="login id" />
+      </field>
+      <field id="login_pwd">
+        <phrase id="fldcaption" value="login pwd" />
+      </field>
+      <field id="grp_user_id">
+        <phrase id="fldcaption" value="grp user id" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="versi_db">
+      <phrase id="tblcaption" value="versi db" />
+      <field id="no_id">
+        <phrase id="fldcaption" value="no id" />
+      </field>
+      <field id="versi_db">
+        <phrase id="fldcaption" value="versi db" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="z_pay_com">
+      <phrase id="tblcaption" value="z pay com" />
+      <field id="com_id">
+        <phrase id="fldcaption" value="com id" />
+      </field>
+      <field id="com_kode">
+        <phrase id="fldcaption" value="com kode" />
+      </field>
+      <field id="com_name">
+        <phrase id="fldcaption" value="com name" />
+      </field>
+      <field id="type_com">
+        <phrase id="fldcaption" value="type com" />
+      </field>
+      <field id="fluctuate">
+        <phrase id="fldcaption" value="fluctuate" />
+      </field>
+      <field id="no_urut">
+        <phrase id="fldcaption" value="no urut" />
+      </field>
+      <field id="param">
+        <phrase id="fldcaption" value="param" />
+      </field>
+      <field id="hitung">
+        <phrase id="fldcaption" value="hitung" />
+      </field>
+      <field id="dibayar">
+        <phrase id="fldcaption" value="dibayar" />
+      </field>
+      <field id="cara_bayar">
+        <phrase id="fldcaption" value="cara bayar" />
+      </field>
+      <field id="pinjaman">
+        <phrase id="fldcaption" value="pinjaman" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="z_pay_grp">
+      <phrase id="tblcaption" value="z pay grp" />
+      <field id="grp_id">
+        <phrase id="fldcaption" value="grp id" />
+      </field>
+      <field id="kode_grp">
+        <phrase id="fldcaption" value="kode grp" />
+      </field>
+      <field id="grp_name">
+        <phrase id="fldcaption" value="grp name" />
+      </field>
+      <field id="use_pengurang">
+        <phrase id="fldcaption" value="use pengurang" />
+      </field>
+      <field id="type_pengurang">
+        <phrase id="fldcaption" value="type pengurang" />
+      </field>
+      <field id="pengurang_persen">
+        <phrase id="fldcaption" value="pengurang persen" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="z_pay_grp_com">
+      <phrase id="tblcaption" value="z pay grp com" />
+      <field id="grp_id">
+        <phrase id="fldcaption" value="grp id" />
+      </field>
+      <field id="com_id">
+        <phrase id="fldcaption" value="com id" />
+      </field>
+      <field id="no_urut_ref">
+        <phrase id="fldcaption" value="no urut ref" />
+      </field>
+      <field id="use_if_sum">
+        <phrase id="fldcaption" value="use if sum" />
+      </field>
+      <field id="use_kode_if">
+        <phrase id="fldcaption" value="use kode if" />
+      </field>
+      <field id="id_kode_if">
+        <phrase id="fldcaption" value="id kode if" />
+      </field>
+      <field id="min_if">
+        <phrase id="fldcaption" value="min if" />
+      </field>
+      <field id="max_if">
+        <phrase id="fldcaption" value="max if" />
+      </field>
+      <field id="use_sum">
+        <phrase id="fldcaption" value="use sum" />
+      </field>
+      <field id="use_kode_sum">
+        <phrase id="fldcaption" value="use kode sum" />
+      </field>
+      <field id="id_kode_sum">
+        <phrase id="fldcaption" value="id kode sum" />
+      </field>
+      <field id="operator_sum">
+        <phrase id="fldcaption" value="operator sum" />
+      </field>
+      <field id="konstanta_sum">
+        <phrase id="fldcaption" value="konstanta sum" />
+      </field>
+      <field id="operator_sum2">
+        <phrase id="fldcaption" value="operator sum 2" />
+      </field>
+      <field id="nilai_rp">
+        <phrase id="fldcaption" value="nilai rp" />
+      </field>
+      <field id="hitung">
+        <phrase id="fldcaption" value="hitung" />
+      </field>
+      <field id="jenis">
+        <phrase id="fldcaption" value="jenis" />
+      </field>
+    </table>
+    <table id="z_pay_grp_emp">
+      <phrase id="tblcaption" value="z pay grp emp" />
+      <field id="grp_id">
+        <phrase id="fldcaption" value="grp id" />
+      </field>
+      <field id="emp_id_auto">
+        <phrase id="fldcaption" value="emp id auto" />
+      </field>
+      <field id="no_rek">
+        <phrase id="fldcaption" value="no rek" />
+      </field>
+    </table>
+    <table id="z_pay_money">
+      <phrase id="tblcaption" value="z pay money" />
+      <field id="com_id">
+        <phrase id="fldcaption" value="com id" />
+      </field>
+      <field id="grp_id">
+        <phrase id="fldcaption" value="grp id" />
+      </field>
+      <field id="emp_id_auto">
+        <phrase id="fldcaption" value="emp id auto" />
+      </field>
+      <field id="nilai_rp">
+        <phrase id="fldcaption" value="nilai rp" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="z_pay_process_d">
+      <phrase id="tblcaption" value="z pay process d" />
+      <field id="process_id">
+        <phrase id="fldcaption" value="process id" />
+      </field>
+      <field id="no_urut">
+        <phrase id="fldcaption" value="no urut" />
+      </field>
+      <field id="emp_id_auto">
+        <phrase id="fldcaption" value="emp id auto" />
+      </field>
+      <field id="tot_payroll">
+        <phrase id="fldcaption" value="tot payroll" />
+      </field>
+    </table>
+    <table id="z_pay_process_m">
+      <phrase id="tblcaption" value="z pay process m" />
+      <field id="process_id">
+        <phrase id="fldcaption" value="process id" />
+      </field>
+      <field id="process_name">
+        <phrase id="fldcaption" value="process name" />
+      </field>
+      <field id="date1">
+        <phrase id="fldcaption" value="date 1" />
+      </field>
+      <field id="date2">
+        <phrase id="fldcaption" value="date 2" />
+      </field>
+      <field id="payment_date">
+        <phrase id="fldcaption" value="payment date" />
+      </field>
+      <field id="round_value">
+        <phrase id="fldcaption" value="round value" />
+      </field>
+      <field id="tot_process">
+        <phrase id="fldcaption" value="tot process" />
+      </field>
+      <field id="create_by">
+        <phrase id="fldcaption" value="create by" />
+      </field>
+      <field id="check_by">
+        <phrase id="fldcaption" value="check by" />
+      </field>
+      <field id="approve_by">
+        <phrase id="fldcaption" value="approve by" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="z_pay_process_sd">
+      <phrase id="tblcaption" value="z pay process sd" />
+      <field id="process_id">
+        <phrase id="fldcaption" value="process id" />
+      </field>
+      <field id="no_urut">
+        <phrase id="fldcaption" value="no urut" />
+      </field>
+      <field id="no_urut_ref">
+        <phrase id="fldcaption" value="no urut ref" />
+      </field>
+      <field id="emp_id_auto">
+        <phrase id="fldcaption" value="emp id auto" />
+      </field>
+      <field id="com_id">
+        <phrase id="fldcaption" value="com id" />
+      </field>
+      <field id="kondisi">
+        <phrase id="fldcaption" value="kondisi" />
+      </field>
+      <field id="rumus">
+        <phrase id="fldcaption" value="rumus" />
+      </field>
+      <field id="subtot_payroll">
+        <phrase id="fldcaption" value="subtot payroll" />
+      </field>
+      <field id="jml_faktor">
+        <phrase id="fldcaption" value="jml faktor" />
+      </field>
+    </table>
+    <table id="z_pay_report">
+      <phrase id="tblcaption" value="z pay report" />
+      <field id="id_kode_report">
+        <phrase id="fldcaption" value="id kode report" />
+      </field>
+      <field id="report_code">
+        <phrase id="fldcaption" value="report code" />
+      </field>
+      <field id="report_name">
+        <phrase id="fldcaption" value="report name" />
+      </field>
+    </table>
+    <table id="zx_bayar_kredit">
+      <phrase id="tblcaption" value="zx bayar kredit" />
+      <field id="id_bayar">
+        <phrase id="fldcaption" value="id bayar" />
+      </field>
+      <field id="tgl_bayar">
+        <phrase id="fldcaption" value="tgl bayar" />
+      </field>
+      <field id="id_kredit">
+        <phrase id="fldcaption" value="id kredit" />
+      </field>
+      <field id="no_urut">
+        <phrase id="fldcaption" value="no urut" />
+      </field>
+      <field id="tgl_jt">
+        <phrase id="fldcaption" value="tgl jt" />
+      </field>
+      <field id="debet">
+        <phrase id="fldcaption" value="debet" />
+      </field>
+      <field id="angs_pokok">
+        <phrase id="fldcaption" value="angs pokok" />
+      </field>
+      <field id="bunga">
+        <phrase id="fldcaption" value="bunga" />
+      </field>
+      <field id="emp_id_auto">
+        <phrase id="fldcaption" value="emp id auto" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+      <field id="status">
+        <phrase id="fldcaption" value="status" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="zx_jns_krd">
+      <phrase id="tblcaption" value="zx jns krd" />
+      <field id="krd_id">
+        <phrase id="fldcaption" value="krd id" />
+      </field>
+      <field id="krd_kode">
+        <phrase id="fldcaption" value="krd kode" />
+      </field>
+      <field id="krd_name">
+        <phrase id="fldcaption" value="krd name" />
+      </field>
+      <field id="com_id">
+        <phrase id="fldcaption" value="com id" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="zx_kredit_d">
+      <phrase id="tblcaption" value="zx kredit d" />
+      <field id="id_kredit">
+        <phrase id="fldcaption" value="id kredit" />
+      </field>
+      <field id="no_urut">
+        <phrase id="fldcaption" value="no urut" />
+      </field>
+      <field id="tgl_jt">
+        <phrase id="fldcaption" value="tgl jt" />
+      </field>
+      <field id="saldo_aw">
+        <phrase id="fldcaption" value="saldo aw" />
+      </field>
+      <field id="debet">
+        <phrase id="fldcaption" value="debet" />
+      </field>
+      <field id="angs_pokok">
+        <phrase id="fldcaption" value="angs pokok" />
+      </field>
+      <field id="bunga">
+        <phrase id="fldcaption" value="bunga" />
+      </field>
+      <field id="saldo_akh">
+        <phrase id="fldcaption" value="saldo akh" />
+      </field>
+      <field id="proses_bayar">
+        <phrase id="fldcaption" value="proses bayar" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+    </table>
+    <table id="zx_kredit_m">
+      <phrase id="tblcaption" value="zx kredit m" />
+      <field id="id_kredit">
+        <phrase id="fldcaption" value="id kredit" />
+      </field>
+      <field id="no_kredit">
+        <phrase id="fldcaption" value="no kredit" />
+      </field>
+      <field id="tgl_kredit">
+        <phrase id="fldcaption" value="tgl kredit" />
+      </field>
+      <field id="emp_id_auto">
+        <phrase id="fldcaption" value="emp id auto" />
+      </field>
+      <field id="krd_id">
+        <phrase id="fldcaption" value="krd id" />
+      </field>
+      <field id="cara_hitung">
+        <phrase id="fldcaption" value="cara hitung" />
+      </field>
+      <field id="tot_kredit">
+        <phrase id="fldcaption" value="tot kredit" />
+      </field>
+      <field id="saldo_aw">
+        <phrase id="fldcaption" value="saldo aw" />
+      </field>
+      <field id="suku_bunga">
+        <phrase id="fldcaption" value="suku bunga" />
+      </field>
+      <field id="periode_bulan">
+        <phrase id="fldcaption" value="periode bulan" />
+      </field>
+      <field id="angs_pokok">
+        <phrase id="fldcaption" value="angs pokok" />
+      </field>
+      <field id="angs_pertama">
+        <phrase id="fldcaption" value="angs pertama" />
+      </field>
+      <field id="tot_debet">
+        <phrase id="fldcaption" value="tot debet" />
+      </field>
+      <field id="tot_angs_pokok">
+        <phrase id="fldcaption" value="tot angs pokok" />
+      </field>
+      <field id="tot_bunga">
+        <phrase id="fldcaption" value="tot bunga" />
+      </field>
+      <field id="def_pembulatan">
+        <phrase id="fldcaption" value="def pembulatan" />
+      </field>
+      <field id="jumlah_piutang">
+        <phrase id="fldcaption" value="jumlah piutang" />
+      </field>
+      <field id="approv_by">
+        <phrase id="fldcaption" value="approv by" />
+      </field>
+      <field id="keterangan">
+        <phrase id="fldcaption" value="keterangan" />
+      </field>
+      <field id="status">
+        <phrase id="fldcaption" value="status" />
+      </field>
+      <field id="status_lunas">
+        <phrase id="fldcaption" value="status lunas" />
+      </field>
+      <field id="lastupdate_date">
+        <phrase id="fldcaption" value="lastupdate date" />
+      </field>
+      <field id="lastupdate_user">
+        <phrase id="fldcaption" value="lastupdate user" />
+      </field>
+    </table>
+    <table id="t_audit_trail">
+      <phrase id="tblcaption" value="Activity Log." />
+      <field id="id">
+        <phrase id="fldcaption" value="id" />
+      </field>
+      <field id="datetime">
+        <phrase id="fldcaption" value="datetime" />
+      </field>
+      <field id="script">
+        <phrase id="fldcaption" value="script" />
+      </field>
+      <field id="user">
+        <phrase id="fldcaption" value="user" />
+      </field>
+      <field id="action">
+        <phrase id="fldcaption" value="action" />
+      </field>
+      <field id="_table">
+        <phrase id="fldcaption" value="table" />
+      </field>
+      <field id="_field">
+        <phrase id="fldcaption" value="field" />
+      </field>
+      <field id="keyvalue">
+        <phrase id="fldcaption" value="keyvalue" />
+      </field>
+      <field id="oldvalue">
+        <phrase id="fldcaption" value="oldvalue" />
+      </field>
+      <field id="newvalue">
+        <phrase id="fldcaption" value="newvalue" />
+      </field>
+    </table>
+    <table id="t_user">
+      <phrase id="tblcaption" value="User" />
+      <field id="user_id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="username">
+        <phrase id="fldcaption" value="User Name" />
+      </field>
+      <field id="password">
+        <phrase id="fldcaption" value="Password" />
+      </field>
+      <field id="userlevel">
+        <phrase id="fldcaption" value="User Level" />
+        <phrase id="fldtagvalue1" value="-2" />
+        <phrase id="fldtagcaption1" value="Anonymous" />
+        <phrase id="fldtagvalue2" value="-1" />
+        <phrase id="fldtagcaption2" value="Administrator" />
+        <phrase id="fldtagvalue3" value="0" />
+        <phrase id="fldtagcaption3" value="Default" />
+      </field>
+    </table>
+    <table id="c_home_php">
+      <phrase id="tblcaption" value="Home" />
+    </table>
+  </project>
+</ew-language>
