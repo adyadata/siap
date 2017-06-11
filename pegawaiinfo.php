@@ -68,7 +68,7 @@ class cpegawai extends cTable {
 		$this->BasicSearch = new cBasicSearch($this->TableVar);
 
 		// pegawai_id
-		$this->pegawai_id = new cField('pegawai', 'pegawai', 'x_pegawai_id', 'pegawai_id', '`pegawai_id`', '`pegawai_id`', 3, -1, FALSE, '`pegawai_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->pegawai_id = new cField('pegawai', 'pegawai', 'x_pegawai_id', 'pegawai_id', '`pegawai_id`', '`pegawai_id`', 3, -1, FALSE, '`pegawai_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'NO');
 		$this->pegawai_id->Sortable = TRUE; // Allow sort
 		$this->pegawai_id->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['pegawai_id'] = &$this->pegawai_id;
@@ -90,17 +90,17 @@ class cpegawai extends cTable {
 
 		// pegawai_pwd
 		$this->pegawai_pwd = new cField('pegawai', 'pegawai', 'x_pegawai_pwd', 'pegawai_pwd', '`pegawai_pwd`', '`pegawai_pwd`', 200, -1, FALSE, '`pegawai_pwd`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->pegawai_pwd->Sortable = TRUE; // Allow sort
+		$this->pegawai_pwd->Sortable = FALSE; // Allow sort
 		$this->fields['pegawai_pwd'] = &$this->pegawai_pwd;
 
 		// pegawai_rfid
 		$this->pegawai_rfid = new cField('pegawai', 'pegawai', 'x_pegawai_rfid', 'pegawai_rfid', '`pegawai_rfid`', '`pegawai_rfid`', 200, -1, FALSE, '`pegawai_rfid`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->pegawai_rfid->Sortable = TRUE; // Allow sort
+		$this->pegawai_rfid->Sortable = FALSE; // Allow sort
 		$this->fields['pegawai_rfid'] = &$this->pegawai_rfid;
 
 		// pegawai_privilege
 		$this->pegawai_privilege = new cField('pegawai', 'pegawai', 'x_pegawai_privilege', 'pegawai_privilege', '`pegawai_privilege`', '`pegawai_privilege`', 200, -1, FALSE, '`pegawai_privilege`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->pegawai_privilege->Sortable = TRUE; // Allow sort
+		$this->pegawai_privilege->Sortable = FALSE; // Allow sort
 		$this->fields['pegawai_privilege'] = &$this->pegawai_privilege;
 
 		// pegawai_telp
@@ -109,8 +109,9 @@ class cpegawai extends cTable {
 		$this->fields['pegawai_telp'] = &$this->pegawai_telp;
 
 		// pegawai_status
-		$this->pegawai_status = new cField('pegawai', 'pegawai', 'x_pegawai_status', 'pegawai_status', '`pegawai_status`', '`pegawai_status`', 16, -1, FALSE, '`pegawai_status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->pegawai_status = new cField('pegawai', 'pegawai', 'x_pegawai_status', 'pegawai_status', '`pegawai_status`', '`pegawai_status`', 16, -1, FALSE, '`pegawai_status`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'RADIO');
 		$this->pegawai_status->Sortable = TRUE; // Allow sort
+		$this->pegawai_status->OptionCount = 2;
 		$this->pegawai_status->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['pegawai_status'] = &$this->pegawai_status;
 
@@ -126,20 +127,26 @@ class cpegawai extends cTable {
 		$this->fields['tgl_lahir'] = &$this->tgl_lahir;
 
 		// pembagian1_id
-		$this->pembagian1_id = new cField('pegawai', 'pegawai', 'x_pembagian1_id', 'pembagian1_id', '`pembagian1_id`', '`pembagian1_id`', 3, -1, FALSE, '`pembagian1_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->pembagian1_id = new cField('pegawai', 'pegawai', 'x_pembagian1_id', 'pembagian1_id', '`pembagian1_id`', '`pembagian1_id`', 3, -1, FALSE, '`EV__pembagian1_id`', TRUE, TRUE, TRUE, 'FORMATTED TEXT', 'SELECT');
 		$this->pembagian1_id->Sortable = TRUE; // Allow sort
+		$this->pembagian1_id->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->pembagian1_id->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
 		$this->pembagian1_id->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['pembagian1_id'] = &$this->pembagian1_id;
 
 		// pembagian2_id
-		$this->pembagian2_id = new cField('pegawai', 'pegawai', 'x_pembagian2_id', 'pembagian2_id', '`pembagian2_id`', '`pembagian2_id`', 3, -1, FALSE, '`pembagian2_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->pembagian2_id = new cField('pegawai', 'pegawai', 'x_pembagian2_id', 'pembagian2_id', '`pembagian2_id`', '`pembagian2_id`', 3, -1, FALSE, '`EV__pembagian2_id`', TRUE, TRUE, TRUE, 'FORMATTED TEXT', 'SELECT');
 		$this->pembagian2_id->Sortable = TRUE; // Allow sort
+		$this->pembagian2_id->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->pembagian2_id->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
 		$this->pembagian2_id->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['pembagian2_id'] = &$this->pembagian2_id;
 
 		// pembagian3_id
-		$this->pembagian3_id = new cField('pegawai', 'pegawai', 'x_pembagian3_id', 'pembagian3_id', '`pembagian3_id`', '`pembagian3_id`', 3, -1, FALSE, '`pembagian3_id`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->pembagian3_id = new cField('pegawai', 'pegawai', 'x_pembagian3_id', 'pembagian3_id', '`pembagian3_id`', '`pembagian3_id`', 3, -1, FALSE, '`EV__pembagian3_id`', TRUE, TRUE, TRUE, 'FORMATTED TEXT', 'SELECT');
 		$this->pembagian3_id->Sortable = TRUE; // Allow sort
+		$this->pembagian3_id->UsePleaseSelect = TRUE; // Use PleaseSelect by default
+		$this->pembagian3_id->PleaseSelectText = $Language->Phrase("PleaseSelect"); // PleaseSelect text
 		$this->pembagian3_id->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['pembagian3_id'] = &$this->pembagian3_id;
 
@@ -156,8 +163,9 @@ class cpegawai extends cTable {
 		$this->fields['tgl_resign'] = &$this->tgl_resign;
 
 		// gender
-		$this->gender = new cField('pegawai', 'pegawai', 'x_gender', 'gender', '`gender`', '`gender`', 16, -1, FALSE, '`gender`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->gender = new cField('pegawai', 'pegawai', 'x_gender', 'gender', '`gender`', '`gender`', 16, -1, FALSE, '`gender`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'RADIO');
 		$this->gender->Sortable = TRUE; // Allow sort
+		$this->gender->OptionCount = 2;
 		$this->gender->FldDefaultErrMsg = $Language->Phrase("IncorrectInteger");
 		$this->fields['gender'] = &$this->gender;
 
@@ -168,13 +176,13 @@ class cpegawai extends cTable {
 		$this->fields['tgl_masuk_pertama'] = &$this->tgl_masuk_pertama;
 
 		// photo_path
-		$this->photo_path = new cField('pegawai', 'pegawai', 'x_photo_path', 'photo_path', '`photo_path`', '`photo_path`', 200, -1, FALSE, '`photo_path`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->photo_path = new cField('pegawai', 'pegawai', 'x_photo_path', 'photo_path', '`photo_path`', '`photo_path`', 200, -1, TRUE, '`photo_path`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'FILE');
 		$this->photo_path->Sortable = TRUE; // Allow sort
 		$this->fields['photo_path'] = &$this->photo_path;
 
 		// tmp_img
 		$this->tmp_img = new cField('pegawai', 'pegawai', 'x_tmp_img', 'tmp_img', '`tmp_img`', '`tmp_img`', 201, -1, FALSE, '`tmp_img`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXTAREA');
-		$this->tmp_img->Sortable = TRUE; // Allow sort
+		$this->tmp_img->Sortable = FALSE; // Allow sort
 		$this->fields['tmp_img'] = &$this->tmp_img;
 
 		// nama_bank
@@ -222,9 +230,31 @@ class cpegawai extends cTable {
 			} else {
 				$this->setSessionOrderBy($sSortField . " " . $sThisSort); // Save to Session
 			}
+			$sSortFieldList = ($ofld->FldVirtualExpression <> "") ? $ofld->FldVirtualExpression : $sSortField;
+			if ($ctrl) {
+				$sOrderByList = $this->getSessionOrderByList();
+				if (strpos($sOrderByList, $sSortFieldList . " " . $sLastSort) !== FALSE) {
+					$sOrderByList = str_replace($sSortFieldList . " " . $sLastSort, $sSortFieldList . " " . $sThisSort, $sOrderByList);
+				} else {
+					if ($sOrderByList <> "") $sOrderByList .= ", ";
+					$sOrderByList .= $sSortFieldList . " " . $sThisSort;
+				}
+				$this->setSessionOrderByList($sOrderByList); // Save to Session
+			} else {
+				$this->setSessionOrderByList($sSortFieldList . " " . $sThisSort); // Save to Session
+			}
 		} else {
 			if (!$ctrl) $ofld->setSort("");
 		}
+	}
+
+	// Session ORDER BY for List page
+	function getSessionOrderByList() {
+		return @$_SESSION[EW_PROJECT_NAME . "_" . $this->TableVar . "_" . EW_TABLE_ORDER_BY_LIST];
+	}
+
+	function setSessionOrderByList($v) {
+		$_SESSION[EW_PROJECT_NAME . "_" . $this->TableVar . "_" . EW_TABLE_ORDER_BY_LIST] = $v;
 	}
 
 	// Current detail table name
@@ -277,6 +307,23 @@ class cpegawai extends cTable {
 
 	function setSqlSelect($v) {
 		$this->_SqlSelect = $v;
+	}
+	var $_SqlSelectList = "";
+
+	function getSqlSelectList() { // Select for List page
+		$select = "";
+		$select = "SELECT * FROM (" .
+			"SELECT *, (SELECT `pembagian1_nama` FROM `pembagian1` `EW_TMP_LOOKUPTABLE` WHERE `EW_TMP_LOOKUPTABLE`.`pembagian1_id` = `pegawai`.`pembagian1_id` LIMIT 1) AS `EV__pembagian1_id`, (SELECT `pembagian2_nama` FROM `pembagian2` `EW_TMP_LOOKUPTABLE` WHERE `EW_TMP_LOOKUPTABLE`.`pembagian2_id` = `pegawai`.`pembagian2_id` LIMIT 1) AS `EV__pembagian2_id`, (SELECT `pembagian3_nama` FROM `pembagian3` `EW_TMP_LOOKUPTABLE` WHERE `EW_TMP_LOOKUPTABLE`.`pembagian3_id` = `pegawai`.`pembagian3_id` LIMIT 1) AS `EV__pembagian3_id` FROM `pegawai`" .
+			") `EW_TMP_TABLE`";
+		return ($this->_SqlSelectList <> "") ? $this->_SqlSelectList : $select;
+	}
+
+	function SqlSelectList() { // For backward compatibility
+		return $this->getSqlSelectList();
+	}
+
+	function setSqlSelectList($v) {
+		$this->_SqlSelectList = $v;
 	}
 	var $_SqlWhere = "";
 
@@ -389,15 +436,50 @@ class cpegawai extends cTable {
 		ew_AddFilter($sFilter, $this->CurrentFilter);
 		$sFilter = $this->ApplyUserIDFilters($sFilter);
 		$this->Recordset_Selecting($sFilter);
-		$sSort = $this->getSessionOrderBy();
-		return ew_BuildSelectSql($this->getSqlSelect(), $this->getSqlWhere(), $this->getSqlGroupBy(),
-			$this->getSqlHaving(), $this->getSqlOrderBy(), $sFilter, $sSort);
+		if ($this->UseVirtualFields()) {
+			$sSort = $this->getSessionOrderByList();
+			return ew_BuildSelectSql($this->getSqlSelectList(), $this->getSqlWhere(), $this->getSqlGroupBy(),
+				$this->getSqlHaving(), $this->getSqlOrderBy(), $sFilter, $sSort);
+		} else {
+			$sSort = $this->getSessionOrderBy();
+			return ew_BuildSelectSql($this->getSqlSelect(), $this->getSqlWhere(), $this->getSqlGroupBy(),
+				$this->getSqlHaving(), $this->getSqlOrderBy(), $sFilter, $sSort);
+		}
 	}
 
 	// Get ORDER BY clause
 	function GetOrderBy() {
-		$sSort = $this->getSessionOrderBy();
+		$sSort = ($this->UseVirtualFields()) ? $this->getSessionOrderByList() : $this->getSessionOrderBy();
 		return ew_BuildSelectSql("", "", "", "", $this->getSqlOrderBy(), "", $sSort);
+	}
+
+	// Check if virtual fields is used in SQL
+	function UseVirtualFields() {
+		$sWhere = $this->getSessionWhere();
+		$sOrderBy = $this->getSessionOrderByList();
+		if ($sWhere <> "")
+			$sWhere = " " . str_replace(array("(",")"), array("",""), $sWhere) . " ";
+		if ($sOrderBy <> "")
+			$sOrderBy = " " . str_replace(array("(",")"), array("",""), $sOrderBy) . " ";
+		if ($this->pembagian1_id->AdvancedSearch->SearchValue <> "" ||
+			$this->pembagian1_id->AdvancedSearch->SearchValue2 <> "" ||
+			strpos($sWhere, " " . $this->pembagian1_id->FldVirtualExpression . " ") !== FALSE)
+			return TRUE;
+		if (strpos($sOrderBy, " " . $this->pembagian1_id->FldVirtualExpression . " ") !== FALSE)
+			return TRUE;
+		if ($this->pembagian2_id->AdvancedSearch->SearchValue <> "" ||
+			$this->pembagian2_id->AdvancedSearch->SearchValue2 <> "" ||
+			strpos($sWhere, " " . $this->pembagian2_id->FldVirtualExpression . " ") !== FALSE)
+			return TRUE;
+		if (strpos($sOrderBy, " " . $this->pembagian2_id->FldVirtualExpression . " ") !== FALSE)
+			return TRUE;
+		if ($this->pembagian3_id->AdvancedSearch->SearchValue <> "" ||
+			$this->pembagian3_id->AdvancedSearch->SearchValue2 <> "" ||
+			strpos($sWhere, " " . $this->pembagian3_id->FldVirtualExpression . " ") !== FALSE)
+			return TRUE;
+		if (strpos($sOrderBy, " " . $this->pembagian3_id->FldVirtualExpression . " ") !== FALSE)
+			return TRUE;
+		return FALSE;
 	}
 
 	// Try to get record count
@@ -476,6 +558,10 @@ class cpegawai extends cTable {
 		$conn = &$this->Connection();
 		$bInsert = $conn->Execute($this->InsertSQL($rs));
 		if ($bInsert) {
+
+			// Get insert id if necessary
+			$this->pegawai_id->setDbValue($conn->Insert_ID());
+			$rs['pegawai_id'] = $this->pegawai_id->DbValue;
 			if ($this->AuditTrailOnAdd)
 				$this->WriteAuditTrailOnAdd($rs);
 		}
@@ -747,7 +833,7 @@ class cpegawai extends cTable {
 		$this->tgl_resign->setDbValue($rs->fields('tgl_resign'));
 		$this->gender->setDbValue($rs->fields('gender'));
 		$this->tgl_masuk_pertama->setDbValue($rs->fields('tgl_masuk_pertama'));
-		$this->photo_path->setDbValue($rs->fields('photo_path'));
+		$this->photo_path->Upload->DbValue = $rs->fields('photo_path');
 		$this->tmp_img->setDbValue($rs->fields('tmp_img'));
 		$this->nama_bank->setDbValue($rs->fields('nama_bank'));
 		$this->nama_rek->setDbValue($rs->fields('nama_rek'));
@@ -767,8 +853,15 @@ class cpegawai extends cTable {
 		// pegawai_nip
 		// pegawai_nama
 		// pegawai_pwd
+
+		$this->pegawai_pwd->CellCssStyle = "white-space: nowrap;";
+
 		// pegawai_rfid
+		$this->pegawai_rfid->CellCssStyle = "white-space: nowrap;";
+
 		// pegawai_privilege
+		$this->pegawai_privilege->CellCssStyle = "white-space: nowrap;";
+
 		// pegawai_telp
 		// pegawai_status
 		// tempat_lahir
@@ -782,6 +875,9 @@ class cpegawai extends cTable {
 		// tgl_masuk_pertama
 		// photo_path
 		// tmp_img
+
+		$this->tmp_img->CellCssStyle = "white-space: nowrap;";
+
 		// nama_bank
 		// nama_rek
 		// no_rek
@@ -819,7 +915,11 @@ class cpegawai extends cTable {
 		$this->pegawai_telp->ViewCustomAttributes = "";
 
 		// pegawai_status
-		$this->pegawai_status->ViewValue = $this->pegawai_status->CurrentValue;
+		if (strval($this->pegawai_status->CurrentValue) <> "") {
+			$this->pegawai_status->ViewValue = $this->pegawai_status->OptionCaption($this->pegawai_status->CurrentValue);
+		} else {
+			$this->pegawai_status->ViewValue = NULL;
+		}
 		$this->pegawai_status->ViewCustomAttributes = "";
 
 		// tempat_lahir
@@ -832,15 +932,84 @@ class cpegawai extends cTable {
 		$this->tgl_lahir->ViewCustomAttributes = "";
 
 		// pembagian1_id
-		$this->pembagian1_id->ViewValue = $this->pembagian1_id->CurrentValue;
+		if ($this->pembagian1_id->VirtualValue <> "") {
+			$this->pembagian1_id->ViewValue = $this->pembagian1_id->VirtualValue;
+		} else {
+		if (strval($this->pembagian1_id->CurrentValue) <> "") {
+			$sFilterWrk = "`pembagian1_id`" . ew_SearchString("=", $this->pembagian1_id->CurrentValue, EW_DATATYPE_NUMBER, "");
+		$sSqlWrk = "SELECT `pembagian1_id`, `pembagian1_nama` AS `DispFld`, '' AS `Disp2Fld`, '' AS `Disp3Fld`, '' AS `Disp4Fld` FROM `pembagian1`";
+		$sWhereWrk = "";
+		$this->pembagian1_id->LookupFilters = array("dx1" => '`pembagian1_nama`');
+		ew_AddFilter($sWhereWrk, $sFilterWrk);
+		$this->Lookup_Selecting($this->pembagian1_id, $sWhereWrk); // Call Lookup selecting
+		if ($sWhereWrk <> "") $sSqlWrk .= " WHERE " . $sWhereWrk;
+			$rswrk = Conn()->Execute($sSqlWrk);
+			if ($rswrk && !$rswrk->EOF) { // Lookup values found
+				$arwrk = array();
+				$arwrk[1] = $rswrk->fields('DispFld');
+				$this->pembagian1_id->ViewValue = $this->pembagian1_id->DisplayValue($arwrk);
+				$rswrk->Close();
+			} else {
+				$this->pembagian1_id->ViewValue = $this->pembagian1_id->CurrentValue;
+			}
+		} else {
+			$this->pembagian1_id->ViewValue = NULL;
+		}
+		}
 		$this->pembagian1_id->ViewCustomAttributes = "";
 
 		// pembagian2_id
-		$this->pembagian2_id->ViewValue = $this->pembagian2_id->CurrentValue;
+		if ($this->pembagian2_id->VirtualValue <> "") {
+			$this->pembagian2_id->ViewValue = $this->pembagian2_id->VirtualValue;
+		} else {
+		if (strval($this->pembagian2_id->CurrentValue) <> "") {
+			$sFilterWrk = "`pembagian2_id`" . ew_SearchString("=", $this->pembagian2_id->CurrentValue, EW_DATATYPE_NUMBER, "");
+		$sSqlWrk = "SELECT `pembagian2_id`, `pembagian2_nama` AS `DispFld`, '' AS `Disp2Fld`, '' AS `Disp3Fld`, '' AS `Disp4Fld` FROM `pembagian2`";
+		$sWhereWrk = "";
+		$this->pembagian2_id->LookupFilters = array("dx1" => '`pembagian2_nama`');
+		ew_AddFilter($sWhereWrk, $sFilterWrk);
+		$this->Lookup_Selecting($this->pembagian2_id, $sWhereWrk); // Call Lookup selecting
+		if ($sWhereWrk <> "") $sSqlWrk .= " WHERE " . $sWhereWrk;
+			$rswrk = Conn()->Execute($sSqlWrk);
+			if ($rswrk && !$rswrk->EOF) { // Lookup values found
+				$arwrk = array();
+				$arwrk[1] = $rswrk->fields('DispFld');
+				$this->pembagian2_id->ViewValue = $this->pembagian2_id->DisplayValue($arwrk);
+				$rswrk->Close();
+			} else {
+				$this->pembagian2_id->ViewValue = $this->pembagian2_id->CurrentValue;
+			}
+		} else {
+			$this->pembagian2_id->ViewValue = NULL;
+		}
+		}
 		$this->pembagian2_id->ViewCustomAttributes = "";
 
 		// pembagian3_id
-		$this->pembagian3_id->ViewValue = $this->pembagian3_id->CurrentValue;
+		if ($this->pembagian3_id->VirtualValue <> "") {
+			$this->pembagian3_id->ViewValue = $this->pembagian3_id->VirtualValue;
+		} else {
+		if (strval($this->pembagian3_id->CurrentValue) <> "") {
+			$sFilterWrk = "`pembagian3_id`" . ew_SearchString("=", $this->pembagian3_id->CurrentValue, EW_DATATYPE_NUMBER, "");
+		$sSqlWrk = "SELECT `pembagian3_id`, `pembagian3_nama` AS `DispFld`, '' AS `Disp2Fld`, '' AS `Disp3Fld`, '' AS `Disp4Fld` FROM `pembagian3`";
+		$sWhereWrk = "";
+		$this->pembagian3_id->LookupFilters = array("dx1" => '`pembagian3_nama`');
+		ew_AddFilter($sWhereWrk, $sFilterWrk);
+		$this->Lookup_Selecting($this->pembagian3_id, $sWhereWrk); // Call Lookup selecting
+		if ($sWhereWrk <> "") $sSqlWrk .= " WHERE " . $sWhereWrk;
+			$rswrk = Conn()->Execute($sSqlWrk);
+			if ($rswrk && !$rswrk->EOF) { // Lookup values found
+				$arwrk = array();
+				$arwrk[1] = $rswrk->fields('DispFld');
+				$this->pembagian3_id->ViewValue = $this->pembagian3_id->DisplayValue($arwrk);
+				$rswrk->Close();
+			} else {
+				$this->pembagian3_id->ViewValue = $this->pembagian3_id->CurrentValue;
+			}
+		} else {
+			$this->pembagian3_id->ViewValue = NULL;
+		}
+		}
 		$this->pembagian3_id->ViewCustomAttributes = "";
 
 		// tgl_mulai_kerja
@@ -854,7 +1023,11 @@ class cpegawai extends cTable {
 		$this->tgl_resign->ViewCustomAttributes = "";
 
 		// gender
-		$this->gender->ViewValue = $this->gender->CurrentValue;
+		if (strval($this->gender->CurrentValue) <> "") {
+			$this->gender->ViewValue = $this->gender->OptionCaption($this->gender->CurrentValue);
+		} else {
+			$this->gender->ViewValue = NULL;
+		}
 		$this->gender->ViewCustomAttributes = "";
 
 		// tgl_masuk_pertama
@@ -863,7 +1036,11 @@ class cpegawai extends cTable {
 		$this->tgl_masuk_pertama->ViewCustomAttributes = "";
 
 		// photo_path
-		$this->photo_path->ViewValue = $this->photo_path->CurrentValue;
+		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->ViewValue = $this->photo_path->Upload->DbValue;
+		} else {
+			$this->photo_path->ViewValue = "";
+		}
 		$this->photo_path->ViewCustomAttributes = "";
 
 		// tmp_img
@@ -975,6 +1152,7 @@ class cpegawai extends cTable {
 		// photo_path
 		$this->photo_path->LinkCustomAttributes = "";
 		$this->photo_path->HrefValue = "";
+		$this->photo_path->HrefValue2 = $this->photo_path->UploadPath . $this->photo_path->Upload->DbValue;
 		$this->photo_path->TooltipValue = "";
 
 		// tmp_img
@@ -1057,10 +1235,8 @@ class cpegawai extends cTable {
 		$this->pegawai_telp->PlaceHolder = ew_RemoveHtml($this->pegawai_telp->FldCaption());
 
 		// pegawai_status
-		$this->pegawai_status->EditAttrs["class"] = "form-control";
 		$this->pegawai_status->EditCustomAttributes = "";
-		$this->pegawai_status->EditValue = $this->pegawai_status->CurrentValue;
-		$this->pegawai_status->PlaceHolder = ew_RemoveHtml($this->pegawai_status->FldCaption());
+		$this->pegawai_status->EditValue = $this->pegawai_status->Options(FALSE);
 
 		// tempat_lahir
 		$this->tempat_lahir->EditAttrs["class"] = "form-control";
@@ -1077,20 +1253,14 @@ class cpegawai extends cTable {
 		// pembagian1_id
 		$this->pembagian1_id->EditAttrs["class"] = "form-control";
 		$this->pembagian1_id->EditCustomAttributes = "";
-		$this->pembagian1_id->EditValue = $this->pembagian1_id->CurrentValue;
-		$this->pembagian1_id->PlaceHolder = ew_RemoveHtml($this->pembagian1_id->FldCaption());
 
 		// pembagian2_id
 		$this->pembagian2_id->EditAttrs["class"] = "form-control";
 		$this->pembagian2_id->EditCustomAttributes = "";
-		$this->pembagian2_id->EditValue = $this->pembagian2_id->CurrentValue;
-		$this->pembagian2_id->PlaceHolder = ew_RemoveHtml($this->pembagian2_id->FldCaption());
 
 		// pembagian3_id
 		$this->pembagian3_id->EditAttrs["class"] = "form-control";
 		$this->pembagian3_id->EditCustomAttributes = "";
-		$this->pembagian3_id->EditValue = $this->pembagian3_id->CurrentValue;
-		$this->pembagian3_id->PlaceHolder = ew_RemoveHtml($this->pembagian3_id->FldCaption());
 
 		// tgl_mulai_kerja
 		$this->tgl_mulai_kerja->EditAttrs["class"] = "form-control";
@@ -1105,10 +1275,8 @@ class cpegawai extends cTable {
 		$this->tgl_resign->PlaceHolder = ew_RemoveHtml($this->tgl_resign->FldCaption());
 
 		// gender
-		$this->gender->EditAttrs["class"] = "form-control";
 		$this->gender->EditCustomAttributes = "";
-		$this->gender->EditValue = $this->gender->CurrentValue;
-		$this->gender->PlaceHolder = ew_RemoveHtml($this->gender->FldCaption());
+		$this->gender->EditValue = $this->gender->Options(FALSE);
 
 		// tgl_masuk_pertama
 		$this->tgl_masuk_pertama->EditAttrs["class"] = "form-control";
@@ -1119,8 +1287,13 @@ class cpegawai extends cTable {
 		// photo_path
 		$this->photo_path->EditAttrs["class"] = "form-control";
 		$this->photo_path->EditCustomAttributes = "";
-		$this->photo_path->EditValue = $this->photo_path->CurrentValue;
-		$this->photo_path->PlaceHolder = ew_RemoveHtml($this->photo_path->FldCaption());
+		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->EditValue = $this->photo_path->Upload->DbValue;
+		} else {
+			$this->photo_path->EditValue = "";
+		}
+		if (!ew_Empty($this->photo_path->CurrentValue))
+			$this->photo_path->Upload->FileName = $this->photo_path->CurrentValue;
 
 		// tmp_img
 		$this->tmp_img->EditAttrs["class"] = "form-control";
@@ -1177,9 +1350,6 @@ class cpegawai extends cTable {
 					if ($this->pegawai_pin->Exportable) $Doc->ExportCaption($this->pegawai_pin);
 					if ($this->pegawai_nip->Exportable) $Doc->ExportCaption($this->pegawai_nip);
 					if ($this->pegawai_nama->Exportable) $Doc->ExportCaption($this->pegawai_nama);
-					if ($this->pegawai_pwd->Exportable) $Doc->ExportCaption($this->pegawai_pwd);
-					if ($this->pegawai_rfid->Exportable) $Doc->ExportCaption($this->pegawai_rfid);
-					if ($this->pegawai_privilege->Exportable) $Doc->ExportCaption($this->pegawai_privilege);
 					if ($this->pegawai_telp->Exportable) $Doc->ExportCaption($this->pegawai_telp);
 					if ($this->pegawai_status->Exportable) $Doc->ExportCaption($this->pegawai_status);
 					if ($this->tempat_lahir->Exportable) $Doc->ExportCaption($this->tempat_lahir);
@@ -1192,7 +1362,6 @@ class cpegawai extends cTable {
 					if ($this->gender->Exportable) $Doc->ExportCaption($this->gender);
 					if ($this->tgl_masuk_pertama->Exportable) $Doc->ExportCaption($this->tgl_masuk_pertama);
 					if ($this->photo_path->Exportable) $Doc->ExportCaption($this->photo_path);
-					if ($this->tmp_img->Exportable) $Doc->ExportCaption($this->tmp_img);
 					if ($this->nama_bank->Exportable) $Doc->ExportCaption($this->nama_bank);
 					if ($this->nama_rek->Exportable) $Doc->ExportCaption($this->nama_rek);
 					if ($this->no_rek->Exportable) $Doc->ExportCaption($this->no_rek);
@@ -1201,9 +1370,6 @@ class cpegawai extends cTable {
 					if ($this->pegawai_pin->Exportable) $Doc->ExportCaption($this->pegawai_pin);
 					if ($this->pegawai_nip->Exportable) $Doc->ExportCaption($this->pegawai_nip);
 					if ($this->pegawai_nama->Exportable) $Doc->ExportCaption($this->pegawai_nama);
-					if ($this->pegawai_pwd->Exportable) $Doc->ExportCaption($this->pegawai_pwd);
-					if ($this->pegawai_rfid->Exportable) $Doc->ExportCaption($this->pegawai_rfid);
-					if ($this->pegawai_privilege->Exportable) $Doc->ExportCaption($this->pegawai_privilege);
 					if ($this->pegawai_telp->Exportable) $Doc->ExportCaption($this->pegawai_telp);
 					if ($this->pegawai_status->Exportable) $Doc->ExportCaption($this->pegawai_status);
 					if ($this->tempat_lahir->Exportable) $Doc->ExportCaption($this->tempat_lahir);
@@ -1254,9 +1420,6 @@ class cpegawai extends cTable {
 						if ($this->pegawai_pin->Exportable) $Doc->ExportField($this->pegawai_pin);
 						if ($this->pegawai_nip->Exportable) $Doc->ExportField($this->pegawai_nip);
 						if ($this->pegawai_nama->Exportable) $Doc->ExportField($this->pegawai_nama);
-						if ($this->pegawai_pwd->Exportable) $Doc->ExportField($this->pegawai_pwd);
-						if ($this->pegawai_rfid->Exportable) $Doc->ExportField($this->pegawai_rfid);
-						if ($this->pegawai_privilege->Exportable) $Doc->ExportField($this->pegawai_privilege);
 						if ($this->pegawai_telp->Exportable) $Doc->ExportField($this->pegawai_telp);
 						if ($this->pegawai_status->Exportable) $Doc->ExportField($this->pegawai_status);
 						if ($this->tempat_lahir->Exportable) $Doc->ExportField($this->tempat_lahir);
@@ -1269,7 +1432,6 @@ class cpegawai extends cTable {
 						if ($this->gender->Exportable) $Doc->ExportField($this->gender);
 						if ($this->tgl_masuk_pertama->Exportable) $Doc->ExportField($this->tgl_masuk_pertama);
 						if ($this->photo_path->Exportable) $Doc->ExportField($this->photo_path);
-						if ($this->tmp_img->Exportable) $Doc->ExportField($this->tmp_img);
 						if ($this->nama_bank->Exportable) $Doc->ExportField($this->nama_bank);
 						if ($this->nama_rek->Exportable) $Doc->ExportField($this->nama_rek);
 						if ($this->no_rek->Exportable) $Doc->ExportField($this->no_rek);
@@ -1278,9 +1440,6 @@ class cpegawai extends cTable {
 						if ($this->pegawai_pin->Exportable) $Doc->ExportField($this->pegawai_pin);
 						if ($this->pegawai_nip->Exportable) $Doc->ExportField($this->pegawai_nip);
 						if ($this->pegawai_nama->Exportable) $Doc->ExportField($this->pegawai_nama);
-						if ($this->pegawai_pwd->Exportable) $Doc->ExportField($this->pegawai_pwd);
-						if ($this->pegawai_rfid->Exportable) $Doc->ExportField($this->pegawai_rfid);
-						if ($this->pegawai_privilege->Exportable) $Doc->ExportField($this->pegawai_privilege);
 						if ($this->pegawai_telp->Exportable) $Doc->ExportField($this->pegawai_telp);
 						if ($this->pegawai_status->Exportable) $Doc->ExportField($this->pegawai_status);
 						if ($this->tempat_lahir->Exportable) $Doc->ExportField($this->tempat_lahir);

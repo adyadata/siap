@@ -272,6 +272,12 @@ class cdefault {
 			$this->Page_Terminate("pegawailist.php");
 		if ($Security->AllowList(CurrentProjectID() . 'pegawai_d'))
 			$this->Page_Terminate("pegawai_dlist.php");
+		if ($Security->AllowList(CurrentProjectID() . 'pembagian1'))
+			$this->Page_Terminate("pembagian1list.php");
+		if ($Security->AllowList(CurrentProjectID() . 'pembagian2'))
+			$this->Page_Terminate("pembagian2list.php");
+		if ($Security->AllowList(CurrentProjectID() . 'pembagian3'))
+			$this->Page_Terminate("pembagian3list.php");
 		if ($Security->AllowList(CurrentProjectID() . 't_audit_trail'))
 			$this->Page_Terminate("t_audit_traillist.php");
 		if ($Security->AllowList(CurrentProjectID() . 't_user'))

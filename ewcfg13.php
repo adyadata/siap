@@ -25,7 +25,7 @@ define("EW_CONFIG_FILE_FOLDER", EW_PROJECT_NAME, TRUE); // Config file name
 define("EW_PROJECT_ID", "{035CBF11-745C-4982-814A-B6768131C8FC}", TRUE); // Project ID (GUID)
 $EW_RELATED_PROJECT_ID = "";
 $EW_RELATED_LANGUAGE_FOLDER = "";
-define("EW_RANDOM_KEY", 'Axvee8JwZt4haody', TRUE); // Random key for encryption
+define("EW_RANDOM_KEY", 'Ip4Lwf8ffevgfd72', TRUE); // Random key for encryption
 define("EW_PROJECT_STYLESHEET_FILENAME", "phpcss/siap.css", TRUE); // Project stylesheet file name
 define("EW_CHARSET", "", TRUE); // Project charset
 define("EW_EMAIL_CHARSET", EW_CHARSET, TRUE); // Email charset
@@ -296,7 +296,7 @@ define("EW_EMAIL_TEMPLATE_PATH", "phphtml", TRUE); // Template path
 
 // File upload
 define("EW_UPLOAD_TEMP_PATH", "", TRUE); // Upload temp path (absolute)
-define("EW_UPLOAD_DEST_PATH", "", TRUE); // Upload destination path (relative to app root)
+define("EW_UPLOAD_DEST_PATH", "files/", TRUE); // Upload destination path (relative to app root)
 define("EW_UPLOAD_URL", "ewupload13.php", TRUE); // Upload URL
 define("EW_UPLOAD_TEMP_FOLDER_PREFIX", "temp__", TRUE); // Upload temp folders prefix
 define("EW_UPLOAD_TEMP_FOLDER_TIME_LIMIT", 1440, TRUE); // Upload temp folder time limit (minutes)

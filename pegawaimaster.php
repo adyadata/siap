@@ -4,9 +4,6 @@
 // pegawai_pin
 // pegawai_nip
 // pegawai_nama
-// pegawai_pwd
-// pegawai_rfid
-// pegawai_privilege
 // pegawai_telp
 // pegawai_status
 // tempat_lahir
@@ -69,39 +66,6 @@
 <span id="el_pegawai_pegawai_nama">
 <span<?php echo $pegawai->pegawai_nama->ViewAttributes() ?>>
 <?php echo $pegawai->pegawai_nama->ListViewValue() ?></span>
-</span>
-</td>
-		</tr>
-<?php } ?>
-<?php if ($pegawai->pegawai_pwd->Visible) { // pegawai_pwd ?>
-		<tr id="r_pegawai_pwd">
-			<td><?php echo $pegawai->pegawai_pwd->FldCaption() ?></td>
-			<td<?php echo $pegawai->pegawai_pwd->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_pwd">
-<span<?php echo $pegawai->pegawai_pwd->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_pwd->ListViewValue() ?></span>
-</span>
-</td>
-		</tr>
-<?php } ?>
-<?php if ($pegawai->pegawai_rfid->Visible) { // pegawai_rfid ?>
-		<tr id="r_pegawai_rfid">
-			<td><?php echo $pegawai->pegawai_rfid->FldCaption() ?></td>
-			<td<?php echo $pegawai->pegawai_rfid->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_rfid">
-<span<?php echo $pegawai->pegawai_rfid->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_rfid->ListViewValue() ?></span>
-</span>
-</td>
-		</tr>
-<?php } ?>
-<?php if ($pegawai->pegawai_privilege->Visible) { // pegawai_privilege ?>
-		<tr id="r_pegawai_privilege">
-			<td><?php echo $pegawai->pegawai_privilege->FldCaption() ?></td>
-			<td<?php echo $pegawai->pegawai_privilege->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_privilege">
-<span<?php echo $pegawai->pegawai_privilege->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_privilege->ListViewValue() ?></span>
 </span>
 </td>
 		</tr>
@@ -233,7 +197,8 @@
 			<td<?php echo $pegawai->photo_path->CellAttributes() ?>>
 <span id="el_pegawai_photo_path">
 <span<?php echo $pegawai->photo_path->ViewAttributes() ?>>
-<?php echo $pegawai->photo_path->ListViewValue() ?></span>
+<?php echo ew_GetFileViewTag($pegawai->photo_path, $pegawai->photo_path->ListViewValue()) ?>
+</span>
 </span>
 </td>
 		</tr>

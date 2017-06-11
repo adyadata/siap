@@ -385,12 +385,10 @@ class cpegawai_view extends cpegawai {
 		// Setup export options
 		$this->SetupExportOptions();
 		$this->pegawai_id->SetVisibility();
+		$this->pegawai_id->Visible = !$this->IsAdd() && !$this->IsCopy() && !$this->IsGridAdd();
 		$this->pegawai_pin->SetVisibility();
 		$this->pegawai_nip->SetVisibility();
 		$this->pegawai_nama->SetVisibility();
-		$this->pegawai_pwd->SetVisibility();
-		$this->pegawai_rfid->SetVisibility();
-		$this->pegawai_privilege->SetVisibility();
 		$this->pegawai_telp->SetVisibility();
 		$this->pegawai_status->SetVisibility();
 		$this->tempat_lahir->SetVisibility();
@@ -403,7 +401,6 @@ class cpegawai_view extends cpegawai {
 		$this->gender->SetVisibility();
 		$this->tgl_masuk_pertama->SetVisibility();
 		$this->photo_path->SetVisibility();
-		$this->tmp_img->SetVisibility();
 		$this->nama_bank->SetVisibility();
 		$this->nama_rek->SetVisibility();
 		$this->no_rek->SetVisibility();
@@ -757,7 +754,7 @@ class cpegawai_view extends cpegawai {
 		if ($this->UseSelectLimit) {
 			$conn->raiseErrorFn = $GLOBALS["EW_ERROR_FN"];
 			if ($dbtype == "MSSQL") {
-				$rs = $conn->SelectLimit($sSql, $rowcnt, $offset, array("_hasOrderBy" => trim($this->getOrderBy()) || trim($this->getSessionOrderBy())));
+				$rs = $conn->SelectLimit($sSql, $rowcnt, $offset, array("_hasOrderBy" => trim($this->getOrderBy()) || trim($this->getSessionOrderByList())));
 			} else {
 				$rs = $conn->SelectLimit($sSql, $rowcnt, $offset);
 			}
@@ -813,13 +810,29 @@ class cpegawai_view extends cpegawai {
 		$this->tempat_lahir->setDbValue($rs->fields('tempat_lahir'));
 		$this->tgl_lahir->setDbValue($rs->fields('tgl_lahir'));
 		$this->pembagian1_id->setDbValue($rs->fields('pembagian1_id'));
+		if (array_key_exists('EV__pembagian1_id', $rs->fields)) {
+			$this->pembagian1_id->VirtualValue = $rs->fields('EV__pembagian1_id'); // Set up virtual field value
+		} else {
+			$this->pembagian1_id->VirtualValue = ""; // Clear value
+		}
 		$this->pembagian2_id->setDbValue($rs->fields('pembagian2_id'));
+		if (array_key_exists('EV__pembagian2_id', $rs->fields)) {
+			$this->pembagian2_id->VirtualValue = $rs->fields('EV__pembagian2_id'); // Set up virtual field value
+		} else {
+			$this->pembagian2_id->VirtualValue = ""; // Clear value
+		}
 		$this->pembagian3_id->setDbValue($rs->fields('pembagian3_id'));
+		if (array_key_exists('EV__pembagian3_id', $rs->fields)) {
+			$this->pembagian3_id->VirtualValue = $rs->fields('EV__pembagian3_id'); // Set up virtual field value
+		} else {
+			$this->pembagian3_id->VirtualValue = ""; // Clear value
+		}
 		$this->tgl_mulai_kerja->setDbValue($rs->fields('tgl_mulai_kerja'));
 		$this->tgl_resign->setDbValue($rs->fields('tgl_resign'));
 		$this->gender->setDbValue($rs->fields('gender'));
 		$this->tgl_masuk_pertama->setDbValue($rs->fields('tgl_masuk_pertama'));
-		$this->photo_path->setDbValue($rs->fields('photo_path'));
+		$this->photo_path->Upload->DbValue = $rs->fields('photo_path');
+		$this->photo_path->CurrentValue = $this->photo_path->Upload->DbValue;
 		$this->tmp_img->setDbValue($rs->fields('tmp_img'));
 		$this->nama_bank->setDbValue($rs->fields('nama_bank'));
 		$this->nama_rek->setDbValue($rs->fields('nama_rek'));
@@ -848,7 +861,7 @@ class cpegawai_view extends cpegawai {
 		$this->tgl_resign->DbValue = $row['tgl_resign'];
 		$this->gender->DbValue = $row['gender'];
 		$this->tgl_masuk_pertama->DbValue = $row['tgl_masuk_pertama'];
-		$this->photo_path->DbValue = $row['photo_path'];
+		$this->photo_path->Upload->DbValue = $row['photo_path'];
 		$this->tmp_img->DbValue = $row['tmp_img'];
 		$this->nama_bank->DbValue = $row['nama_bank'];
 		$this->nama_rek->DbValue = $row['nama_rek'];
@@ -913,24 +926,16 @@ class cpegawai_view extends cpegawai {
 		$this->pegawai_nama->ViewValue = $this->pegawai_nama->CurrentValue;
 		$this->pegawai_nama->ViewCustomAttributes = "";
 
-		// pegawai_pwd
-		$this->pegawai_pwd->ViewValue = $this->pegawai_pwd->CurrentValue;
-		$this->pegawai_pwd->ViewCustomAttributes = "";
-
-		// pegawai_rfid
-		$this->pegawai_rfid->ViewValue = $this->pegawai_rfid->CurrentValue;
-		$this->pegawai_rfid->ViewCustomAttributes = "";
-
-		// pegawai_privilege
-		$this->pegawai_privilege->ViewValue = $this->pegawai_privilege->CurrentValue;
-		$this->pegawai_privilege->ViewCustomAttributes = "";
-
 		// pegawai_telp
 		$this->pegawai_telp->ViewValue = $this->pegawai_telp->CurrentValue;
 		$this->pegawai_telp->ViewCustomAttributes = "";
 
 		// pegawai_status
-		$this->pegawai_status->ViewValue = $this->pegawai_status->CurrentValue;
+		if (strval($this->pegawai_status->CurrentValue) <> "") {
+			$this->pegawai_status->ViewValue = $this->pegawai_status->OptionCaption($this->pegawai_status->CurrentValue);
+		} else {
+			$this->pegawai_status->ViewValue = NULL;
+		}
 		$this->pegawai_status->ViewCustomAttributes = "";
 
 		// tempat_lahir
@@ -943,15 +948,84 @@ class cpegawai_view extends cpegawai {
 		$this->tgl_lahir->ViewCustomAttributes = "";
 
 		// pembagian1_id
-		$this->pembagian1_id->ViewValue = $this->pembagian1_id->CurrentValue;
+		if ($this->pembagian1_id->VirtualValue <> "") {
+			$this->pembagian1_id->ViewValue = $this->pembagian1_id->VirtualValue;
+		} else {
+		if (strval($this->pembagian1_id->CurrentValue) <> "") {
+			$sFilterWrk = "`pembagian1_id`" . ew_SearchString("=", $this->pembagian1_id->CurrentValue, EW_DATATYPE_NUMBER, "");
+		$sSqlWrk = "SELECT `pembagian1_id`, `pembagian1_nama` AS `DispFld`, '' AS `Disp2Fld`, '' AS `Disp3Fld`, '' AS `Disp4Fld` FROM `pembagian1`";
+		$sWhereWrk = "";
+		$this->pembagian1_id->LookupFilters = array("dx1" => '`pembagian1_nama`');
+		ew_AddFilter($sWhereWrk, $sFilterWrk);
+		$this->Lookup_Selecting($this->pembagian1_id, $sWhereWrk); // Call Lookup selecting
+		if ($sWhereWrk <> "") $sSqlWrk .= " WHERE " . $sWhereWrk;
+			$rswrk = Conn()->Execute($sSqlWrk);
+			if ($rswrk && !$rswrk->EOF) { // Lookup values found
+				$arwrk = array();
+				$arwrk[1] = $rswrk->fields('DispFld');
+				$this->pembagian1_id->ViewValue = $this->pembagian1_id->DisplayValue($arwrk);
+				$rswrk->Close();
+			} else {
+				$this->pembagian1_id->ViewValue = $this->pembagian1_id->CurrentValue;
+			}
+		} else {
+			$this->pembagian1_id->ViewValue = NULL;
+		}
+		}
 		$this->pembagian1_id->ViewCustomAttributes = "";
 
 		// pembagian2_id
-		$this->pembagian2_id->ViewValue = $this->pembagian2_id->CurrentValue;
+		if ($this->pembagian2_id->VirtualValue <> "") {
+			$this->pembagian2_id->ViewValue = $this->pembagian2_id->VirtualValue;
+		} else {
+		if (strval($this->pembagian2_id->CurrentValue) <> "") {
+			$sFilterWrk = "`pembagian2_id`" . ew_SearchString("=", $this->pembagian2_id->CurrentValue, EW_DATATYPE_NUMBER, "");
+		$sSqlWrk = "SELECT `pembagian2_id`, `pembagian2_nama` AS `DispFld`, '' AS `Disp2Fld`, '' AS `Disp3Fld`, '' AS `Disp4Fld` FROM `pembagian2`";
+		$sWhereWrk = "";
+		$this->pembagian2_id->LookupFilters = array("dx1" => '`pembagian2_nama`');
+		ew_AddFilter($sWhereWrk, $sFilterWrk);
+		$this->Lookup_Selecting($this->pembagian2_id, $sWhereWrk); // Call Lookup selecting
+		if ($sWhereWrk <> "") $sSqlWrk .= " WHERE " . $sWhereWrk;
+			$rswrk = Conn()->Execute($sSqlWrk);
+			if ($rswrk && !$rswrk->EOF) { // Lookup values found
+				$arwrk = array();
+				$arwrk[1] = $rswrk->fields('DispFld');
+				$this->pembagian2_id->ViewValue = $this->pembagian2_id->DisplayValue($arwrk);
+				$rswrk->Close();
+			} else {
+				$this->pembagian2_id->ViewValue = $this->pembagian2_id->CurrentValue;
+			}
+		} else {
+			$this->pembagian2_id->ViewValue = NULL;
+		}
+		}
 		$this->pembagian2_id->ViewCustomAttributes = "";
 
 		// pembagian3_id
-		$this->pembagian3_id->ViewValue = $this->pembagian3_id->CurrentValue;
+		if ($this->pembagian3_id->VirtualValue <> "") {
+			$this->pembagian3_id->ViewValue = $this->pembagian3_id->VirtualValue;
+		} else {
+		if (strval($this->pembagian3_id->CurrentValue) <> "") {
+			$sFilterWrk = "`pembagian3_id`" . ew_SearchString("=", $this->pembagian3_id->CurrentValue, EW_DATATYPE_NUMBER, "");
+		$sSqlWrk = "SELECT `pembagian3_id`, `pembagian3_nama` AS `DispFld`, '' AS `Disp2Fld`, '' AS `Disp3Fld`, '' AS `Disp4Fld` FROM `pembagian3`";
+		$sWhereWrk = "";
+		$this->pembagian3_id->LookupFilters = array("dx1" => '`pembagian3_nama`');
+		ew_AddFilter($sWhereWrk, $sFilterWrk);
+		$this->Lookup_Selecting($this->pembagian3_id, $sWhereWrk); // Call Lookup selecting
+		if ($sWhereWrk <> "") $sSqlWrk .= " WHERE " . $sWhereWrk;
+			$rswrk = Conn()->Execute($sSqlWrk);
+			if ($rswrk && !$rswrk->EOF) { // Lookup values found
+				$arwrk = array();
+				$arwrk[1] = $rswrk->fields('DispFld');
+				$this->pembagian3_id->ViewValue = $this->pembagian3_id->DisplayValue($arwrk);
+				$rswrk->Close();
+			} else {
+				$this->pembagian3_id->ViewValue = $this->pembagian3_id->CurrentValue;
+			}
+		} else {
+			$this->pembagian3_id->ViewValue = NULL;
+		}
+		}
 		$this->pembagian3_id->ViewCustomAttributes = "";
 
 		// tgl_mulai_kerja
@@ -965,7 +1039,11 @@ class cpegawai_view extends cpegawai {
 		$this->tgl_resign->ViewCustomAttributes = "";
 
 		// gender
-		$this->gender->ViewValue = $this->gender->CurrentValue;
+		if (strval($this->gender->CurrentValue) <> "") {
+			$this->gender->ViewValue = $this->gender->OptionCaption($this->gender->CurrentValue);
+		} else {
+			$this->gender->ViewValue = NULL;
+		}
 		$this->gender->ViewCustomAttributes = "";
 
 		// tgl_masuk_pertama
@@ -974,12 +1052,12 @@ class cpegawai_view extends cpegawai {
 		$this->tgl_masuk_pertama->ViewCustomAttributes = "";
 
 		// photo_path
-		$this->photo_path->ViewValue = $this->photo_path->CurrentValue;
+		if (!ew_Empty($this->photo_path->Upload->DbValue)) {
+			$this->photo_path->ViewValue = $this->photo_path->Upload->DbValue;
+		} else {
+			$this->photo_path->ViewValue = "";
+		}
 		$this->photo_path->ViewCustomAttributes = "";
-
-		// tmp_img
-		$this->tmp_img->ViewValue = $this->tmp_img->CurrentValue;
-		$this->tmp_img->ViewCustomAttributes = "";
 
 		// nama_bank
 		$this->nama_bank->ViewValue = $this->nama_bank->CurrentValue;
@@ -1012,21 +1090,6 @@ class cpegawai_view extends cpegawai {
 			$this->pegawai_nama->LinkCustomAttributes = "";
 			$this->pegawai_nama->HrefValue = "";
 			$this->pegawai_nama->TooltipValue = "";
-
-			// pegawai_pwd
-			$this->pegawai_pwd->LinkCustomAttributes = "";
-			$this->pegawai_pwd->HrefValue = "";
-			$this->pegawai_pwd->TooltipValue = "";
-
-			// pegawai_rfid
-			$this->pegawai_rfid->LinkCustomAttributes = "";
-			$this->pegawai_rfid->HrefValue = "";
-			$this->pegawai_rfid->TooltipValue = "";
-
-			// pegawai_privilege
-			$this->pegawai_privilege->LinkCustomAttributes = "";
-			$this->pegawai_privilege->HrefValue = "";
-			$this->pegawai_privilege->TooltipValue = "";
 
 			// pegawai_telp
 			$this->pegawai_telp->LinkCustomAttributes = "";
@@ -1086,12 +1149,8 @@ class cpegawai_view extends cpegawai {
 			// photo_path
 			$this->photo_path->LinkCustomAttributes = "";
 			$this->photo_path->HrefValue = "";
+			$this->photo_path->HrefValue2 = $this->photo_path->UploadPath . $this->photo_path->Upload->DbValue;
 			$this->photo_path->TooltipValue = "";
-
-			// tmp_img
-			$this->tmp_img->LinkCustomAttributes = "";
-			$this->tmp_img->HrefValue = "";
-			$this->tmp_img->TooltipValue = "";
 
 			// nama_bank
 			$this->nama_bank->LinkCustomAttributes = "";
@@ -1563,8 +1622,15 @@ fpegawaiview.ValidateRequired = false;
 <?php } ?>
 
 // Dynamic selection lists
-// Form object for search
+fpegawaiview.Lists["x_pegawai_status"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawaiview.Lists["x_pegawai_status"].Options = <?php echo json_encode($pegawai->pegawai_status->Options()) ?>;
+fpegawaiview.Lists["x_pembagian1_id"] = {"LinkField":"x_pembagian1_id","Ajax":true,"AutoFill":false,"DisplayFields":["x_pembagian1_nama","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":"","LinkTable":"pembagian1"};
+fpegawaiview.Lists["x_pembagian2_id"] = {"LinkField":"x_pembagian2_id","Ajax":true,"AutoFill":false,"DisplayFields":["x_pembagian2_nama","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":"","LinkTable":"pembagian2"};
+fpegawaiview.Lists["x_pembagian3_id"] = {"LinkField":"x_pembagian3_id","Ajax":true,"AutoFill":false,"DisplayFields":["x_pembagian3_nama","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":"","LinkTable":"pembagian3"};
+fpegawaiview.Lists["x_gender"] = {"LinkField":"","Ajax":null,"AutoFill":false,"DisplayFields":["","","",""],"ParentFields":[],"ChildFields":[],"FilterFields":[],"Options":[],"Template":""};
+fpegawaiview.Lists["x_gender"].Options = <?php echo json_encode($pegawai->gender->Options()) ?>;
 
+// Form object for search
 </script>
 <script type="text/javascript">
 
@@ -1691,39 +1757,6 @@ $pegawai_view->ShowMessage();
 <span id="el_pegawai_pegawai_nama">
 <span<?php echo $pegawai->pegawai_nama->ViewAttributes() ?>>
 <?php echo $pegawai->pegawai_nama->ViewValue ?></span>
-</span>
-</td>
-	</tr>
-<?php } ?>
-<?php if ($pegawai->pegawai_pwd->Visible) { // pegawai_pwd ?>
-	<tr id="r_pegawai_pwd">
-		<td><span id="elh_pegawai_pegawai_pwd"><?php echo $pegawai->pegawai_pwd->FldCaption() ?></span></td>
-		<td data-name="pegawai_pwd"<?php echo $pegawai->pegawai_pwd->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_pwd">
-<span<?php echo $pegawai->pegawai_pwd->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_pwd->ViewValue ?></span>
-</span>
-</td>
-	</tr>
-<?php } ?>
-<?php if ($pegawai->pegawai_rfid->Visible) { // pegawai_rfid ?>
-	<tr id="r_pegawai_rfid">
-		<td><span id="elh_pegawai_pegawai_rfid"><?php echo $pegawai->pegawai_rfid->FldCaption() ?></span></td>
-		<td data-name="pegawai_rfid"<?php echo $pegawai->pegawai_rfid->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_rfid">
-<span<?php echo $pegawai->pegawai_rfid->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_rfid->ViewValue ?></span>
-</span>
-</td>
-	</tr>
-<?php } ?>
-<?php if ($pegawai->pegawai_privilege->Visible) { // pegawai_privilege ?>
-	<tr id="r_pegawai_privilege">
-		<td><span id="elh_pegawai_pegawai_privilege"><?php echo $pegawai->pegawai_privilege->FldCaption() ?></span></td>
-		<td data-name="pegawai_privilege"<?php echo $pegawai->pegawai_privilege->CellAttributes() ?>>
-<span id="el_pegawai_pegawai_privilege">
-<span<?php echo $pegawai->pegawai_privilege->ViewAttributes() ?>>
-<?php echo $pegawai->pegawai_privilege->ViewValue ?></span>
 </span>
 </td>
 	</tr>
@@ -1855,18 +1888,8 @@ $pegawai_view->ShowMessage();
 		<td data-name="photo_path"<?php echo $pegawai->photo_path->CellAttributes() ?>>
 <span id="el_pegawai_photo_path">
 <span<?php echo $pegawai->photo_path->ViewAttributes() ?>>
-<?php echo $pegawai->photo_path->ViewValue ?></span>
+<?php echo ew_GetFileViewTag($pegawai->photo_path, $pegawai->photo_path->ViewValue) ?>
 </span>
-</td>
-	</tr>
-<?php } ?>
-<?php if ($pegawai->tmp_img->Visible) { // tmp_img ?>
-	<tr id="r_tmp_img">
-		<td><span id="elh_pegawai_tmp_img"><?php echo $pegawai->tmp_img->FldCaption() ?></span></td>
-		<td data-name="tmp_img"<?php echo $pegawai->tmp_img->CellAttributes() ?>>
-<span id="el_pegawai_tmp_img">
-<span<?php echo $pegawai->tmp_img->ViewAttributes() ?>>
-<?php echo $pegawai->tmp_img->ViewValue ?></span>
 </span>
 </td>
 	</tr>

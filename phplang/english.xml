@@ -592,23 +592,32 @@
     <menu id="29">
       <phrase id="menutext" value="Pegawai" />
     </menu>
-    <menu id="2">
-      <phrase id="menutext" value="cuti normatif" />
-    </menu>
     <menu id="65">
       <phrase id="menutext" value="Setup" />
     </menu>
+    <menu id="31">
+      <phrase id="menutext" value="Jabatan" />
+    </menu>
+    <menu id="32">
+      <phrase id="menutext" value="Departemen" />
+    </menu>
+    <menu id="33">
+      <phrase id="menutext" value="Kantor" />
+    </menu>
     <menu id="62">
       <phrase id="menutext" value="User" />
-    </menu>
-    <menu id="3">
-      <phrase id="menutext" value="dev type" />
     </menu>
     <menu id="64">
       <phrase id="menutext" value="View" />
     </menu>
     <menu id="61">
       <phrase id="menutext" value="Activity Log." />
+    </menu>
+    <menu id="2">
+      <phrase id="menutext" value="cuti normatif" />
+    </menu>
+    <menu id="3">
+      <phrase id="menutext" value="dev type" />
     </menu>
     <menu id="4">
       <phrase id="menutext" value="device" />
@@ -687,15 +696,6 @@
     </menu>
     <menu id="30">
       <phrase id="menutext" value="Detal Pegawai" />
-    </menu>
-    <menu id="31">
-      <phrase id="menutext" value="pembagian 1" />
-    </menu>
-    <menu id="32">
-      <phrase id="menutext" value="pembagian 2" />
-    </menu>
-    <menu id="33">
-      <phrase id="menutext" value="pembagian 3" />
     </menu>
     <menu id="34">
       <phrase id="menutext" value="pendidikan" />
@@ -1474,52 +1474,60 @@
         <phrase id="fldcaption" value="pegawai privilege" />
       </field>
       <field id="pegawai_telp">
-        <phrase id="fldcaption" value="pegawai telp" />
+        <phrase id="fldcaption" value="Telp. / HP" />
       </field>
       <field id="pegawai_status">
-        <phrase id="fldcaption" value="pegawai status" />
+        <phrase id="fldcaption" value="Status" />
+        <phrase id="fldtagvalue1" value="0" />
+        <phrase id="fldtagcaption1" value="Non-Aktif" />
+        <phrase id="fldtagvalue2" value="1" />
+        <phrase id="fldtagcaption2" value="Aktif" />
       </field>
       <field id="tempat_lahir">
-        <phrase id="fldcaption" value="tempat lahir" />
+        <phrase id="fldcaption" value="Tempat Lahir" />
       </field>
       <field id="tgl_lahir">
-        <phrase id="fldcaption" value="tgl lahir" />
+        <phrase id="fldcaption" value="Tgl. Lahir" />
       </field>
       <field id="pembagian1_id">
-        <phrase id="fldcaption" value="pembagian 1 id" />
+        <phrase id="fldcaption" value="Jabatan" />
       </field>
       <field id="pembagian2_id">
-        <phrase id="fldcaption" value="pembagian 2 id" />
+        <phrase id="fldcaption" value="Departemen" />
       </field>
       <field id="pembagian3_id">
-        <phrase id="fldcaption" value="pembagian 3 id" />
+        <phrase id="fldcaption" value="Kantor" />
       </field>
       <field id="tgl_mulai_kerja">
-        <phrase id="fldcaption" value="tgl mulai kerja" />
+        <phrase id="fldcaption" value="Tgl. Mulai Kerja" />
       </field>
       <field id="tgl_resign">
-        <phrase id="fldcaption" value="tgl resign" />
+        <phrase id="fldcaption" value="Tgl. Resign" />
       </field>
       <field id="gender">
-        <phrase id="fldcaption" value="gender" />
+        <phrase id="fldcaption" value="Jns. Kelamin" />
+        <phrase id="fldtagvalue1" value="1" />
+        <phrase id="fldtagcaption1" value="Laki-laki" />
+        <phrase id="fldtagvalue2" value="2" />
+        <phrase id="fldtagcaption2" value="Perempuan" />
       </field>
       <field id="tgl_masuk_pertama">
-        <phrase id="fldcaption" value="tgl masuk pertama" />
+        <phrase id="fldcaption" value="Tgl. Masuk" />
       </field>
       <field id="photo_path">
-        <phrase id="fldcaption" value="photo path" />
+        <phrase id="fldcaption" value="Photo Path" />
       </field>
       <field id="tmp_img">
         <phrase id="fldcaption" value="tmp img" />
       </field>
       <field id="nama_bank">
-        <phrase id="fldcaption" value="nama bank" />
+        <phrase id="fldcaption" value="Nama Bank" />
       </field>
       <field id="nama_rek">
-        <phrase id="fldcaption" value="nama rek" />
+        <phrase id="fldcaption" value="Nama Rekening" />
       </field>
       <field id="no_rek">
-        <phrase id="fldcaption" value="no rek" />
+        <phrase id="fldcaption" value="Nomor Rekening" />
       </field>
     </table>
     <table id="pegawai_d">
@@ -1556,39 +1564,39 @@
       </field>
     </table>
     <table id="pembagian1">
-      <phrase id="tblcaption" value="pembagian 1" />
+      <phrase id="tblcaption" value="Jabatan" />
       <field id="pembagian1_id">
-        <phrase id="fldcaption" value="pembagian 1 id" />
+        <phrase id="fldcaption" value="ID" />
       </field>
       <field id="pembagian1_nama">
-        <phrase id="fldcaption" value="pembagian 1 nama" />
+        <phrase id="fldcaption" value="Jabatan" />
       </field>
       <field id="pembagian1_ket">
-        <phrase id="fldcaption" value="pembagian 1 ket" />
+        <phrase id="fldcaption" value="Keterangan" />
       </field>
     </table>
     <table id="pembagian2">
-      <phrase id="tblcaption" value="pembagian 2" />
+      <phrase id="tblcaption" value="Departemen" />
       <field id="pembagian2_id">
-        <phrase id="fldcaption" value="pembagian 2 id" />
+        <phrase id="fldcaption" value="ID" />
       </field>
       <field id="pembagian2_nama">
-        <phrase id="fldcaption" value="pembagian 2 nama" />
+        <phrase id="fldcaption" value="Departemen" />
       </field>
       <field id="pembagian2_ket">
-        <phrase id="fldcaption" value="pembagian 2 ket" />
+        <phrase id="fldcaption" value="Keterangan" />
       </field>
     </table>
     <table id="pembagian3">
-      <phrase id="tblcaption" value="pembagian 3" />
+      <phrase id="tblcaption" value="Kantor" />
       <field id="pembagian3_id">
-        <phrase id="fldcaption" value="pembagian 3 id" />
+        <phrase id="fldcaption" value="ID" />
       </field>
       <field id="pembagian3_nama">
-        <phrase id="fldcaption" value="pembagian 3 nama" />
+        <phrase id="fldcaption" value="Kantor" />
       </field>
       <field id="pembagian3_ket">
-        <phrase id="fldcaption" value="pembagian 3 ket" />
+        <phrase id="fldcaption" value="Keterangan" />
       </field>
     </table>
     <table id="pendidikan">
