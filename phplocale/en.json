@@ -1,1 +1,27 @@
-{"decimal_point":".","thousands_sep":",","int_curr_symbol":"$","currency_symbol":"$","mon_decimal_point":".","mon_thousands_sep":",","positive_sign":"","negative_sign":"-","int_frac_digits":2,"frac_digits":2,"p_cs_precedes":1,"p_sep_by_space":0,"n_cs_precedes":1,"n_sep_by_space":0,"p_sign_posn":1,"n_sign_posn":1,"date_sep":"-","time_sep":":","date_format":"Ymd","time_zone":"Asia/Jakarta"}
+{
+    "date": "2016-08-22",
+    "version": "13.0.1",
+    "id": "en",
+    "locale": "en_US",
+    "name": "English (United States)",
+    "desc": "English (United States, EN_US)",
+    "author": "e.World",
+    "decimal_point": ".",
+    "thousands_sep": ",",
+    "mon_decimal_point": ".",
+    "mon_thousands_sep": ",",
+    "currency_symbol": "$",
+    "positive_sign": "",
+    "negative_sign": "-",
+    "frac_digits": 2,
+    "p_cs_precedes": 1,
+    "p_sep_by_space": 0,
+    "n_cs_precedes": 1,
+    "n_sep_by_space": 0,
+    "p_sign_posn": 1,
+    "n_sign_posn": 1,
+    "date_sep": "\/",
+    "time_sep": ":",
+    "date_format": "mdY",
+    "time_zone": ""
+}

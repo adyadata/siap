@@ -285,6 +285,7 @@ class cv_shift_edit extends cv_shift {
 		// Create form object
 		$objForm = new cFormObj();
 		$this->CurrentAction = (@$_GET["a"] <> "") ? $_GET["a"] : @$_POST["a_list"]; // Set up current action
+		$this->disp_field->SetVisibility();
 		$this->param_value->SetVisibility();
 
 		// Global Page Loading event (in userfn*.php)
@@ -537,6 +538,9 @@ class cv_shift_edit extends cv_shift {
 
 		// Load from form
 		global $objForm;
+		if (!$this->disp_field->FldIsDetailKey) {
+			$this->disp_field->setFormValue($objForm->GetValue("x_disp_field"));
+		}
 		if (!$this->param_value->FldIsDetailKey) {
 			$this->param_value->setFormValue($objForm->GetValue("x_param_value"));
 		}
@@ -549,6 +553,7 @@ class cv_shift_edit extends cv_shift {
 		global $objForm;
 		$this->LoadRow();
 		$this->param_name->CurrentValue = $this->param_name->FormValue;
+		$this->disp_field->CurrentValue = $this->disp_field->FormValue;
 		$this->param_value->CurrentValue = $this->param_value->FormValue;
 	}
 
@@ -656,11 +661,22 @@ class cv_shift_edit extends cv_shift {
 		$this->disp_no->ViewValue = $this->disp_no->CurrentValue;
 		$this->disp_no->ViewCustomAttributes = "";
 
+			// disp_field
+			$this->disp_field->LinkCustomAttributes = "";
+			$this->disp_field->HrefValue = "";
+			$this->disp_field->TooltipValue = "";
+
 			// param_value
 			$this->param_value->LinkCustomAttributes = "";
 			$this->param_value->HrefValue = "";
 			$this->param_value->TooltipValue = "";
 		} elseif ($this->RowType == EW_ROWTYPE_EDIT) { // Edit row
+
+			// disp_field
+			$this->disp_field->EditAttrs["class"] = "form-control";
+			$this->disp_field->EditCustomAttributes = "";
+			$this->disp_field->EditValue = $this->disp_field->CurrentValue;
+			$this->disp_field->ViewCustomAttributes = "";
 
 			// param_value
 			$this->param_value->EditAttrs["class"] = "form-control";
@@ -669,8 +685,13 @@ class cv_shift_edit extends cv_shift {
 			$this->param_value->PlaceHolder = ew_RemoveHtml($this->param_value->FldCaption());
 
 			// Edit refer script
-			// param_value
+			// disp_field
 
+			$this->disp_field->LinkCustomAttributes = "";
+			$this->disp_field->HrefValue = "";
+			$this->disp_field->TooltipValue = "";
+
+			// param_value
 			$this->param_value->LinkCustomAttributes = "";
 			$this->param_value->HrefValue = "";
 		}
@@ -1006,6 +1027,18 @@ $v_shift_edit->ShowMessage();
 <input type="hidden" name="modal" value="1">
 <?php } ?>
 <div>
+<?php if ($v_shift->disp_field->Visible) { // disp_field ?>
+	<div id="r_disp_field" class="form-group">
+		<label id="elh_v_shift_disp_field" for="x_disp_field" class="col-sm-2 control-label ewLabel"><?php echo $v_shift->disp_field->FldCaption() ?></label>
+		<div class="col-sm-10"><div<?php echo $v_shift->disp_field->CellAttributes() ?>>
+<span id="el_v_shift_disp_field">
+<span<?php echo $v_shift->disp_field->ViewAttributes() ?>>
+<p class="form-control-static"><?php echo $v_shift->disp_field->EditValue ?></p></span>
+</span>
+<input type="hidden" data-table="v_shift" data-field="x_disp_field" name="x_disp_field" id="x_disp_field" value="<?php echo ew_HtmlEncode($v_shift->disp_field->CurrentValue) ?>">
+<?php echo $v_shift->disp_field->CustomMsg ?></div></div>
+	</div>
+<?php } ?>
 <?php if ($v_shift->param_value->Visible) { // param_value ?>
 	<div id="r_param_value" class="form-group">
 		<label id="elh_v_shift_param_value" for="x_param_value" class="col-sm-2 control-label ewLabel"><?php echo $v_shift->param_value->FldCaption() ?></label>

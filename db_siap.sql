@@ -1473,19 +1473,6 @@ INSERT INTO `versi_db` (`no_id`, `versi_db`, `keterangan`) VALUES
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `db_siap`.`v_shift` AS select `db_siap`.`setting`.`param_name` AS `param_name`,`db_siap`.`setting`.`param_value` AS `param_value`,(case when (`db_siap`.`setting`.`param_name` = 'range_before_in') then 'Durasi sebelum jam masuk' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_in') then 'Durasi setelah jam masuk' else (case when (`db_siap`.`setting`.`param_name` = 'range_before_out') then 'Durasi sebelum jam pulang' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_out') then 'Durasi setelah jam pulang' else (case when (`db_siap`.`setting`.`param_name` = 'late_tolerance') then 'Toleransi terlambat' else (case when (`db_siap`.`setting`.`param_name` = 'early_tolerance') then 'Toleransi pulang awal' else (case when (`db_siap`.`setting`.`param_name` = 'minim_count_as') then 'Hitung kerja 1/2 hari jika kerja minimal' else 'none' end) end) end) end) end) end) end) AS `disp_field`,(case when (`db_siap`.`setting`.`param_name` = 'range_before_in') then '1' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_in') then '2' else (case when (`db_siap`.`setting`.`param_name` = 'range_before_out') then '3' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_out') then '4' else (case when (`db_siap`.`setting`.`param_name` = 'late_tolerance') then '5' else (case when (`db_siap`.`setting`.`param_name` = 'early_tolerance') then '6' else (case when (`db_siap`.`setting`.`param_name` = 'minim_count_as') then '7' else 'none' end) end) end) end) end) end) end) AS `disp_no` from `db_siap`.`setting` where ((`db_siap`.`setting`.`param_name` = 'range_before_in') or (`db_siap`.`setting`.`param_name` = 'range_after_in') or (`db_siap`.`setting`.`param_name` = 'range_before_out') or (`db_siap`.`setting`.`param_name` = 'range_after_out') or (`db_siap`.`setting`.`param_name` = 'late_tolerance') or (`db_siap`.`setting`.`param_name` = 'early_tolerance') or (`db_siap`.`setting`.`param_name` = 'minim_count_as')) order by (case when (`db_siap`.`setting`.`param_name` = 'range_before_in') then '1' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_in') then '2' else (case when (`db_siap`.`setting`.`param_name` = 'range_before_out') then '3' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_out') then '4' else (case when (`db_siap`.`setting`.`param_name` = 'late_tolerance') then '5' else (case when (`db_siap`.`setting`.`param_name` = 'early_tolerance') then '6' else (case when (`db_siap`.`setting`.`param_name` = 'minim_count_as') then '7' else 'none' end) end) end) end) end) end) end);
 
---
--- Dumping data for table `v_shift`
---
-
-INSERT INTO `v_shift` (`param_name`, `param_value`, `disp_field`, `disp_no`) VALUES
-('range_before_in', '60', 'Durasi sebelum jam masuk', '1'),
-('range_after_in', '60', 'Durasi setelah jam masuk', '2'),
-('range_before_out', '60', 'Durasi sebelum jam pulang', '3'),
-('range_after_out', '60', 'Durasi setelah jam pulang', '4'),
-('late_tolerance', '15', 'Toleransi terlambat', '5'),
-('early_tolerance', '15', 'Toleransi pulang awal', '6'),
-('minim_count_as', '240', 'Hitung kerja 1/2 hari jika kerja minimal', '7');
-
 -- --------------------------------------------------------
 
 --

@@ -647,7 +647,7 @@ class cv_shift extends cTable {
 		$this->disp_field->EditAttrs["class"] = "form-control";
 		$this->disp_field->EditCustomAttributes = "";
 		$this->disp_field->EditValue = $this->disp_field->CurrentValue;
-		$this->disp_field->PlaceHolder = ew_RemoveHtml($this->disp_field->FldCaption());
+		$this->disp_field->ViewCustomAttributes = "";
 
 		// param_value
 		$this->param_value->EditAttrs["class"] = "form-control";
