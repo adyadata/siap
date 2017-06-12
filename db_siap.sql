@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 12, 2017 at 04:12 AM
+-- Generation Time: Jun 12, 2017 at 11:24 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -1274,7 +1274,7 @@ CREATE TABLE IF NOT EXISTS `t_audit_trail` (
   `oldvalue` longtext,
   `newvalue` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
 
 --
 -- Dumping data for table `t_audit_trail`
@@ -1334,7 +1334,8 @@ INSERT INTO `t_audit_trail` (`id`, `datetime`, `script`, `user`, `action`, `tabl
 (51, '2017-06-12 00:19:55', '/siap/login.php', 'admin', 'login', '::1', '', '', '', ''),
 (52, '2017-06-12 02:25:56', '/siap/v_shiftedit.php', '3', 'U', 'v_shift', 'param_value', 'range_before_in', '62', '60'),
 (53, '2017-06-12 02:51:23', '/siap/v_shiftedit.php', '3', 'U', 'v_shift', 'param_value', 'range_before_in', '63', '62'),
-(54, '2017-06-12 02:51:51', '/siap/v_shiftedit.php', '3', 'U', 'v_shift', 'param_value', 'range_before_in', '60', '63');
+(54, '2017-06-12 02:51:51', '/siap/v_shiftedit.php', '3', 'U', 'v_shift', 'param_value', 'range_before_in', '60', '63'),
+(55, '2017-06-12 10:46:58', '/siap/login.php', 'admin', 'login', '::1', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1464,14 +1465,6 @@ INSERT INTO `versi_db` (`no_id`, `versi_db`, `keterangan`) VALUES
 (11, 'v.2016.02.26', NULL),
 (12, 'v.2016.03.15', NULL),
 (13, 'v.2016.03.23', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `v_shift`
---
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `db_siap`.`v_shift` AS select `db_siap`.`setting`.`param_name` AS `param_name`,`db_siap`.`setting`.`param_value` AS `param_value`,(case when (`db_siap`.`setting`.`param_name` = 'range_before_in') then 'Durasi sebelum jam masuk' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_in') then 'Durasi setelah jam masuk' else (case when (`db_siap`.`setting`.`param_name` = 'range_before_out') then 'Durasi sebelum jam pulang' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_out') then 'Durasi setelah jam pulang' else (case when (`db_siap`.`setting`.`param_name` = 'late_tolerance') then 'Toleransi terlambat' else (case when (`db_siap`.`setting`.`param_name` = 'early_tolerance') then 'Toleransi pulang awal' else (case when (`db_siap`.`setting`.`param_name` = 'minim_count_as') then 'Hitung kerja 1/2 hari jika kerja minimal' else 'none' end) end) end) end) end) end) end) AS `disp_field`,(case when (`db_siap`.`setting`.`param_name` = 'range_before_in') then '1' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_in') then '2' else (case when (`db_siap`.`setting`.`param_name` = 'range_before_out') then '3' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_out') then '4' else (case when (`db_siap`.`setting`.`param_name` = 'late_tolerance') then '5' else (case when (`db_siap`.`setting`.`param_name` = 'early_tolerance') then '6' else (case when (`db_siap`.`setting`.`param_name` = 'minim_count_as') then '7' else 'none' end) end) end) end) end) end) end) AS `disp_no` from `db_siap`.`setting` where ((`db_siap`.`setting`.`param_name` = 'range_before_in') or (`db_siap`.`setting`.`param_name` = 'range_after_in') or (`db_siap`.`setting`.`param_name` = 'range_before_out') or (`db_siap`.`setting`.`param_name` = 'range_after_out') or (`db_siap`.`setting`.`param_name` = 'late_tolerance') or (`db_siap`.`setting`.`param_name` = 'early_tolerance') or (`db_siap`.`setting`.`param_name` = 'minim_count_as')) order by (case when (`db_siap`.`setting`.`param_name` = 'range_before_in') then '1' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_in') then '2' else (case when (`db_siap`.`setting`.`param_name` = 'range_before_out') then '3' else (case when (`db_siap`.`setting`.`param_name` = 'range_after_out') then '4' else (case when (`db_siap`.`setting`.`param_name` = 'late_tolerance') then '5' else (case when (`db_siap`.`setting`.`param_name` = 'early_tolerance') then '6' else (case when (`db_siap`.`setting`.`param_name` = 'minim_count_as') then '7' else 'none' end) end) end) end) end) end) end);
 
 -- --------------------------------------------------------
 
