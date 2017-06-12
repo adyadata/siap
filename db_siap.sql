@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 12, 2017 at 11:24 AM
+-- Generation Time: Jun 12, 2017 at 03:21 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -518,7 +518,8 @@ CREATE TABLE IF NOT EXISTS `index_ot` (
 INSERT INTO `index_ot` (`index_id`, `type_ot`, `from_ot`, `to_ot`, `multiplier`) VALUES
 (1, 4, 0, 60, 1),
 (2, 4, 60, 120, 2),
-(3, 4, 120, 1440, 3);
+(3, 4, 120, 480, 3),
+(4, 4, 480, 1440, 4);
 
 -- --------------------------------------------------------
 
@@ -1071,7 +1072,7 @@ INSERT INTO `setting` (`param_name`, `param_value`, `keterangan`) VALUES
 ('shortcut_new', 'A', ''),
 ('unsetting_row_color', '$00FFFF80', ''),
 ('unsetting_row_fcolor', 'clBlack', ''),
-('use_index_ot', '0', ''),
+('use_index_ot', '-1', ''),
 ('use_payroll_module', '-1', '');
 
 -- --------------------------------------------------------
@@ -1274,7 +1275,7 @@ CREATE TABLE IF NOT EXISTS `t_audit_trail` (
   `oldvalue` longtext,
   `newvalue` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Dumping data for table `t_audit_trail`
@@ -1335,7 +1336,8 @@ INSERT INTO `t_audit_trail` (`id`, `datetime`, `script`, `user`, `action`, `tabl
 (52, '2017-06-12 02:25:56', '/siap/v_shiftedit.php', '3', 'U', 'v_shift', 'param_value', 'range_before_in', '62', '60'),
 (53, '2017-06-12 02:51:23', '/siap/v_shiftedit.php', '3', 'U', 'v_shift', 'param_value', 'range_before_in', '63', '62'),
 (54, '2017-06-12 02:51:51', '/siap/v_shiftedit.php', '3', 'U', 'v_shift', 'param_value', 'range_before_in', '60', '63'),
-(55, '2017-06-12 10:46:58', '/siap/login.php', 'admin', 'login', '::1', '', '', '', '');
+(55, '2017-06-12 10:46:58', '/siap/login.php', 'admin', 'login', '::1', '', '', '', ''),
+(56, '2017-06-12 07:54:33', '/siap/login.php', 'admin', 'login', '::1', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1407,7 +1409,11 @@ INSERT INTO `user_log` (`login_id`, `log_date`, `module`, `tipe_log`, `nama_data
 ('admin', '2017-06-11 19:41:00', 5, 3, '', 'Log out user aplikasi "admin" '),
 ('Out', '2017-06-11 19:41:00', 5, 1, '', 'Login user aplikasi "Out" '),
 ('admin', '2017-06-11 22:54:00', 5, 1, '', 'Login user aplikasi "admin" '),
-('admin', '2017-06-12 02:48:00', 5, 1, '', 'Login user aplikasi "admin" ');
+('admin', '2017-06-12 02:48:00', 5, 1, '', 'Login user aplikasi "admin" '),
+('admin', '2017-06-12 12:43:00', 5, 1, '', 'Login user aplikasi "admin" '),
+('admin', '2017-06-12 14:56:00', 5, 2, '', 'Mengubah pengaturan umum'),
+('admin', '2017-06-12 14:56:00', 5, 2, '', 'Mengubah pengaturan umum'),
+('admin', '2017-06-12 14:57:00', 5, 2, '', 'Mengubah pengaturan umum');
 
 -- --------------------------------------------------------
 

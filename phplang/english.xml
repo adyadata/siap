@@ -601,6 +601,9 @@
     <menu id="66">
       <phrase id="menutext" value="Shift" />
     </menu>
+    <menu id="189">
+      <phrase id="menutext" value="Lembur" />
+    </menu>
     <menu id="35">
       <phrase id="menutext" value="setting" />
     </menu>
@@ -2449,6 +2452,21 @@
       </field>
       <field id="param_value">
         <phrase id="fldcaption" value="Waktu (menit)" />
+      </field>
+      <field id="disp_no">
+        <phrase id="fldcaption" value="disp no" />
+      </field>
+    </table>
+    <table id="v_lembur">
+      <phrase id="tblcaption" value="Lembur" />
+      <field id="param_name">
+        <phrase id="fldcaption" value="param name" />
+      </field>
+      <field id="disp_field">
+        <phrase id="fldcaption" value="Lembur" />
+      </field>
+      <field id="param_value">
+        <phrase id="fldcaption" value="Nilai" />
       </field>
       <field id="disp_no">
         <phrase id="fldcaption" value="disp no" />

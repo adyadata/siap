@@ -8,6 +8,7 @@ $RootMenu->AddMenuItem(29, "mmi_pegawai", $Language->MenuPhrase("29", "MenuText"
 $RootMenu->AddMenuItem(65, "mmci_Setup", $Language->MenuPhrase("65", "MenuText"), "", -1, "", TRUE, FALSE, TRUE);
 $RootMenu->AddMenuItem(128, "mmci_Umum", $Language->MenuPhrase("128", "MenuText"), "", 65, "", TRUE, FALSE, TRUE);
 $RootMenu->AddMenuItem(66, "mmi_v_shift", $Language->MenuPhrase("66", "MenuText"), "v_shiftlist.php", 128, "", AllowListMenu('{035CBF11-745C-4982-814A-B6768131C8FC}v_shift'), FALSE, FALSE);
+$RootMenu->AddMenuItem(189, "mmi_v_lembur", $Language->MenuPhrase("189", "MenuText"), "v_lemburlist.php", 128, "", AllowListMenu('{035CBF11-745C-4982-814A-B6768131C8FC}v_lembur'), FALSE, FALSE);
 $RootMenu->AddMenuItem(188, "mmci_Pembagian_Pegawai", $Language->MenuPhrase("188", "MenuText"), "", 65, "", TRUE, FALSE, TRUE);
 $RootMenu->AddMenuItem(31, "mmi_pembagian1", $Language->MenuPhrase("31", "MenuText"), "pembagian1list.php", 188, "", AllowListMenu('{035CBF11-745C-4982-814A-B6768131C8FC}pembagian1'), FALSE, FALSE);
 $RootMenu->AddMenuItem(32, "mmi_pembagian2", $Language->MenuPhrase("32", "MenuText"), "pembagian2list.php", 188, "", AllowListMenu('{035CBF11-745C-4982-814A-B6768131C8FC}pembagian2'), FALSE, FALSE);
